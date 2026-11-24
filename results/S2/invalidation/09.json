@@ -1,0 +1,19 @@
+{
+ "entry": 9,
+ "tests": {
+  "shape_change": {
+   "time": "2026-11-17 15:21:29",
+   "dynamic_false_unique_graphs_after_3_shapes": [
+    1,
+    2,
+    3
+   ],
+   "recompiles_after_3_shapes": 2,
+   "revisit_adds_graphs": 0,
+   "automatic_dynamic_unique_graphs_for_4_shapes": 4,
+   "manual_graph_copy_new_shape_exception": "RuntimeError",
+   "manual_graph_new_shape_needs_new_capture": true
+  }
+ },
+ "torch": "2.9.1+cu126"
+}

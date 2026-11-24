@@ -1,0 +1,6 @@
+{"tag": "C1+G1-recipe_768x768_b4_cfg_p0", "start": "2026-11-17T19:23:12", "end": "2026-11-17T19:25:02", "exit_code": 0,
+ "pinned_fallback_count": 0,
+ "memavailable_mb_before": 56856, "memavailable_mb_after": 56847,
+ "shmem_mb_before": 10, "shmem_mb_after": 10,
+ "uptime_s_before": 25657, "uptime_s_after": 25767,
+ "swap_used_pct_after": 2, "load1_after": 1.02}

@@ -1,0 +1,11 @@
+{
+ "alpha": 1.0,
+ "H_prior": 1000.0,
+ "horizon": "online",
+ "tiers": [
+  "E",
+  "G1",
+  "C1",
+  "C1+G1"
+ ]
+}

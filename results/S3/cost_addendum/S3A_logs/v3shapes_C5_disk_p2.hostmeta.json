@@ -1,0 +1,6 @@
+{"tag": "v3shapes_C5_disk_p2", "start": "2026-11-17T19:11:46", "end": "2026-11-17T19:14:06", "exit_code": 0,
+ "pinned_fallback_count": 0,
+ "memavailable_mb_before": 56851, "memavailable_mb_after": 56891,
+ "shmem_mb_before": 10, "shmem_mb_after": 10,
+ "uptime_s_before": 24972, "uptime_s_after": 25111,
+ "swap_used_pct_after": 2, "load1_after": 1.04}

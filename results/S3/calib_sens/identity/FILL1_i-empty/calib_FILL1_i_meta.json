@@ -1,0 +1,37 @@
+{
+ "set": "FILL1_i",
+ "table": "FILL1",
+ "perspective": "i",
+ "n_rows": 13,
+ "status_counts": {
+  "ok": 13
+ },
+ "wall_s": 0.17278742790222168,
+ "time": "2026-11-18T10:31:00",
+ "spec_sha16": "148f2f315fe7cbee",
+ "script_sha16": "2cb33356124a6bf0",
+ "guards": {
+  "params_mode": "0o444",
+  "params_sha16": "bb09408690eeb4bf",
+  "cost_table_sha16": "aa691bbea98d15c6",
+  "manifest_sha16": "7d7b993c4d5402b0",
+  "code_sha16": {
+   "policy/base.py": "0716509f6bf09dc4",
+   "policy/ours.py": "03f9ad80c392b842",
+   "policy/baselines.py": "35757377e4ecb559",
+   "policy/factory.py": "b3a9693b76f57da5",
+   "policy/costview.py": "d21ea0c0a3c6badc",
+   "sim/simulator.py": "f99de8b737d55997",
+   "sim/prior.py": "5eee108e125dbe26"
+  },
+  "code_matches_freeze": true
+ },
+ "cell": [
+  "W2",
+  1000,
+  "empty"
+ ],
+ "table_sha16": "082d5a65ef444d12",
+ "procs": 1,
+ "perspective_def": "i: policies (and B7 oracle) built on the FROZEN cost table (impute+addendum), simulator charges the calibrated table; ii: policies and simulator use the calibrated table"
+}

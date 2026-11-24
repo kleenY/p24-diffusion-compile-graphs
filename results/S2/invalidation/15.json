@@ -1,0 +1,72 @@
+{
+ "entry": 15,
+ "tests": {
+  "global_reset_only": {
+   "time": "2026-11-17 15:21:37",
+   "reserved_mb_base": 1846.0,
+   "reserved_mb_after_shape128": 1766.0,
+   "reserved_mb_after_shape96": 1766.0,
+   "reserved_mb_after_torch_compiler_reset": 1714.0,
+   "recompiled_kept_shape_after_reset": 1,
+   "public_torch_compiler_names": [
+    "Any",
+    "Callable",
+    "F",
+    "FuncType",
+    "Optional",
+    "ParamSpec",
+    "TYPE_CHECKING",
+    "TypeVar",
+    "Union",
+    "allow_in_graph",
+    "assume_constant_result",
+    "compile",
+    "config",
+    "cudagraph_mark_step_begin",
+    "disable",
+    "io",
+    "is_compiling",
+    "is_dynamo_compiling",
+    "is_exporting",
+    "keep_tensor_guards_unsafe",
+    "list_backends",
+    "load_cache_artifacts",
+    "load_compiled_function",
+    "nested_compile_region",
+    "reset",
+    "save_cache_artifacts",
+    "set_enable_guard_collectives",
+    "set_stance",
+    "skip_guard_on_all_nn_modules_unsafe",
+    "skip_guard_on_globals_unsafe",
+    "skip_guard_on_inbuilt_nn_modules_unsafe",
+    "substitute_in_graph",
+    "torch",
+    "wrap_numpy"
+   ],
+   "names_matching_release_evict_free_drop": [],
+   "private_note": "torch._inductor.cudagraph_trees.reset_cudagraph_trees() is also global; the manager keeps one root per function id (tm.roots) but exposes no supported per-shape release."
+  },
+  "manual_graph_per_shape_release_toy": {
+   "time": "2026-11-17 15:21:39",
+   "reserved_mb_base": 1750.0,
+   "pool_mb_A": 86.0,
+   "pool_mb_B": 40.0,
+   "reserved_mb_both": 1910.0,
+   "reserved_mb_after_release_B": 1870.0,
+   "freed_mb": 40.0
+  },
+  "real_unet_manual_graph_per_shape_release": {
+   "time": "2026-11-17 15:21:41",
+   "unet_only": true,
+   "dtype": "fp16",
+   "reserved_mb_base_weights_incl_static_io": 1714.0,
+   "pool_mb_512x512_B1": 230.0,
+   "pool_mb_512x768_B1": 268.0,
+   "reserved_mb_both": 2256.0,
+   "reserved_mb_after_release_512x768": 1988.0,
+   "freed_mb": 268.0
+  }
+ },
+ "torch": "2.9.1+cu126"
+}

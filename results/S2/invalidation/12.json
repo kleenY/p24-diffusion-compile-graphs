@@ -1,0 +1,94 @@
+{
+ "entry": 12,
+ "tests": {
+  "default_limit_8": {
+   "time": "2026-11-17 15:21:31",
+   "recompile_limit": 8,
+   "accumulated_recompile_limit": 256,
+   "shapes_run": 11,
+   "compiled_per_shape": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false
+   ],
+   "unique_graphs_per_shape": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    8,
+    8,
+    8
+   ],
+   "counters_final": {
+    "unique_graphs": 8,
+    "frame_attempts": 9,
+    "frames_total": 9,
+    "frames_ok": 8,
+    "limit_events": 1
+   },
+   "warning_text": [
+    "torch._dynamo hit config.recompile_limit (8)\n   function: 'forward' (<REPO>/code/tests/test_invalidation.py:72)\n   last reason: 0/7: tensor 'x' size mismatch at index 2. expected 22, actual 24\nTo log all recompilation reasons, use TORCH_LOGS=\"recompiles\".\nTo diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html"
+   ],
+   "observation": "9th distinct shape: warning 'torch._dynamo hit config.recompile_limit (8)', then silent eager fallback for that and all later new shapes (the frame is skipped); no exception."
+  },
+  "fail_on_hit_and_fullgraph": {
+   "time": "2026-11-17 15:21:32",
+   "fail_on_recompile_limit_hit_raises": "FailOnRecompileLimitHit",
+   "graphs_before_raise": 8,
+   "fullgraph_true_default_config_exception": "FailOnRecompileLimitHit",
+   "fullgraph_graphs": 8
+  },
+  "limit_64": {
+   "time": "2026-11-17 15:21:33",
+   "recompile_limit": 64,
+   "shapes_run": 11,
+   "compiled_per_shape": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "unique_graphs_per_shape": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "counters_final": {
+    "unique_graphs": 11,
+    "frame_attempts": 11,
+    "frames_total": 11,
+    "frames_ok": 11,
+    "limit_events": 0
+   }
+  }
+ },
+ "torch": "2.9.1+cu126"
+}

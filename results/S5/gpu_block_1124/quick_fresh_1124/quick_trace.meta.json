@@ -1,0 +1,13 @@
+{
+ "source": "results/S3/workload/real_validation/W2_N300_seed100_B.jsonl",
+ "source_sha16": "191985d7de10418f",
+ "rule": "first 60 requests whose (H,W,B,cfg) is in [(512, 512, 1, 0), (768, 512, 1, 0)]",
+ "n_requests": 60,
+ "n_by_shape": {
+  "512x512x1x0": 49,
+  "768x512x1x0": 11
+ },
+ "first_req_id": "W2-B-s100-00001",
+ "last_req_id": "W2-B-s100-00178",
+ "sha16": "33054ba374b4200d"
+}

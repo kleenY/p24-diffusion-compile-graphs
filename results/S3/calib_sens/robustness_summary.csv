@@ -1,0 +1,5 @@
+set,robust,H4_unchanged_N1e4,H4_unchanged_N1e3,n_flip,n_band_change
+A_i,True,True,True,0,0
+A_ii,True,True,True,0,0
+B_i,True,True,True,0,0
+B_ii,False,True,False,0,1

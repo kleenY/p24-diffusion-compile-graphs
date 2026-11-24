@@ -1,0 +1,78 @@
+{
+  "generated": "2026-11-16T01:29:13",
+  "source": "results/S2/cost_table/merged/cost_table_procs.csv",
+  "source_sha16": "a82bb89249182539",
+  "units": "MiB",
+  "cap_mb": 20480,
+  "device_total_mb": 24218,
+  "resident_mb": 2561.5,
+  "resident_spread_mb": 0.0,
+  "weights_mb": 2056.6103515625,
+  "context_and_slack_mb": 504.8896484375,
+  "eager_ws": {
+    "max_over_workload_shapes_mb": 11289.3896484375,
+    "argmax_shape": {
+      "H": 768,
+      "W": 768,
+      "B": 4,
+      "cfg": 1
+    },
+    "n_shapes": 26
+  },
+  "capture_pool": {
+    "n_buckets": 56,
+    "max_cross_process_spread_mb": 18.0,
+    "median_cross_process_spread_mb": 0.0,
+    "argmax_spread": {
+      "arm": "C1+G1",
+      "H": "768",
+      "W": "512",
+      "B": "1",
+      "cfg": "0"
+    },
+    "table": "results/S2/memory_budget_buckets.csv"
+  },
+  "accounting_error_bound_mb": 64.0,
+  "accounting_error_bound_rule": "max(2 x max cross-process spread of capture_pool_mb, 64 MB) (plan 2.2; proposal for S3.1)",
+  "graph_budget_mb": 6565.1,
+  "graph_budget_formula": "cap_mb - resident_mb - eager_ws.max_over_workload_shapes_mb - accounting_error_bound_mb",
+  "additivity_check": {
+    "what": "G1 one process, 9 buckets accumulated: reserved - (weights + cumsum(pool)) = base + per_bucket*n",
+    "per_bucket_overhead_mb": 22.33,
+    "base_overhead_mb": 51.06,
+    "max_abs_err_of_linear_model_mb_per_process": [
+      2.3333333333332575,
+      2.3333333333332575,
+      2.3333333333332575
+    ],
+    "source": "results/S2/inproc_seq/v3shapes_G1_disk"
+  },
+  "admission_rule": "admit new bucket iff sum over live buckets of (pool_mb + per_bucket_overhead_mb) + pool_mb(new) + per_bucket_overhead_mb <= graph_budget_mb",
+  "buckets_that_fit": {
+    "G1_512x512_b1_cfg0": {
+      "per_bucket_mb": 1194.3333333333333,
+      "n_fit": 5
+    },
+    "G1_512x512_b4_cfg0": {
+      "per_bucket_mb": 4718.333333333333,
+      "n_fit": 1
+    },
+    "G1_768x768_b4_cfg1": {
+      "per_bucket_mb": 10600.333333333334,
+      "n_fit": 0
+    },
+    "C1+G1_512x512_b1_cfg0": {
+      "per_bucket_mb": 650.3333333333334,
+      "n_fit": 10
+    },
+    "C1+G1_512x512_b4_cfg0": {
+      "per_bucket_mb": 2264.3333333333335,
+      "n_fit": 2
+    },
+    "C1+G1_768x768_b4_cfg1": {
+      "per_bucket_mb": 5088.333333333333,
+      "n_fit": 1
+    }
+  },
+  "evidence_unbounded_g1": "S-5: G1 without budget OOMs at the 10th V3 shape (19.24 GiB private pools); failure catalogue #19"
+}

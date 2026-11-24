@@ -1,0 +1,1 @@
+{"note":"dev control checked against sim_eval_S3.py --split dev run (scratch dir), max abs diff service_s = 0.0 over 90 rows"}

@@ -1,0 +1,38 @@
+{
+ "entry": 10,
+ "tests": {
+  "guidance_float": {
+   "time": "2026-11-17 15:21:30",
+   "values": [
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+   ],
+   "unique_graphs_python_float_dynamic_false": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "unique_graphs_python_float_automatic_dynamic": [
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "unique_graphs_0dim_tensor": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "note": "torch 2.9.1: a Python float is guarded by value under dynamic=False (1 compile per value); with automatic dynamic it is symbolised after the first change (2 graphs total); a 0-dim tensor never recompiles. Serving code keeps guidance as a tensor / eager step math."
+  }
+ },
+ "torch": "2.9.1+cu126"
+}

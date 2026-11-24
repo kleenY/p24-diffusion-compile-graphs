@@ -1,0 +1,10 @@
+# Whitelist for p24.paper.check criterion (c): "token | reason".  Limit: 30 entries; every entry needs a reason.
+# A token matches the numeric core of a flagged number exactly (e.g. 512 for "512" in "512x512").
+# Letter-prefixed identifiers (H4a, B0, W2, #17, pytorch#203030, SD1.5), section/figure numbers, years, version strings
+# and TeX dimensions are excluded automatically and must NOT be listed here.
+# Add entries only for numbers that are not results; anything that is a result goes through a numbers.tex macro.
+256 | latent/image side length label (shape name 256x256), not a measured result
+384 | image side length label (shape name 384x384), not a measured result
+512 | image side length label (shape name 512x512 / 512^2), not a measured result
+768 | image side length label (shape name 768x768), not a measured result
+4090 | GPU model name (RTX 4090), not a result

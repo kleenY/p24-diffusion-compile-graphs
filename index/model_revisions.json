@@ -1,0 +1,26 @@
+{
+  "base": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+  "base_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+  "lora": "latent-consistency/lcm-lora-sdv1-5",
+  "lora_revision": "cf2fced511dbe7e26c8d1d397e728fbab875db4b",
+  "fused_dir": "<REPO>/data/models/sd15_lcm_fused",
+  "dtype": "float16",
+  "scheduler": "LCMScheduler",
+  "steps": 4,
+  "fused_files_sha256": {
+    "model_index.json": "1c0fcb29d0eced5c4b23e7049694be59a9ac63aef57f5b3083e23ad51d07aa20",
+    "scheduler/scheduler_config.json": "4d613ce1657242a9144255e4c5951e5a4b0b965c6fa4ff7d512b515955d07da4",
+    "text_encoder/config.json": "9029e92919fe20ba88b51778d744b3406c1bbc00d2af4ab28e5a7830d33fb7de",
+    "text_encoder/model.safetensors": "660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd",
+    "tokenizer/merges.txt": "9fd691f7c8039210e0fced15865466c65820d09b63988b0174bfe25de299051a",
+    "tokenizer/special_tokens_map.json": "c4864a9376a8401918425bed71fc14fc0e81f9b59ec45c1cf96cccb2df508eac",
+    "tokenizer/tokenizer_config.json": "c19f835a5e93d299b21dfee61c8f6a7cd06f5d83c8e828c013c25d2f36b47ccf",
+    "tokenizer/vocab.json": "e089ad92ba36837a0d31433e555c8f45fe601ab5c221d4f607ded32d9f7a4349",
+    "unet/config.json": "074dc4be36b476b04085ad40842efe6f609192552a972394ac8ddb0b4d2da901",
+    "unet/diffusion_pytorch_model.safetensors": "444a5981e52fc3b30f23773a0e4b19f2ed0f400941abce553449d506a0d7cd42",
+    "vae/config.json": "ff47506c631720a91748591c231d66a1ec51018c852eb9528eb66301c95e27a3",
+    "vae/diffusion_pytorch_model.safetensors": "4fbcf0ebe55a0984f5a5e00d8c4521d52359af7229bb4d81890039d2aa16dd7c"
+  },
+  "torch": "2.9.1+cu126",
+  "diffusers": "0.35.2"
+}

@@ -1,0 +1,333 @@
+section,workload,N,shape,quantity,value,unit,source,note
+Q1_measured_untraced,,,256x256_b1_cfg0,steady_ms_E0,45.87430413812399,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,256x256_b1_cfg0,steady_ms_C1,34.611963434144855,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,256x256_b1_cfg0,steady_ms_C1+G1,31.012486899271607,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,256x256_b1_cfg0,steady_ms_G1,40.52985901944339,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,256x256_b1_cfg0,saving_compile_vs_eager_(E0-C1)/E0,24.550433877032983,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,256x256_b1_cfg0,saving_graph_on_eager_(E0-G1)/E0,11.650193325197664,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,256x256_b1_cfg0,saving_graph_on_compile_(C1-C1+G1)/C1,10.399515594432726,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,256x256_b1_cfg0,saving_graph_on_compile_(C1-C1+G1)/E0,7.846389394889787,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_ceiling_compile,,,256x256_b1_cfg0,E0_kernel_time_per_req,41.25574833333334,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,256x256_b1_cfg0,E0_big_ops(conv+gemm+attn)_per_req,21.655366,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,256x256_b1_cfg0,E0_big_ops_fraction_of_kernel_time,52.490542227065006,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,256x256_b1_cfg0,E0_layout_convert_fraction,27.923846087064476,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,256x256_b1_cfg0,E0_other_nonbig_fraction(norm+elementwise+other),19.58561168587052,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,256x256_b1_cfg0,ceiling_if_big_ops_unchanged_and_all_rest_vanished_(nonbig_ms/E0_wall),42.72627716448428,%,kernel_breakdown.csv + cost table,hard upper bound of compile saving under the assumption; traced kernel time is not inflated by tracing (results/S2/nsight/README_nsight.txt)
+Q1_ceiling_compile,,,256x256_b1_cfg0,implied_fraction_of_nonbig_kernel_time_removed_by_compile_=(E0-C1)/nonbig_E0,57.45980110207272,%,cost table + kernel_breakdown.csv,ASSUMES big ops unchanged (verified at 512 within +-2%; no C1 trace at 256/768 so unverified there)
+Q1_ceiling_graph,,,256x256_b1_cfg0,E0_derived_idle_ms_(untraced_wall-traced_busy),4.500796138123988,ms,cost table + trace busy,mixes two runs (untraced steady median vs one Nsight window); can be slightly off if GPU clocks differ
+Q1_ceiling_graph,,,256x256_b1_cfg0,E0_derived_idle_pct_of_wall,9.811148578019708,%,cost table + trace busy,
+Q1_ceiling_graph,,,256x256_b1_cfg0,E0_traced_idle_pct_(inflated_by_tracing),46.60621533809142,%,trace only,S1 summary sec. 5 numbers (E0 9.8/101 ms)
+Q1_ceiling_graph,,,256x256_b1_cfg0,measured_graph_on_eager_saving_pct_of_E0_(for_comparison),11.650193325197664,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg0,steady_ms_E0,94.84067268203944,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg0,steady_ms_C1,75.6042783614248,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg0,steady_ms_C1+G1,72.11677054874599,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg0,steady_ms_G1,90.41522874031216,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg0,saving_compile_vs_eager_(E0-C1)/E0,20.28285310154443,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg0,saving_graph_on_eager_(E0-G1)/E0,4.666187845971862,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg0,saving_graph_on_compile_(C1-C1+G1)/C1,4.612844521849477,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg0,saving_graph_on_compile_(C1-C1+G1)/E0,3.677228043680109,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_ceiling_compile,,,512x512_b1_cfg0,E0_kernel_time_per_req,91.23950666666667,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg0,E0_big_ops(conv+gemm+attn)_per_req,52.78270466666666,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg0,E0_big_ops_fraction_of_kernel_time,57.85071247645208,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg0,E0_layout_convert_fraction,16.75762604591023,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg0,E0_other_nonbig_fraction(norm+elementwise+other),25.391661477637683,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg0,ceiling_if_big_ops_unchanged_and_all_rest_vanished_(nonbig_ms/E0_wall),40.548849889466055,%,kernel_breakdown.csv + cost table,hard upper bound of compile saving under the assumption; traced kernel time is not inflated by tracing (results/S2/nsight/README_nsight.txt)
+Q1_ceiling_compile,,,512x512_b1_cfg0,implied_fraction_of_nonbig_kernel_time_removed_by_compile_=(E0-C1)/nonbig_E0,50.02078519325301,%,cost table + kernel_breakdown.csv,ASSUMES big ops unchanged (verified at 512 within +-2%; no C1 trace at 256/768 so unverified there)
+Q1_ceiling_compile,,,512x512_b1_cfg0,C1_kernel_time_per_req,72.388914,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg0,kernel_time_reduction_E0_to_C1,18.85059266666667,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg0,kernel_time_reduction_E0_to_C1_pct_of_E0,20.66055961430743,%,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,delta_conv_(E0-C1),-0.991729000000003,ms,kernel_breakdown.csv,share of total reduction -5.3%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,delta_gemm_(E0-C1),1.175590999999999,ms,kernel_breakdown.csv,share of total reduction 6.2%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,delta_attention_(E0-C1),0.026232000000000255,ms,kernel_breakdown.csv,share of total reduction 0.1%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,delta_triton_fused_(E0-C1),-19.758999666666668,ms,kernel_breakdown.csv,share of total reduction -104.8%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,delta_layout_convert_(E0-C1),15.289575333333334,ms,kernel_breakdown.csv,share of total reduction 81.1%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,delta_norm_reduce_(E0-C1),10.852494,ms,kernel_breakdown.csv,share of total reduction 57.6%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,delta_elementwise_copy_(E0-C1),11.735501333333334,ms,kernel_breakdown.csv,share of total reduction 62.3%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,delta_other_(E0-C1),0.5219276666666667,ms,kernel_breakdown.csv,share of total reduction 2.8%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,big_ops_E0,52.78270466666666,ms,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,big_ops_C1,52.57261066666667,ms,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,big_ops_change_pct,-0.3980356848455882,%,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,big_ops_share_of_C1_kernel_time,72.62522361734376,%,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg0,compile_nonbig_remaining_C1_ms_(layout+norm+elem+triton+other),19.81630333333333,ms,kernel_breakdown.csv,
+Q1_ceiling_graph,,,512x512_b1_cfg0,E0_derived_idle_ms_(untraced_wall-traced_busy),3.4191686820394267,ms,cost table + trace busy,mixes two runs (untraced steady median vs one Nsight window); can be slightly off if GPU clocks differ
+Q1_ceiling_graph,,,512x512_b1_cfg0,E0_derived_idle_pct_of_wall,3.6051712681356123,%,cost table + trace busy,
+Q1_ceiling_graph,,,512x512_b1_cfg0,E0_traced_idle_pct_(inflated_by_tracing),11.358868682408962,%,trace only,S1 summary sec. 5 numbers (E0 9.8/101 ms)
+Q1_ceiling_graph,,,512x512_b1_cfg0,C1_derived_idle_ms_(untraced_wall-traced_busy),3.0796620280914766,ms,cost table + trace busy,mixes two runs (untraced steady median vs one Nsight window); can be slightly off if GPU clocks differ
+Q1_ceiling_graph,,,512x512_b1_cfg0,C1_derived_idle_pct_of_wall,4.073396499294936,%,cost table + trace busy,
+Q1_ceiling_graph,,,512x512_b1_cfg0,C1_traced_idle_pct_(inflated_by_tracing),8.80752768659182,%,trace only,S1 summary sec. 5 numbers (E0 9.8/101 ms)
+Q1_ceiling_graph,,,512x512_b1_cfg0,measured_graph_on_eager_saving_pct_of_E0_(for_comparison),4.666187845971862,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg1,steady_ms_E0,126.58528122119606,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg1,steady_ms_C1,105.33929499797523,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg1,steady_ms_C1+G1,101.34438937529922,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg1,steady_ms_G1,121.43245548941195,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg1,saving_compile_vs_eager_(E0-C1)/E0,16.783930973851085,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg1,saving_graph_on_eager_(E0-G1)/E0,4.070635765922911,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg1,saving_graph_on_compile_(C1-C1+G1)/C1,3.7924172767178694,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,512x512_b1_cfg1,saving_graph_on_compile_(C1-C1+G1)/E0,3.1559005787531387,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_ceiling_compile,,,512x512_b1_cfg1,E0_kernel_time_per_req,122.15094933333334,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg1,E0_big_ops(conv+gemm+attn)_per_req,77.04578433333333,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg1,E0_big_ops_fraction_of_kernel_time,63.07424113674782,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg1,E0_layout_convert_fraction,12.96486580996636,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg1,E0_other_nonbig_fraction(norm+elementwise+other),23.960893053285805,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg1,ceiling_if_big_ops_unchanged_and_all_rest_vanished_(nonbig_ms/E0_wall),35.63223509468128,%,kernel_breakdown.csv + cost table,hard upper bound of compile saving under the assumption; traced kernel time is not inflated by tracing (results/S2/nsight/README_nsight.txt)
+Q1_ceiling_compile,,,512x512_b1_cfg1,implied_fraction_of_nonbig_kernel_time_removed_by_compile_=(E0-C1)/nonbig_E0,47.10322248731563,%,cost table + kernel_breakdown.csv,ASSUMES big ops unchanged (verified at 512 within +-2%; no C1 trace at 256/768 so unverified there)
+Q1_ceiling_compile,,,512x512_b1_cfg1,C1_kernel_time_per_req,101.23233733333332,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg1,kernel_time_reduction_E0_to_C1,20.918612000000024,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,512x512_b1_cfg1,kernel_time_reduction_E0_to_C1_pct_of_E0,17.12521442867871,%,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,delta_conv_(E0-C1),-2.408050000000003,ms,kernel_breakdown.csv,share of total reduction -11.5%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,delta_gemm_(E0-C1),1.0677123333333327,ms,kernel_breakdown.csv,share of total reduction 5.1%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,delta_attention_(E0-C1),0.044466333333332386,ms,kernel_breakdown.csv,share of total reduction 0.2%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,delta_triton_fused_(E0-C1),-22.812450333333334,ms,kernel_breakdown.csv,share of total reduction -109.1%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,delta_layout_convert_(E0-C1),15.836706666666666,ms,kernel_breakdown.csv,share of total reduction 75.7%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,delta_norm_reduce_(E0-C1),11.685831,ms,kernel_breakdown.csv,share of total reduction 55.9%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,delta_elementwise_copy_(E0-C1),16.943127666666665,ms,kernel_breakdown.csv,share of total reduction 81.0%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,delta_other_(E0-C1),0.5612683333333334,ms,kernel_breakdown.csv,share of total reduction 2.7%
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,big_ops_E0,77.04578433333333,ms,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,big_ops_C1,78.34165566666667,ms,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,big_ops_change_pct,1.6819496933496567,%,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,big_ops_share_of_C1_kernel_time,77.38797476216199,%,kernel_breakdown.csv,
+Q1_decomposition_E0_to_C1,,,512x512_b1_cfg1,compile_nonbig_remaining_C1_ms_(layout+norm+elem+triton+other),22.89068166666665,ms,kernel_breakdown.csv,
+Q1_ceiling_graph,,,512x512_b1_cfg1,E0_derived_idle_ms_(untraced_wall-traced_busy),4.20303655452939,ms,cost table + trace busy,mixes two runs (untraced steady median vs one Nsight window); can be slightly off if GPU clocks differ
+Q1_ceiling_graph,,,512x512_b1_cfg1,E0_derived_idle_pct_of_wall,3.320320114615042,%,cost table + trace busy,
+Q1_ceiling_graph,,,512x512_b1_cfg1,E0_traced_idle_pct_(inflated_by_tracing),7.846953770942222,%,trace only,S1 summary sec. 5 numbers (E0 9.8/101 ms)
+Q1_ceiling_graph,,,512x512_b1_cfg1,C1_derived_idle_ms_(untraced_wall-traced_busy),3.878403664641894,ms,cost table + trace busy,mixes two runs (untraced steady median vs one Nsight window); can be slightly off if GPU clocks differ
+Q1_ceiling_graph,,,512x512_b1_cfg1,C1_derived_idle_pct_of_wall,3.6818204115723794,%,cost table + trace busy,
+Q1_ceiling_graph,,,512x512_b1_cfg1,C1_traced_idle_pct_(inflated_by_tracing),9.709616956070533,%,trace only,S1 summary sec. 5 numbers (E0 9.8/101 ms)
+Q1_ceiling_graph,,,512x512_b1_cfg1,measured_graph_on_eager_saving_pct_of_E0_(for_comparison),4.070635765922911,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg0,steady_ms_E0,205.91837947722524,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg0,steady_ms_C1,169.97878812253475,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg0,steady_ms_C1+G1,166.47312138229609,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg0,steady_ms_G1,201.48019189946353,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg0,saving_compile_vs_eager_(E0-C1)/E0,17.453318856690714,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg0,saving_graph_on_eager_(E0-G1)/E0,2.1553139593605715,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg0,saving_graph_on_compile_(C1-C1+G1)/C1,2.0624142453065923,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg0,saving_graph_on_compile_(C1-C1+G1)/E0,1.7024545109274214,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg1,steady_ms_E0,292.5705548841506,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg1,steady_ms_C1,248.88440570794046,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg1,steady_ms_C1+G1,244.2395370453596,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg1,steady_ms_G1,287.00722358189523,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg1,saving_compile_vs_eager_(E0-C1)/E0,14.931833859189487,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg1,saving_graph_on_eager_(E0-G1)/E0,1.9015349321322879,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg1,saving_graph_on_compile_(C1-C1+G1)/C1,1.866275490169313,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b1_cfg1,saving_graph_on_compile_(C1-C1+G1)/E0,1.587606334622457,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b4_cfg1,steady_ms_E0,1038.3796009700745,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b4_cfg1,steady_ms_C1,947.8163540316018,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b4_cfg1,steady_ms_C1+G1,943.9950659871101,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b4_cfg1,steady_ms_G1,1032.7115426771343,ms,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b4_cfg1,saving_compile_vs_eager_(E0-C1)/E0,8.721593418617504,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b4_cfg1,saving_graph_on_eager_(E0-G1)/E0,0.5458560903589639,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b4_cfg1,saving_graph_on_compile_(C1-C1+G1)/C1,0.4031675575376555,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_measured_untraced,,,768x768_b4_cfg1,saving_graph_on_compile_(C1-C1+G1)/E0,0.36800492237345034,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q1_ceiling_compile,,,768x768_b4_cfg1,E0_kernel_time_per_req,1034.228101,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,768x768_b4_cfg1,E0_big_ops(conv+gemm+attn)_per_req,697.762425,ms,kernel_breakdown.csv,
+Q1_ceiling_compile,,,768x768_b4_cfg1,E0_big_ops_fraction_of_kernel_time,67.4669760302713,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,768x768_b4_cfg1,E0_layout_convert_fraction,6.937169527427748,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,768x768_b4_cfg1,E0_other_nonbig_fraction(norm+elementwise+other),25.595854442300958,%,kernel_breakdown.csv,
+Q1_ceiling_compile,,,768x768_b4_cfg1,ceiling_if_big_ops_unchanged_and_all_rest_vanished_(nonbig_ms/E0_wall),32.40295511252986,%,kernel_breakdown.csv + cost table,hard upper bound of compile saving under the assumption; traced kernel time is not inflated by tracing (results/S2/nsight/README_nsight.txt)
+Q1_ceiling_compile,,,768x768_b4_cfg1,implied_fraction_of_nonbig_kernel_time_removed_by_compile_=(E0-C1)/nonbig_E0,26.916043269291084,%,cost table + kernel_breakdown.csv,ASSUMES big ops unchanged (verified at 512 within +-2%; no C1 trace at 256/768 so unverified there)
+Q1_ceiling_graph,,,768x768_b4_cfg1,E0_derived_idle_ms_(untraced_wall-traced_busy),3.9275869700745716,ms,cost table + trace busy,mixes two runs (untraced steady median vs one Nsight window); can be slightly off if GPU clocks differ
+Q1_ceiling_graph,,,768x768_b4_cfg1,E0_derived_idle_pct_of_wall,0.37824192293505604,%,cost table + trace busy,
+Q1_ceiling_graph,,,768x768_b4_cfg1,E0_traced_idle_pct_(inflated_by_tracing),1.8341547162204819,%,trace only,S1 summary sec. 5 numbers (E0 9.8/101 ms)
+Q1_ceiling_graph,,,768x768_b4_cfg1,measured_graph_on_eager_saving_pct_of_E0_(for_comparison),0.5458560903589639,%,results/S2/cost_table/merged/cost_table.csv (steady_ms),
+Q2,W1,1000,,B1_total_mean,82.72993010748178,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W1,1000,,B0_total_mean,95.24980705347843,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,Ours_total_mean,86.88886378123425,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,B1_steady_part_(reconstructed),75.6042783614248,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,B1_onetime_part_(reconstructed),7.125651746056974,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W1,1000,,CAP_max_saving_vs_B1_=onetime/B1_total,8.613148514448651,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W1,1000,,B1_vs_B0_ratio,0.8685574560905166,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,Ours_vs_B1_ratio,1.0502712098070097,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",82.72993010748178,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W1,1000,,ORACLE_saving_vs_B1,0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,oracle_vs_B0_ratio,0.8685574560905166,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,"ORACLE_saving_vs_best_of(B0,B1)",0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W1,1000,,"Ours_vs_best_of(B0,B1)_ratio",1.0502712098070097,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,mean_n_shapes,1.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,1000,,mean_shapes_served_eagerly_by_oracle,0.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,B1_total_mean,763.168435360305,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W1,10000,,B0_total_mean,948.8158611918334,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,Ours_total_mean,735.9397987199482,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,B1_steady_part_(reconstructed),756.042783614248,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,B1_onetime_part_(reconstructed),7.125651746056974,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W1,10000,,CAP_max_saving_vs_B1_=onetime/B1_total,0.9336931948309458,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W1,10000,,B1_vs_B0_ratio,0.8043377715057044,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,Ours_vs_B1_ratio,0.964321589600988,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",763.168435360305,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W1,10000,,ORACLE_saving_vs_B1,0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,oracle_vs_B0_ratio,0.8043377715057044,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,"ORACLE_saving_vs_best_of(B0,B1)",0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W1,10000,,"Ours_vs_best_of(B0,B1)_ratio",0.964321589600988,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,mean_n_shapes,1.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W1,10000,,mean_shapes_served_eagerly_by_oracle,0.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,B1_total_mean,121.34959566634215,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W2,100,,B0_total_mean,25.577692123578164,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,Ours_total_mean,26.33032196094864,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,B1_steady_part_(reconstructed),17.98674958109923,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,B1_onetime_part_(reconstructed),103.36284608524292,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W2,100,,CAP_max_saving_vs_B1_=onetime/B1_total,85.1777424701481,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W2,100,,B1_vs_B0_ratio,4.744352816510721,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,Ours_vs_B1_ratio,0.2169790662784358,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",25.577692123578164,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W2,100,,ORACLE_saving_vs_B1,78.92230956096012,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,oracle_vs_B0_ratio,1.0,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,"ORACLE_saving_vs_best_of(B0,B1)",0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W2,100,,"Ours_vs_best_of(B0,B1)_ratio",1.0294252442219634,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,B1_vs_B0_break_even_N_estimate_=onetime/((B0-B1steady)/N),1361.6602352978455,requests,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,rough: assumes both totals scale linearly with N and the same shape mix
+Q2,W2,100,,mean_n_shapes,22.7,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100,,mean_shapes_served_eagerly_by_oracle,22.7,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,B1_total_mean,311.3155234472615,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W2,1000,,B0_total_mean,215.88632266164058,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,Ours_total_mean,214.73072826354763,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,B1_steady_part_(reconstructed),174.76617995366905,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,B1_onetime_part_(reconstructed),136.54934349359246,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W2,1000,,CAP_max_saving_vs_B1_=onetime/B1_total,43.862041308301364,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W2,1000,,B1_vs_B0_ratio,1.442034491157587,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,Ours_vs_B1_ratio,0.6897527173903493,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",215.88632266164058,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W2,1000,,ORACLE_saving_vs_B1,30.653531095691456,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,oracle_vs_B0_ratio,1.0,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,"ORACLE_saving_vs_best_of(B0,B1)",0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W2,1000,,"Ours_vs_best_of(B0,B1)_ratio",0.9946472088465552,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,B1_vs_B0_break_even_N_estimate_=onetime/((B0-B1steady)/N),3320.7409921542194,requests,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,rough: assumes both totals scale linearly with N and the same shape mix
+Q2,W2,1000,,mean_n_shapes,31.4,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,1000,,mean_shapes_served_eagerly_by_oracle,31.4,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,B1_total_mean,1895.7755721137,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W2,10000,,B0_total_mean,2111.1796905013384,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,Ours_total_mean,1978.6834362367051,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,B1_steady_part_(reconstructed),1756.5950120651237,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,B1_onetime_part_(reconstructed),139.18056004857644,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W2,10000,,CAP_max_saving_vs_B1_=onetime/B1_total,7.341615858748337,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W2,10000,,B1_vs_B0_ratio,0.8979697846863586,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,Ours_vs_B1_ratio,1.043732953068156,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",1879.9577016254711,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W2,10000,,ORACLE_saving_vs_B1,0.834374633838789,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,oracle_vs_B0_ratio,0.8904773525833988,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,"ORACLE_saving_vs_best_of(B0,B1)",0.834374633838789,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W2,10000,,"Ours_vs_best_of(B0,B1)_ratio",1.043732953068156,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,B1_vs_B0_break_even_N_estimate_=onetime/((B0-B1steady)/N),3925.171292295791,requests,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,rough: assumes both totals scale linearly with N and the same shape mix
+Q2,W2,10000,,mean_n_shapes,32.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,mean_shapes_served_eagerly_by_oracle,9.2,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,B1_total_mean,17702.35322633206,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W2,100000,,B0_total_mean,21045.786869158608,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,Ours_total_mean,17659.06572032548,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,B1_steady_part_(reconstructed),17563.251463049248,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,B1_onetime_part_(reconstructed),139.1017632828094,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),7.275957614183426e-12,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W2,100000,,CAP_max_saving_vs_B1_=onetime/B1_total,0.7857811981510855,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W2,100000,,B1_vs_B0_ratio,0.8411352512684542,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,Ours_vs_B1_ratio,0.9975547032954811,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",17702.353226332016,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W2,100000,,ORACLE_saving_vs_B1,2.4660984405261503e-13,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,oracle_vs_B0_ratio,0.8411352512684521,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,"ORACLE_saving_vs_best_of(B0,B1)",2.4660984405261503e-13,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W2,100000,,"Ours_vs_best_of(B0,B1)_ratio",0.9975547032954811,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,B1_vs_B0_break_even_N_estimate_=onetime/((B0-B1steady)/N),3994.2670227784397,requests,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,rough: assumes both totals scale linearly with N and the same shape mix
+Q2,W2,100000,,mean_n_shapes,32.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,100000,,mean_shapes_served_eagerly_by_oracle,0.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,B1_total_mean,429.8428243850538,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W3,1000,,B0_total_mean,346.18452637132725,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,Ours_total_mean,346.43907618464436,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,B1_steady_part_(reconstructed),290.93101510424805,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,B1_onetime_part_(reconstructed),138.91180928080576,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W3,1000,,CAP_max_saving_vs_B1_=onetime/B1_total,32.31688454484199,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W3,1000,,B1_vs_B0_ratio,1.2416581090166703,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,Ours_vs_B1_ratio,0.8059668709842269,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",346.18452637132725,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W3,1000,,ORACLE_saving_vs_B1,19.462532178688953,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,oracle_vs_B0_ratio,1.0,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,"ORACLE_saving_vs_best_of(B0,B1)",0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W3,1000,,"Ours_vs_best_of(B0,B1)_ratio",1.0007353009563578,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,mean_n_shapes,32.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,1000,,mean_shapes_served_eagerly_by_oracle,32.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,B1_total_mean,3079.1564590498974,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W3,10000,,B0_total_mean,3436.6713704199765,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,Ours_total_mean,3219.1884670958234,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,B1_steady_part_(reconstructed),2940.156938439997,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,B1_onetime_part_(reconstructed),138.99952060990034,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W3,10000,,CAP_max_saving_vs_B1_=onetime/B1_total,4.5142077857514895,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W3,10000,,B1_vs_B0_ratio,0.8959705852449927,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,Ours_vs_B1_ratio,1.045477392886081,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",3079.1564590498974,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W3,10000,,ORACLE_saving_vs_B1,0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,oracle_vs_B0_ratio,0.8959705852449927,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,"ORACLE_saving_vs_best_of(B0,B1)",0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W3,10000,,"Ours_vs_best_of(B0,B1)_ratio",1.045477392886081,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,mean_n_shapes,32.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W3,10000,,mean_shapes_served_eagerly_by_oracle,0.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,B1_total_mean,310.92398334281995,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W4,1000,,B0_total_mean,217.89486561057856,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,Ours_total_mean,216.79995176120428,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,B1_steady_part_(reconstructed),176.46633169622174,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,B1_onetime_part_(reconstructed),134.45765164659824,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W4,1000,,CAP_max_saving_vs_B1_=onetime/B1_total,43.24454170469935,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W4,1000,,B1_vs_B0_ratio,1.4269449739972437,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,Ours_vs_B1_ratio,0.6972763870780725,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",217.89486561057856,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W4,1000,,ORACLE_saving_vs_B1,29.92021288678427,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,oracle_vs_B0_ratio,1.0,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,"ORACLE_saving_vs_best_of(B0,B1)",0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W4,1000,,"Ours_vs_best_of(B0,B1)_ratio",0.9949750360280122,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,mean_n_shapes,30.9,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,1000,,mean_shapes_served_eagerly_by_oracle,30.9,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,B1_total_mean,1898.0037399388555,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W4,10000,,B0_total_mean,2112.72441237492,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,Ours_total_mean,1981.63708460515,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,B1_steady_part_(reconstructed),1758.65536656499,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,B1_onetime_part_(reconstructed),139.34837337386563,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W4,10000,,CAP_max_saving_vs_B1_=onetime/B1_total,7.341838714098358,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W4,10000,,B1_vs_B0_ratio,0.8983678745896174,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,Ours_vs_B1_ratio,1.0440638460854608,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",1882.8872699371482,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W4,10000,,ORACLE_saving_vs_B1,0.7964404749905427,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,oracle_vs_B0_ratio,0.8912129092220734,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,"ORACLE_saving_vs_best_of(B0,B1)",0.7964404749905427,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W4,10000,,"Ours_vs_best_of(B0,B1)_ratio",1.0440638460854608,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,mean_n_shapes,32.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W4,10000,,mean_shapes_served_eagerly_by_oracle,9.6,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,B1_total_mean,318.03815203916884,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W5,1000,,B0_total_mean,220.98702097299974,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,Ours_total_mean,219.89870849290165,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,B1_steady_part_(reconstructed),179.12616922226871,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,B1_onetime_part_(reconstructed),138.91198281690012,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W5,1000,,CAP_max_saving_vs_B1_=onetime/B1_total,43.677773225078994,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W5,1000,,B1_vs_B0_ratio,1.4391711813610395,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,Ours_vs_B1_ratio,0.6914224192379895,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",220.98702097299974,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W5,1000,,ORACLE_saving_vs_B1,30.515562502141723,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,oracle_vs_B0_ratio,1.0,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,"ORACLE_saving_vs_best_of(B0,B1)",0.0,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W5,1000,,"Ours_vs_best_of(B0,B1)_ratio",0.9950752199142453,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,mean_n_shapes,32.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,1000,,mean_shapes_served_eagerly_by_oracle,32.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,B1_total_mean,1900.6685191419565,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"main_raw service_s, mean of 10 seeds"
+Q2,W5,10000,,B0_total_mean,2116.0952526521637,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,Ours_total_mean,1986.4197639194615,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,B1_steady_part_(reconstructed),1761.564508354292,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,B1_onetime_part_(reconstructed),139.10401078766444,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,reconstruction_error_max_abs_(steady+onetime-B1_sim),0.0,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,must be ~0: check that the arithmetic reproduces the simulator's B1
+Q2,W5,10000,,CAP_max_saving_vs_B1_=onetime/B1_total,7.31868862911782,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,any policy that never does worse than eager on a shape and has compiled-steady<=eager-steady cannot save more than the B1 one-time cost
+Q2,W5,10000,,B1_vs_B0_ratio,0.8981961075522443,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,Ours_vs_B1_ratio,1.045116359803874,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,"ORACLE_selective_compile_total_(known_counts,coord-descent)",1885.7899395308573,s,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"compile-or-eager per shape, known counts, no graphs/memory limit; local optimum so it is a lower bound of the true oracle saving, approximate tier choice"
+Q2,W5,10000,,ORACLE_saving_vs_B1,0.7828077048288273,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,oracle_vs_B0_ratio,0.8911649592178528,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,"ORACLE_saving_vs_best_of(B0,B1)",0.7828077048288273,%,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,"at N<=1e3 the oracle simply never compiles (= B0), so there is nothing to gain over the better fixed baseline"
+Q2,W5,10000,,"Ours_vs_best_of(B0,B1)_ratio",1.045116359803874,ratio,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,mean_n_shapes,32.0,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W5,10000,,mean_shapes_served_eagerly_by_oracle,9.2,count,results/S3/sim_eval/main_raw.csv (cold=disk) + eval_traces + cost table/addendum,
+Q2,W2,10000,,"mean_C1_onetime_per_new_shape_inproc_diskcache_(no_key_sharing,32_shapes_seed100)",6.688064579606362,s,cost table + addendum,reports_internal/S3_summary.md line 79 quotes ~4.4 s for a single C1 shape (disk cache)
+Q2,W2,10000,,sum_C1_onetime_without_key_sharing_seed100,214.01806654740358,s,cost table + addendum,reports_internal/S3_summary.md line 78: unshared 215.2 s
+Q2,W2,10000,,AOT_first_request_median_(quoted),0.6,s,reports_internal/S4X_summary_DRAFT_v1_20261120.md line 5 (D3 0.57-0.60 s),"quoted, not recomputed; includes the steady part of the first request (~0.1-0.2 s)"
+Q2,W2,10000,,AOT_one_time_32_shapes_assumed_0.5s_each_(ASSUMPTION),16.0,s,assumption: 0.6 s first request minus ~0.1 s steady,"assumption, ~1 % of B1 total at N=1e4"
+Q2,W2,10000,,B1-AOT_total_(steady+16s_assumed_one_time),1772.5950120651237,s,reconstructed steady + assumption,
+Q2,W2,10000,,CAP_max_saving_vs_B1-AOT_=16/(steady+16),0.9026314466133776,%,reconstructed steady + assumption,after offline AOT the remaining one-time cost that a selective policy could still save is ~1 % (assumption-based)

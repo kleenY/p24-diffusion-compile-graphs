@@ -1,0 +1,33 @@
+{
+  "dev_seeds": {
+    "values": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "use": "development/prior: policy tuning, validation streams, development traces; drawn from half A only"
+  },
+  "eval_seeds": {
+    "values": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109
+    ],
+    "use": "evaluation: drawn from half B only; no evaluation traces are generated during S2, seeds are only registered"
+  },
+  "validation_stream_seeds": {
+    "V1": 0,
+    "V2": 1,
+    "V3": 2
+  },
+  "dev_trace_N": 1000
+}

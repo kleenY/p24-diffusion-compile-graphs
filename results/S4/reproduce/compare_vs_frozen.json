@@ -1,0 +1,41 @@
+{
+ "new": "<REPO>/results/S4/reproduce/main_raw.csv",
+ "frozen": "<REPO>/results/S3/sim_eval/main_raw.csv",
+ "n_rows_new": 7800,
+ "n_rows_frozen": 7800,
+ "excluded_cols": [
+  "sim_wall_s"
+ ],
+ "same_columns": true,
+ "max_abs_diff": {
+  "N": 0.0,
+  "seed": 0.0,
+  "budget_mb": 0.0,
+  "boot": 0.0,
+  "imputed": 0.0,
+  "error": 0.0,
+  "service_s": 0.0,
+  "load_s": 0.0,
+  "warmup_s": 0.0,
+  "total_incl_load_s": 0.0,
+  "peak_graph_mb": 0.0,
+  "peak_reserved_est_mb": 0.0,
+  "n_requests": 0.0,
+  "n_shapes": 0.0,
+  "n_capture": 0.0,
+  "n_compile": 0.0,
+  "n_compile_capture": 0.0,
+  "n_capture_denied": 0.0,
+  "n_eager_first": 0.0,
+  "n_eager_fallback_limit": 0.0,
+  "n_evicted": 0.0,
+  "n_denied": 0.0,
+  "n_steady": 0.0,
+  "hit_rate": 0.0,
+  "n_events_with_fallback": 0.0
+ },
+ "n_mismatch_cells": 0,
+ "mismatch_cols": [],
+ "n_mismatch_cols": 0,
+ "match": true
+}

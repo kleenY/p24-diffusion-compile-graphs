@@ -1,0 +1,14 @@
+diffusers==0.35.2
+transformers>=4.46,<4.57
+accelerate>=1.0,<1.12
+peft>=0.15,<0.18
+safetensors
+huggingface_hub<1.0
+numpy<2.3
+pandas
+pyarrow
+pillow
+pytest
+lpips
+scipy
+matplotlib

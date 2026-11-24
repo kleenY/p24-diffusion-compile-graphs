@@ -1,0 +1,199 @@
+{
+ "verdict": "GO",
+ "methods_qualifying": [
+  "M2",
+  "M3b",
+  "M5"
+ ],
+ "per_method": {
+  "M1": {
+   "success_all_3": 0,
+   "bit_identical_all_3": 0,
+   "speedup_pct_512x512x1x0": null,
+   "qualifies": 0,
+   "per_shape": {
+    "512x512x1x0": {
+     "status": "fail",
+     "error_class": "other",
+     "speedup_pct": null,
+     "image_bit_identical": null,
+     "graph_pool_mib": null
+    },
+    "512x512x1x1": {
+     "status": "fail",
+     "error_class": "other",
+     "speedup_pct": null,
+     "image_bit_identical": null,
+     "graph_pool_mib": null
+    },
+    "768x768x4x1": {
+     "status": "fail",
+     "error_class": "other",
+     "speedup_pct": null,
+     "image_bit_identical": null,
+     "graph_pool_mib": null
+    }
+   }
+  },
+  "M2": {
+   "success_all_3": 1,
+   "bit_identical_all_3": 1,
+   "speedup_pct_512x512x1x0": 2.139126522732815,
+   "qualifies": 1,
+   "per_shape": {
+    "512x512x1x0": {
+     "status": "ok",
+     "error_class": null,
+     "speedup_pct": 2.139126522732815,
+     "image_bit_identical": 1,
+     "graph_pool_mib": 178.0
+    },
+    "512x512x1x1": {
+     "status": "ok",
+     "error_class": null,
+     "speedup_pct": 1.504348742560993,
+     "image_bit_identical": 1,
+     "graph_pool_mib": 188.0
+    },
+    "768x768x4x1": {
+     "status": "ok",
+     "error_class": null,
+     "speedup_pct": 0.15725321150166044,
+     "image_bit_identical": 1,
+     "graph_pool_mib": 1074.0
+    }
+   }
+  },
+  "M3a": {
+   "success_all_3": 0,
+   "bit_identical_all_3": 0,
+   "speedup_pct_512x512x1x0": null,
+   "qualifies": 0,
+   "per_shape": {
+    "512x512x1x0": {
+     "status": "fail",
+     "error_class": "other",
+     "speedup_pct": null,
+     "image_bit_identical": null,
+     "graph_pool_mib": null
+    },
+    "512x512x1x1": {
+     "status": "fail",
+     "error_class": "other",
+     "speedup_pct": null,
+     "image_bit_identical": null,
+     "graph_pool_mib": null
+    },
+    "768x768x4x1": {
+     "status": "fail",
+     "error_class": "other",
+     "speedup_pct": null,
+     "image_bit_identical": null,
+     "graph_pool_mib": null
+    }
+   }
+  },
+  "M3b": {
+   "success_all_3": 1,
+   "bit_identical_all_3": 1,
+   "speedup_pct_512x512x1x0": 2.1816594961256914,
+   "qualifies": 1,
+   "per_shape": {
+    "512x512x1x0": {
+     "status": "ok",
+     "error_class": null,
+     "speedup_pct": 2.1816594961256914,
+     "image_bit_identical": 1,
+     "graph_pool_mib": 178.0
+    },
+    "512x512x1x1": {
+     "status": "ok",
+     "error_class": null,
+     "speedup_pct": 1.4600204797865106,
+     "image_bit_identical": 1,
+     "graph_pool_mib": 188.0
+    },
+    "768x768x4x1": {
+     "status": "ok",
+     "error_class": null,
+     "speedup_pct": 0.1543570144227934,
+     "image_bit_identical": 1,
+     "graph_pool_mib": 1074.0
+    }
+   }
+  },
+  "M5": {
+   "success_all_3": 1,
+   "bit_identical_all_3": 1,
+   "speedup_pct_512x512x1x0": 2.214067973478567,
+   "qualifies": 1,
+   "per_shape": {
+    "512x512x1x0": {
+     "status": "ok",
+     "error_class": null,
+     "speedup_pct": 2.214067973478567,
+     "image_bit_identical": 1,
+     "graph_pool_mib": 178.0
+    },
+    "512x512x1x1": {
+     "status": "ok",
+     "error_class": null,
+     "speedup_pct": 1.424371441658426,
+     "image_bit_identical": 1,
+     "graph_pool_mib": 188.0
+    },
+    "768x768x4x1": {
+     "status": "ok",
+     "error_class": null,
+     "speedup_pct": 0.22778099944061958,
+     "image_bit_identical": 1,
+     "graph_pool_mib": 1074.0
+    }
+   }
+  }
+ },
+ "M4": {
+  "method": "M4",
+  "doc": "package-provided cudagraph option? (introspection only, no rebuild)",
+  "rebuild_performed": false,
+  "torch": "2.9.1+cu126",
+  "inductor_config_triton_cudagraphs": false,
+  "inductor_config_cudagraphs_env_TORCHINDUCTOR_CUDAGRAPHS": null,
+  "aot_inductor_config_graph_keys": [],
+  "aoti_load_package_signature": "(path: 'FileLike', run_single_threaded: 'bool' = False, device_index: 'int' = -1) -> 'AOTICompiledModel'",
+  "unet_package_wrapper_scan": {
+   "512x512x1x0": {
+    "wrapper_cpp_bytes": 3166465,
+    "mentions_cudagraph": 0,
+    "mentions_cudaStreamSynchronize": 0
+   },
+   "512x512x1x1": {
+    "wrapper_cpp_bytes": 3190297,
+    "mentions_cudagraph": 0,
+    "mentions_cudaStreamSynchronize": 0
+   },
+   "768x768x4x1": {
+    "wrapper_cpp_bytes": 3046599,
+    "mentions_cudagraph": 0,
+    "mentions_cudaStreamSynchronize": 0
+   }
+  },
+  "conclusion": "cudagraphs (inductor config triton.cudagraphs / cpp-wrapper cudagraphs) is a COMPILE-TIME option baked into the exported wrapper; it cannot be switched on for an existing package without re-export and re-compile -> NOT done (no rebuild). A load-time, rebuild-free knob exists: aoti_load_package(..., run_single_threaded=True) -> tested as M5."
+ },
+ "shapes": [
+  "512x512x1x0",
+  "512x512x1x1",
+  "768x768x4x1"
+ ],
+ "methods": [
+  "M1",
+  "M2",
+  "M3a",
+  "M3b",
+  "M5"
+ ],
+ "wall_s": 355.02451825141907,
+ "time": "2026-11-23T08:29:24",
+ "script_sha16": "55aaa03d821f567c",
+ "note": "decision line from the header of scripts/probe_aot_g1_S5.py; exploration level, not a main result"
+}

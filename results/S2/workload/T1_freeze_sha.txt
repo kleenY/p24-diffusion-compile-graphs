@@ -1,0 +1,8 @@
+d96bc3f6d1e5dc35  code/docs/workload_declaration.md
+fea00a207d344794  code/p24/workload/build.py
+1a6a109c7e888e39  code/p24/workload/generate.py
+e3b0c44298fc1c14  code/p24/workload/__init__.py
+dda2826a71ca9aad  code/p24/workload/split.py
+dbcafb77ced83e98  results/S2/workload/split_A_B.parquet
+07934b97002688b7  results/S2/workload/seeds.json
+781bfc9477c20cda  results/S2/workload/sha256_manifest.txt

@@ -1,0 +1,88 @@
+{
+ "version": "S4P_v3",
+ "frozen_at": "2026-11-18T13:22:30",
+ "step": "S4-P P1: policy v3 (cost-aware admission) development tuning on dev traces (half A, seeds 0-4) only; evaluation seeds 110-119 not yet generated",
+ "selected": {
+  "group": "r1_rho0.5",
+  "params": {
+   "alpha": 1.0,
+   "H_prior": 1000.0,
+   "horizon": "online",
+   "tiers": [
+    "E",
+    "G1",
+    "C1",
+    "C1+G1"
+   ],
+   "afford_rho": 0.5
+  },
+  "extra_over_v2": {
+   "afford_rho": 0.5
+  },
+  "constraint_violated": false,
+  "selection_basis": {
+   "O1_disk_geomean_s": {
+    "v2": 593.9663171375228,
+    "r1_rho0.5": 590.6862873798742,
+    "r2_rho0.5_a0.5": 586.6133977326548,
+    "r3_rho0.2_a0.5": 589.3257264803111,
+    "r4_rho0.5_a0.25": 616.6063005164448
+   },
+   "O2_empty_geomean_s": {
+    "v2": 621.2343095297454,
+    "r1_rho0.5": 621.2574443913725,
+    "r2_rho0.5_a0.5": 622.6251785201489,
+    "r3_rho0.2_a0.5": 622.6269304450298,
+    "r4_rho0.5_a0.25": 642.1083192008548
+   },
+   "O2_ratio_vs_v2": {
+    "r1_rho0.5": 1.0000372401544348,
+    "r2_rho0.5_a0.5": 1.0022388798703927,
+    "r3_rho0.2_a0.5": 1.0022416999414256,
+    "r4_rho0.5_a0.25": 1.0336008642003536
+   },
+   "eligible": {
+    "r1_rho0.5": true,
+    "r2_rho0.5_a0.5": true,
+    "r3_rho0.2_a0.5": true,
+    "r4_rho0.5_a0.25": false
+   },
+   "best_eligible": "r2_rho0.5_a0.5",
+   "within_1pct_in_simplicity_order": [
+    "r1_rho0.5",
+    "r2_rho0.5_a0.5",
+    "r3_rho0.2_a0.5"
+   ],
+   "rule": "1) eligible = candidates with O2(candidate) <= 1.005 x O2(v2). 2) best = lowest O1 among eligible. 3) selected = the SIMPLEST (simplicity_order) eligible candidate with O1 <= 1.01 x O1(best) ('difference < 1% -> simplest'). 4) If no candidate is eligible, freeze the candidate with the lowest O2/O2(v2), flag 'constraint_violated' in policy_params_v3.json and the report. No other criterion enters the selection (same rule as the first pass)."
+  }
+ },
+ "prereg_file": "results/S4P/v3/params_prereg_rev2.json",
+ "other_prereg_files": [
+  "results/S4P/v3/params_prereg.json"
+ ],
+ "tuning": {
+  "dev_dir": "results/S4P/v3/dev_rev2",
+  "raw_csv": "results/S4P/v3/dev_rev2/tuning_v3_raw.csv",
+  "raw_csv_sha16": "fc8e6b9e764fb6b8",
+  "summary": "results/S4P/v3/dev_rev2/tuning_v3_summary.json",
+  "summary_sha16": "9543c76c69f90a42",
+  "script": "code/scripts/tune_dev_S4P_v3.py",
+  "script_sha16": "64cce05da1c5b041",
+  "sim_eval_script_sha16": "31ba71e714a6cfbf",
+  "h5_script_sha16": "f9be33d0ea9efc2f",
+  "dev_traces": "results/S3/workload/dev_traces (half A seeds 0-4, N 1e3/1e4), manifest sha16 7d7b993c4d5402b0"
+ },
+ "sha16": {
+  "ours_v3_py": "ac896a8c06ad429c",
+  "factory_v3_py": "8d9df27fdb212819",
+  "ours_py_s3": "03f9ad80c392b842",
+  "cost_table": "aa691bbea98d15c6",
+  "cost_addendum": "8302b0bf7a473d6d",
+  "s3_params": "bb09408690eeb4bf",
+  "budgets": "58eb9bf8560c961f",
+  "prereg": "8edfeb0a8d4b51db",
+  "test_file": "aa93f0b20f8a0f95"
+ },
+ "simulator": "S3 main-evaluation simulator + 3.1b addendum overlay, default budget; cold levels empty (imputed) / disk / hot as sim_eval_S3",
+ "note": "Selected by the pre-registered rule (params_prereg_rev2.json): simplest eligible group within 1% of the best O1. Best-O1 group r2 (alpha_c1=0.5) is 0.68% better on O1 (inside the 1% tie band); see REPORT_P1_dev.txt."
+}

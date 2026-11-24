@@ -1,0 +1,4 @@
+label,policy,pred_total_s,meas_total_s,rel_err,status,peak_reserved_mb,pinned_fallback,pred_event_counts,meas_event_counts
+E0,B0,7.0074738239636645,6.59952951699961,0.06181414991981448,ok,3782.0,0,"{""eager_first"": 2, ""steady"": 58}","{""eager_first"": 2, ""steady"": 58}"
+B1,B1,81.65992502705194,75.97265340399463,0.07485945755789908,ok,3156.0,0,"{""compile"": 2, ""steady"": 58}","{""compile"": 2, ""steady"": 58}"
+Ours,Ours,6.980922155897133,6.62062890798552,0.05441979197430068,ok,4976.0,0,"{""capture"": 1, ""eager_first"": 1, ""steady"": 58}","{""capture"": 1, ""eager_first"": 1, ""steady"": 58}"

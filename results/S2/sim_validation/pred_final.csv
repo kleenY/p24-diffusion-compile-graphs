@@ -1,0 +1,11 @@
+stream,policy,cache_mode,mem_budget_mb,n_requests,pred_excl_input_s,event_counts,n_events_with_fallback,fallbacks,peak_graph_mb,peak_reserved_est_mb,pred_input_s,pred_total_s,error
+V1_N400_seed0_A,B0,warm,,400,38.34540344425477,"{""steady"": 399, ""eager_first"": 1}",0.0,{},0.0,4504.0,0.49659255892038345,38.841996003175154,
+V1_N400_seed0_A,B4,warm,16633.0,400,36.73950740206055,"{""steady"": 399, ""capture"": 1}",0.0,{},1172.0,3228.6103515625,0.49659255892038345,37.23609996098094,
+V1_N400_seed0_A,B1,warm,,400,37.367363090626895,"{""steady"": 399, ""compile"": 1}",0.0,{},0.0,3248.0,0.49659255892038345,37.86395564954728,
+V2_N300_seed1_A,B0,warm,,300,43.62464753224049,"{""steady"": 292, ""eager_first"": 8}",0.0,{},0.0,6846.0,0.5969026866368949,44.22155021887738,
+V2_N300_seed1_A,B4,warm,13065.0,300,44.323465467314236,"{""steady"": 256, ""capture_denied"": 38, ""capture"": 6}",0.0,{},12786.0,18606.0,0.5969026866368949,44.92036815395113,
+V2_N300_seed1_A,B1,warm,,300,77.26411597849801,"{""steady"": 292, ""compile"": 8}",6.0,"{""fc_te:shared_key"": 4, ""fc_unet:shared_key"": 2, ""fc_vae:shared_key"": 2}",0.0,5490.0,0.5969026866368949,77.8610186651349,
+V3_N200_seed2_A,B0,warm,,200,32.76327701297123,"{""steady"": 188, ""eager_first"": 12}",0.0,{},0.0,6846.0,0.44634106173180044,33.20961807470303,
+V3_N200_seed2_A,B4,warm,13065.0,200,33.98582320951391,"{""steady"": 124, ""capture_denied"": 70, ""capture"": 6}",0.0,{},11710.0,18556.0,0.44634106173180044,34.43216427124571,
+V3_N200_seed2_A,B1,warm,,200,74.4458976314636,"{""steady"": 188, ""compile"": 12}",9.0,"{""fc_te:shared_key"": 8, ""fc_unet:shared_key"": 3, ""fc_vae:shared_key"": 4}",0.0,5490.0,0.44634106173180044,74.8922386931954,
+V3_N200_seed2_A,B1,empty,,200,,,,,,,,,'no first-call cost fc_unet_s for arm=C1 shape=512x512_b2_nocfg'

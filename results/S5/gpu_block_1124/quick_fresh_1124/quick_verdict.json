@@ -1,0 +1,56 @@
+{
+ "formal": true,
+ "C1_wall_s": 259.3248727321625,
+ "C1_pass": true,
+ "C2_max_abs_rel_err": 0.07485945755789908,
+ "C2_pass": true,
+ "C3_max_abs_rel_diff": 0.016089028204890814,
+ "C3_pass": true,
+ "C4_max_peak_reserved_mb": 4976.0,
+ "C4_pass": true,
+ "C5_order_pred": [
+  "Ours",
+  "E0",
+  "B1"
+ ],
+ "C5_order_meas": [
+  "E0",
+  "Ours",
+  "B1"
+ ],
+ "pinned_fallback_counts": {
+  "E0": 0,
+  "B1": 0,
+  "Ours": 0
+ },
+ "walls": {
+  "micro_E0": {
+   "wall_s": 5.125988721847534,
+   "rc": 0
+  },
+  "micro_C1": {
+   "wall_s": 78.30728697776794,
+   "rc": 0
+  },
+  "micro_C1+G1": {
+   "wall_s": 76.32475018501282,
+   "rc": 0
+  },
+  "serve_E0": {
+   "wall_s": 9.639414548873901,
+   "rc": 0
+  },
+  "serve_B1": {
+   "wall_s": 80.18761324882507,
+   "rc": 0
+  },
+  "serve_Ours": {
+   "wall_s": 9.739537715911865,
+   "rc": 0
+  },
+  "_total_wall_s": 259.3248727321625,
+  "_cache_root_removed": true
+ },
+ "note": "exclusive-GPU0 run",
+ "all_pass": true
+}

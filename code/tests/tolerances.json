@@ -1,0 +1,10 @@
+{
+  "_doc": "Equivalence tolerances, written 2026-11-14 BEFORE any optimized-arm results were seen (plan v3 section 4.3). Read-only.",
+  "reference": "fp32 eager LCMPipe, same seeds and initial noise",
+  "c_rmse_ratio_max": 2.0,
+  "c_psnr_drop_db_max": 6.02,
+  "lpips_vs_E0_mean_max": 0.02,
+  "n_prompts": 8,
+  "shape": {"H": 512, "W": 512},
+  "E0_vs_diffusers": "bit-exact expected (same ops, same RNG order); if not bit-exact, max-abs <= 1/255 and documented"
+}

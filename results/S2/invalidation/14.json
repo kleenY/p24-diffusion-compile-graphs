@@ -1,0 +1,28 @@
+{
+ "entry": 14,
+ "tests": {
+  "oom_then_evict_retry_toy": {
+   "time": "2026-11-17 15:21:34",
+   "exception": "OutOfMemoryError",
+   "oom_message": "CUDA out of memory. Tried to allocate 14.00 MiB. GPU 0 has a total capacity of 23.64 GiB of which 22.85 GiB is free. Including non-PyTorch memory, this process ",
+   "pool_mb_A_evicted": 86.0,
+   "pool_mb_B_needed": 66.0,
+   "pool_mb_B_after_evict": 44.0,
+   "headroom_mb_at_failure": 16.5,
+   "reserved_mb_before_limit": 234.0
+  },
+  "real_unet_oom_then_evict_retry": {
+   "time": "2026-11-17 15:21:37",
+   "unet_only": true,
+   "dtype": "fp16",
+   "exception": "OutOfMemoryError",
+   "weights_resident_mb": 1758.0,
+   "pool_mb_512x768_B1_evicted": 270.0,
+   "pool_mb_512x512_B1_needed": 228.0,
+   "pool_mb_512x512_B1_after_evict": 228.0,
+   "headroom_mb_at_failure": 57.0,
+   "note": "UNet component only (no text encoder / VAE graphs); one pool per key, as in GraphRunner._GraphSet"
+  }
+ },
+ "torch": "2.9.1+cu126"
+}

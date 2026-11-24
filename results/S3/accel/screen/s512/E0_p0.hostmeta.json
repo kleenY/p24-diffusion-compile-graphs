@@ -1,0 +1,6 @@
+{"tag": "E0_p0", "start": "2026-11-17T14:53:00", "end": "2026-11-17T14:53:07", "exit_code": 0,
+ "pinned_fallback_count": 0,
+ "memavailable_mb_before": 52625, "memavailable_mb_after": 54171,
+ "shmem_mb_before": 10, "shmem_mb_after": 10,
+ "uptime_s_before": 9446, "uptime_s_after": 9453,
+ "swap_used_pct_after": 2, "load1_after": 7.97}

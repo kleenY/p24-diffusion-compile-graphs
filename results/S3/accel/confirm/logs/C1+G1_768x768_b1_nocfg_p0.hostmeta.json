@@ -1,0 +1,6 @@
+{"tag": "C1+G1_768x768_b1_nocfg_p0", "start": "2026-11-17T19:21:16", "end": "2026-11-17T19:21:31", "exit_code": 0,
+ "pinned_fallback_count": 0,
+ "memavailable_mb_before": 56806, "memavailable_mb_after": 56811,
+ "shmem_mb_before": 10, "shmem_mb_after": 10,
+ "uptime_s_before": 25542, "uptime_s_after": 25556,
+ "swap_used_pct_after": 2, "load1_after": 0.99}

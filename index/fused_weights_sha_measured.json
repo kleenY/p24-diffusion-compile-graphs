@@ -1,0 +1,20 @@
+{
+ "text_encoder/model.safetensors": {
+  "computed": "2026-11-15T15:20:33",
+  "mtime_ns": 1794677706194904874,
+  "sha256": "660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd",
+  "size": 246144152
+ },
+ "unet/diffusion_pytorch_model.safetensors": {
+  "computed": "2026-11-15T15:20:34",
+  "mtime_ns": 1794677707899898978,
+  "sha256": "444a5981e52fc3b30f23773a0e4b19f2ed0f400941abce553449d506a0d7cd42",
+  "size": 1719125304
+ },
+ "vae/diffusion_pytorch_model.safetensors": {
+  "computed": "2026-11-15T15:20:35",
+  "mtime_ns": 1794677705829906146,
+  "sha256": "4fbcf0ebe55a0984f5a5e00d8c4521d52359af7229bb4d81890039d2aa16dd7c",
+  "size": 167335342
+ }
+}

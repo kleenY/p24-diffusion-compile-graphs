@@ -1,0 +1,83 @@
+{
+  "time": "2026-11-14T22:44:38",
+  "host": "<HOST>",
+  "argv": [
+    "<REPO>/code/p24/bench.py",
+    "--arm",
+    "C2",
+    "--H",
+    "512",
+    "--W",
+    "512",
+    "--B",
+    "1",
+    "--cfg",
+    "1",
+    "--reps",
+    "20",
+    "--out",
+    "../results/S1/bench",
+    "--proc-id",
+    "0",
+    "--cold-tier",
+    "cold_partial"
+  ],
+  "python": "3.11.18",
+  "torch": "2.9.1+cu126",
+  "cuda": "12.6",
+  "triton": "3.5.1",
+  "diffusers": "0.35.2",
+  "transformers": "4.56.2",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "smi": "535.309.01, 585, 810, 3105, 42, 29.01, P5",
+  "loadavg": [
+    20.29052734375,
+    18.66162109375,
+    18.8798828125
+  ],
+  "nproc": 32,
+  "gpu0_other_procs": 0,
+  "env": {
+    "TORCHINDUCTOR_CACHE_DIR": "<P24_CACHE>/matrix/bench/C2/inductor",
+    "TRITON_CACHE_DIR": "<P24_CACHE>/matrix/bench/C2/triton",
+    "TORCHINDUCTOR_COMPILE_THREADS": "8",
+    "CUDA_VISIBLE_DEVICES": "GPU-722679a6-175b-cb56-b764-e8124d262c41"
+  },
+  "code_sha256_16": {
+    "__init__.py": "e3b0c44298fc1c14",
+    "bench.py": "5b3e76e0830ef38d",
+    "equiv.py": "5229442096672e68",
+    "nsys_analyze.py": "73dd3c7ddb8c2d03",
+    "pipeline.py": "02181ac2debf540d",
+    "runners.py": "50c04671a31dac93",
+    "stats.py": "7890c09487b1c5ae"
+  },
+  "args": {
+    "arm": "C2",
+    "H": 512,
+    "W": 512,
+    "B": 1,
+    "cfg": 1,
+    "reps": 20,
+    "warm": 3,
+    "out": "../results/S1/bench",
+    "proc_id": 0,
+    "cold_tier": "cold_partial",
+    "model_dir": null,
+    "profile": null,
+    "nsys_window": 0
+  },
+  "status": "ok",
+  "error": "",
+  "load_s": 1.773254195228219,
+  "proc_start_to_load_s": 4.968929279129952,
+  "prepare": {
+    "compile_s": 60.52277889987454,
+    "capture_s": 0.4763007960282266
+  },
+  "first_req_s": 61.106632883660495,
+  "peak_alloc_mb": 2386.12744140625,
+  "reserved_mb": 2672.0,
+  "gpu0_other_procs_end": 0,
+  "smi_end": "2610, 54, 357.56"
+}

@@ -1,0 +1,6 @@
+{"tag": "E0-cb_p1", "start": "2026-11-17T15:01:40", "end": "2026-11-17T15:01:48", "exit_code": 0,
+ "pinned_fallback_count": 0,
+ "memavailable_mb_before": 52892, "memavailable_mb_after": 53058,
+ "shmem_mb_before": 10, "shmem_mb_after": 10,
+ "uptime_s_before": 9965, "uptime_s_after": 9973,
+ "swap_used_pct_after": 2, "load1_after": 9.29}

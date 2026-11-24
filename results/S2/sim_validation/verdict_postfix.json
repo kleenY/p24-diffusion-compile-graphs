@@ -1,0 +1,10 @@
+{
+  "n_judged": 9,
+  "all_within_10pct": true,
+  "max_error": 0.019065717310317847,
+  "n_nontied_pairs": 7,
+  "ranking_agrees": true,
+  "n_failed_processes": 0,
+  "pred_file": "../results/S2/sim_validation/pred_final_postfix.csv",
+  "pass": true
+}

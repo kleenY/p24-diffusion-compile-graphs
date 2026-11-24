@@ -1,0 +1,312 @@
+{
+ "time": "2026-11-17T19:57:54",
+ "argv": [
+  "<REPO>/code/scripts/build_cost_addendum_S3.py"
+ ],
+ "raw": "<REPO>/results/S3/cost_addendum",
+ "ratio_thr": 1.5,
+ "std_procs": [
+  0,
+  1,
+  2
+ ],
+ "rules": "(main-session decisions, S3 prep 2026-11-17)\n * inproc_cost rows: per (arm, shape) median over the standard processes of first_req_s / resid_s / component first calls, computed with the\n   SAME per-process machinery as scripts/build_cost_table.py (component keys shared with an earlier shape of the process are NaN, resid_s =\n   first_req - steady - sum of kept component calls). Key 0 of a sequence is the cold tier (not inproc) -> no row. source=inproc_measured_S3.\n   A key that failed (status=fail, e.g. the C2 cumulative-pool OOM) in ANY standard process of the arm, and every key after it in that\n   process, gets NO row (stays \"extrapolated\" in the table); the failing key/error go to meta `oom_keys`.\n * rebuild rows: per (arm, shape) median over ok rounds of rebuild_wall_s (re-capture wall incl. the warm-up calls of runner.prepare) and of\n   cap1_capture_s; ratio = rebuild_wall_med / capture_s_med; ratio > --ratio-thr (1.5) -> rebuild_override_s = rebuild_wall_med, else NaN.\n   ratio_vs_table_capture_s (same numerator over the S2 table capture_s) is informative only.\n * extrapolated rebuild rows (main-session decision 2026-11-17): for an arm, the measured shapes whose ratio passed the gate (> --ratio-thr) give\n   r_i = rebuild_wall_med / steady_s(arm, shape_i) (S2 table steady_ms); every table shape of that arm WITHOUT a measured rebuild row gets\n   rebuild_override_s = median(r_i) x steady_s(arm, shape), source `extrapolated_S3_rebuild` (rationale: the rebuild wall is dominated by the\n   warm-up calls of the re-prepare, proportional to one steady request). No passing shape -> no extrapolation. Ratios/shapes used go to meta.\n * flags (rows are kept, never dropped): pinned_fallback=<n> (process count file / meta), not_quiet_gate (NOT_QUIET printed by the block gate\n   before that process), contended_rows (a row of the process with contended=1 or load1 > CPU_LOAD_MAX), nproc<3, partial_rounds.",
+ "cost_table": {
+  "path": "<REPO>/results/S2/cost_table/merged/cost_table.csv",
+  "sha16": "aa691bbea98d15c6"
+ },
+ "block_log_sha16": "1e612e1ba2ce8f82",
+ "inproc": {
+  "C2": {
+   "dir": "<REPO>/results/S3/cost_addendum/inproc_seq/v3shapes_C2_disk",
+   "processes": [
+    {
+     "proc": 0,
+     "status": "ok",
+     "n_keys": 12,
+     "fail_idx": null,
+     "pinned_fallback_count": 0,
+     "not_quiet": [],
+     "meta_sha16": "9360417a02f4453c"
+    },
+    {
+     "proc": 1,
+     "status": "ok",
+     "n_keys": 12,
+     "fail_idx": null,
+     "pinned_fallback_count": 0,
+     "not_quiet": [],
+     "meta_sha16": "51b99d3779a8b5d9"
+    },
+    {
+     "proc": 2,
+     "status": "ok",
+     "n_keys": 12,
+     "fail_idx": null,
+     "pinned_fallback_count": 0,
+     "not_quiet": [],
+     "meta_sha16": "9fb183a56ae6d74e"
+    }
+   ],
+   "oom_keys": [],
+   "n_rows": 11,
+   "csv_sha16": {
+    "C2_seq0_512x512_b1_nocfg_p0.csv": "773e8a5b931f06fa",
+    "C2_seq0_512x512_b1_nocfg_p1.csv": "a1c3259c39163d62",
+    "C2_seq0_512x512_b1_nocfg_p2.csv": "a8679429c6765a07",
+    "C2_seq10_512x512_b2_cfg_p0.csv": "8a9c7b51ec80fe32",
+    "C2_seq10_512x512_b2_cfg_p1.csv": "755bd4a792f01e6b",
+    "C2_seq10_512x512_b2_cfg_p2.csv": "f06fb9851c5e4752",
+    "C2_seq11_512x512_b4_nocfg_p0.csv": "e2a7ca005ce3b4a7",
+    "C2_seq11_512x512_b4_nocfg_p1.csv": "50eedbb3b14aaba3",
+    "C2_seq11_512x512_b4_nocfg_p2.csv": "7887357153408b71",
+    "C2_seq1_512x768_b1_nocfg_p0.csv": "b827e3022ed2f63c",
+    "C2_seq1_512x768_b1_nocfg_p1.csv": "e7e20181d3898c98",
+    "C2_seq1_512x768_b1_nocfg_p2.csv": "b1ccc43d6befdfbf",
+    "C2_seq2_768x512_b1_nocfg_p0.csv": "d7aa5baadd9ceb9a",
+    "C2_seq2_768x512_b1_nocfg_p1.csv": "17df9380176b0eb3",
+    "C2_seq2_768x512_b1_nocfg_p2.csv": "71d5f6bfcfff33f0",
+    "C2_seq3_512x512_b1_cfg_p0.csv": "de7167bf753b9fd1",
+    "C2_seq3_512x512_b1_cfg_p1.csv": "9ecb29b125c95715",
+    "C2_seq3_512x512_b1_cfg_p2.csv": "e8944e099a62b83e",
+    "C2_seq4_512x512_b2_nocfg_p0.csv": "b75d48c779853d7c",
+    "C2_seq4_512x512_b2_nocfg_p1.csv": "178063a56a7c5cd8",
+    "C2_seq4_512x512_b2_nocfg_p2.csv": "914dffc8417f1842",
+    "C2_seq5_512x512_b3_nocfg_p0.csv": "d97cde30d46522b2",
+    "C2_seq5_512x512_b3_nocfg_p1.csv": "d216e88ebceed8e6",
+    "C2_seq5_512x512_b3_nocfg_p2.csv": "dc049636a233c375",
+    "C2_seq6_512x768_b1_cfg_p0.csv": "584059b58ebc70bd",
+    "C2_seq6_512x768_b1_cfg_p1.csv": "ef7d42b87c4626f8",
+    "C2_seq6_512x768_b1_cfg_p2.csv": "306e802f77245ab2",
+    "C2_seq7_512x768_b2_nocfg_p0.csv": "181d28a50514b3c3",
+    "C2_seq7_512x768_b2_nocfg_p1.csv": "37c17f3cdecabdae",
+    "C2_seq7_512x768_b2_nocfg_p2.csv": "60bc432cca2954dc",
+    "C2_seq8_768x512_b1_cfg_p0.csv": "e2f31a897abdcede",
+    "C2_seq8_768x512_b1_cfg_p1.csv": "08b2f82c2a8efa67",
+    "C2_seq8_768x512_b1_cfg_p2.csv": "512077b74c0908ed",
+    "C2_seq9_768x512_b2_nocfg_p0.csv": "d64a2247aa10dda2",
+    "C2_seq9_768x512_b2_nocfg_p1.csv": "f18094061066a064",
+    "C2_seq9_768x512_b2_nocfg_p2.csv": "8cc09b7a45d4c7c7"
+   }
+  },
+  "C5": {
+   "dir": "<REPO>/results/S3/cost_addendum/inproc_seq/v3shapes_C5_disk",
+   "processes": [
+    {
+     "proc": 0,
+     "status": "ok",
+     "n_keys": 12,
+     "fail_idx": null,
+     "pinned_fallback_count": 0,
+     "not_quiet": [],
+     "meta_sha16": "174b2d952d789c10"
+    },
+    {
+     "proc": 1,
+     "status": "ok",
+     "n_keys": 12,
+     "fail_idx": null,
+     "pinned_fallback_count": 0,
+     "not_quiet": [],
+     "meta_sha16": "6370da7d4306cc21"
+    },
+    {
+     "proc": 2,
+     "status": "ok",
+     "n_keys": 12,
+     "fail_idx": null,
+     "pinned_fallback_count": 0,
+     "not_quiet": [],
+     "meta_sha16": "9f3a15dd53913138"
+    }
+   ],
+   "oom_keys": [],
+   "n_rows": 11,
+   "csv_sha16": {
+    "C5_seq0_512x512_b1_nocfg_p0.csv": "033d4edcf3297dc2",
+    "C5_seq0_512x512_b1_nocfg_p1.csv": "49b364ea71256da3",
+    "C5_seq0_512x512_b1_nocfg_p2.csv": "e626720c80669491",
+    "C5_seq10_512x512_b2_cfg_p0.csv": "e5fa5d2394e56b55",
+    "C5_seq10_512x512_b2_cfg_p1.csv": "97b58e3626e3f5b6",
+    "C5_seq10_512x512_b2_cfg_p2.csv": "56943b11eb9490b1",
+    "C5_seq11_512x512_b4_nocfg_p0.csv": "450ce96e392a4978",
+    "C5_seq11_512x512_b4_nocfg_p1.csv": "4c898f414b2bddd6",
+    "C5_seq11_512x512_b4_nocfg_p2.csv": "a52f9429d4f5cee8",
+    "C5_seq1_512x768_b1_nocfg_p0.csv": "4a5a324c9afc0f0c",
+    "C5_seq1_512x768_b1_nocfg_p1.csv": "54467cc0784ab1b8",
+    "C5_seq1_512x768_b1_nocfg_p2.csv": "1541cd86e1139700",
+    "C5_seq2_768x512_b1_nocfg_p0.csv": "6e36c045252dedc5",
+    "C5_seq2_768x512_b1_nocfg_p1.csv": "9836e9b2216195a5",
+    "C5_seq2_768x512_b1_nocfg_p2.csv": "7b8087b476c3194b",
+    "C5_seq3_512x512_b1_cfg_p0.csv": "3d7a889af6d83661",
+    "C5_seq3_512x512_b1_cfg_p1.csv": "d50f84452b5615a2",
+    "C5_seq3_512x512_b1_cfg_p2.csv": "0f680bcc4a596298",
+    "C5_seq4_512x512_b2_nocfg_p0.csv": "e254e23b88add190",
+    "C5_seq4_512x512_b2_nocfg_p1.csv": "18bc394c985b345b",
+    "C5_seq4_512x512_b2_nocfg_p2.csv": "ccffed4136012d9a",
+    "C5_seq5_512x512_b3_nocfg_p0.csv": "5c153d0ec8c742a9",
+    "C5_seq5_512x512_b3_nocfg_p1.csv": "5ce41011e709de61",
+    "C5_seq5_512x512_b3_nocfg_p2.csv": "3559e15fb4f1068a",
+    "C5_seq6_512x768_b1_cfg_p0.csv": "ad1784eb400cc29f",
+    "C5_seq6_512x768_b1_cfg_p1.csv": "faa6d4bb52407c80",
+    "C5_seq6_512x768_b1_cfg_p2.csv": "fcf906489573e6aa",
+    "C5_seq7_512x768_b2_nocfg_p0.csv": "2c88c98f1a8508cc",
+    "C5_seq7_512x768_b2_nocfg_p1.csv": "8114467ab09a2d2c",
+    "C5_seq7_512x768_b2_nocfg_p2.csv": "63e5f72919144fcd",
+    "C5_seq8_768x512_b1_cfg_p0.csv": "8b2181add0fbc0fe",
+    "C5_seq8_768x512_b1_cfg_p1.csv": "d284cbbd38c1b153",
+    "C5_seq8_768x512_b1_cfg_p2.csv": "a7da655d862f7f1b",
+    "C5_seq9_768x512_b2_nocfg_p0.csv": "e32d2b79c9df0715",
+    "C5_seq9_768x512_b2_nocfg_p1.csv": "1194b58f4f441912",
+    "C5_seq9_768x512_b2_nocfg_p2.csv": "a4d57acd21086182"
+   }
+  }
+ },
+ "rebuild": {
+  "G1": {
+   "csv": "<REPO>/results/S3/cost_addendum/rebuild/rebuild_G1_p0.csv",
+   "n_rows": 3,
+   "shapes": {
+    "512x512x1x0": {
+     "n_ok": 5,
+     "n_fail": 0,
+     "rebuild_wall_med_s": 0.17965575299967895,
+     "capture_s_med": 0.03185714799838024,
+     "ratio": 5.639417345482824,
+     "override": true,
+     "reserved_residual_med_mb": 22.0,
+     "reserved_residual_max_abs_mb": 44.0,
+     "recovered_frac": 1.0,
+     "memory_reserved_falls_back": true,
+     "table_capture_s": 0.04196951910853386,
+     "ratio_vs_table_capture_s": 4.2806245297947365
+    },
+    "768x512x1x0": {
+     "n_ok": 5,
+     "n_fail": 0,
+     "rebuild_wall_med_s": 0.2640798700012965,
+     "capture_s_med": 0.03953839300083928,
+     "ratio": 6.67907443774184,
+     "override": true,
+     "reserved_residual_med_mb": 22.0,
+     "reserved_residual_max_abs_mb": 22.0,
+     "recovered_frac": 1.0,
+     "memory_reserved_falls_back": true,
+     "table_capture_s": 0.0477795610204339,
+     "ratio_vs_table_capture_s": 5.527046803304814
+    },
+    "512x512x4x1": {
+     "n_ok": 5,
+     "n_fail": 0,
+     "rebuild_wall_med_s": 0.6728395630016166,
+     "capture_s_med": 0.06939254200187861,
+     "ratio": 9.696136552879146,
+     "override": true,
+     "reserved_residual_med_mb": 22.0,
+     "reserved_residual_max_abs_mb": 44.0,
+     "recovered_frac": 1.0,
+     "memory_reserved_falls_back": true,
+     "table_capture_s": 0.08701481390744448,
+     "ratio_vs_table_capture_s": 7.732471435464995
+    }
+   },
+   "csv_sha16": "ca3f1f7556699895",
+   "meta_sha16": "55eb0b380ddc4479",
+   "pinned_fallback_count": 0,
+   "not_quiet": [],
+   "any_fail": 0,
+   "median_ratio_over_shapes": 6.67907443774184,
+   "extrapolation": {
+    "ratios_rebuild_over_steady": {
+     "512x512x1x0": 1.98700767008709,
+     "768x512x1x0": 2.0389240711452143,
+     "512x512x4x1": 1.6882065663968293
+    },
+    "median_ratio": 1.98700767008709,
+    "n_extrapolated": 31
+   }
+  },
+  "C1+G1": {
+   "csv": "<REPO>/results/S3/cost_addendum/rebuild/rebuild_C1+G1_p0.csv",
+   "n_rows": 3,
+   "shapes": {
+    "512x512x1x0": {
+     "n_ok": 5,
+     "n_fail": 0,
+     "rebuild_wall_med_s": 0.13349372900120215,
+     "capture_s_med": 0.018934119998448296,
+     "ratio": 7.050432183388631,
+     "override": true,
+     "reserved_residual_med_mb": 22.0,
+     "reserved_residual_max_abs_mb": 44.0,
+     "recovered_frac": 1.0,
+     "memory_reserved_falls_back": true,
+     "table_capture_s": 0.02709471620619297,
+     "ratio_vs_table_capture_s": 4.926928482487291
+    },
+    "768x512x1x0": {
+     "n_ok": 5,
+     "n_fail": 0,
+     "rebuild_wall_med_s": 0.19722387599904323,
+     "capture_s_med": 0.02319872100270004,
+     "ratio": 8.50149781861202,
+     "override": true,
+     "reserved_residual_med_mb": 22.0,
+     "reserved_residual_max_abs_mb": 22.0,
+     "recovered_frac": 1.0,
+     "memory_reserved_falls_back": true,
+     "table_capture_s": 0.03097066516056657,
+     "ratio_vs_table_capture_s": 6.368086541782084
+    },
+    "512x512x4x1": {
+     "n_ok": 5,
+     "n_fail": 0,
+     "rebuild_wall_med_s": 0.5448686410018126,
+     "capture_s_med": 0.04161267599920393,
+     "ratio": 13.093814034267737,
+     "override": true,
+     "reserved_residual_med_mb": 22.0,
+     "reserved_residual_max_abs_mb": 44.0,
+     "recovered_frac": 1.0,
+     "memory_reserved_falls_back": true,
+     "table_capture_s": 0.04558937670662999,
+     "ratio_vs_table_capture_s": 11.951658047620846
+    }
+   },
+   "csv_sha16": "ad85b828678cc6c1",
+   "meta_sha16": "6d7dae33e0e88f85",
+   "pinned_fallback_count": 0,
+   "not_quiet": [],
+   "any_fail": 0,
+   "median_ratio_over_shapes": 8.50149781861202,
+   "extrapolation": {
+    "ratios_rebuild_over_steady": {
+     "512x512x1x0": 1.8510774676324357,
+     "768x512x1x0": 1.8870494564540983,
+     "512x512x4x1": 1.5836485825868638
+    },
+    "median_ratio": 1.8510774676324357,
+    "n_extrapolated": 31
+   }
+  }
+ },
+ "n_rows": 90,
+ "by_kind": {
+  "rebuild": 68,
+  "inproc_cost": 22
+ },
+ "n_inproc_rows_by_arm": {
+  "C2": 11,
+  "C5": 11
+ },
+ "n_override": 68,
+ "n_override_measured": 6,
+ "n_override_extrapolated": 62,
+ "n_flagged": 0,
+ "oom_keys": {
+  "C2": [],
+  "C5": []
+ },
+ "script_sha16": "6ec5ff61ee5c8752",
+ "addendum_csv_sha16": "8302b0bf7a473d6d"
+}

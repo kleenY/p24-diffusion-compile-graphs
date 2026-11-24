@@ -1,0 +1,26 @@
+{
+  "n_judged": 13,
+  "n_with_no_ok_process": 0,
+  "n_incomplete": 0,
+  "n_prediction_errors": 0,
+  "all_within_10pct": false,
+  "max_error": 0.1062491227269182,
+  "worst_combo": "W2_N300_seed100_B/B1",
+  "n_nontied_pairs": 13,
+  "n_tied_pairs": 9,
+  "ranking_agrees": true,
+  "reversed_pairs": [],
+  "mem_line_all_pass": false,
+  "mem_line_violations": [
+    "W2_N300_seed100_B/B1:+3678MB",
+    "W2_N300_seed100_B/Ours:+1108MB",
+    "W3_N300_seed100_B/B1:+3562MB",
+    "W3_N300_seed100_B/Ours:+1178MB",
+    "W5_N300_seed100_B/B1:+1760MB",
+    "W5_N300_seed100_B/B4:+1794MB"
+  ],
+  "pinned_fallback_flagged": [],
+  "n_failed_processes": 0,
+  "pred_file": "<REPO>/results/S3/calib_sens/selfcheck34/pred_calib_A_i.csv",
+  "pass": false
+}

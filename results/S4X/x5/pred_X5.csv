@@ -1,0 +1,5 @@
+stream,policy,cache_mode,role,mem_budget_mb,n_requests,pred_excl_input_s,pred_input_s,pred_total_s,n_input_extrapolated,pred_warmup_s,pred_peak_graph_mb,pred_peak_reserved_est_mb,pred_n_evicted,pred_n_denied,n_events_with_fallback,event_counts,n_fallback_requests,r_pred,R_pred,e1_mode
+W2_N10000_seed133_B,B0,warm,B0,,10000,2104.7815992961223,28.292272818749378,2133.073872114872,2182,0.0,0.0,13346.0,0,0,0,"{""eager_first"": 32, ""steady"": 9968}",,1.0433595211996514,B1,ordering
+W2_N10000_seed133_B,B1,warm,B1,,10000,1871.0910443266057,28.292272818749378,1899.383317145355,2182,0.0,0.0,7280.0,0,0,30,"{""compile"": 32, ""steady"": 9968}",,1.0433595211996514,B1,ordering
+W2_N10000_seed133_B,Ours,warm,Ours,6565.1,10000,1953.447395532634,28.292272818749378,1981.7396683513832,2182,0.0,6408.0,19754.0,7,56,23,"{""capture"": 6, ""capture_denied"": 56, ""compile"": 14, ""compile_capture"": 12, ""eager_first"": 28, ""steady"": 9884}",,1.0433595211996514,B1,ordering
+W2_N10000_seed133_B,B1-AOT,warm,B1-AOT,,10000,1769.0824084899286,28.292272818749378,1797.374681308678,2182,0.0,0.0,7280.0,0,0,0,"{""compile"": 32, ""steady"": 9968}",337.0,1.0433595211996514,B1,ordering

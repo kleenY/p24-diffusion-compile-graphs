@@ -1,0 +1,3 @@
+arm,H,W,B,cfg,proc_id,cold_tier,reason
+C1,768,768,4,1,6,cold_empty,status!=ok
+C1+G1,768,768,4,1,6,cold_empty,status!=ok

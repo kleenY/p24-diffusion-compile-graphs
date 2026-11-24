@@ -1,0 +1,394 @@
+% refs_checked_20261121.bib -- corrected copy of refs.bib (key names unchanged; drop-in replacement).
+% Checked online on 2026-11-20 (system date; arXiv API, Crossref, publisher pages, GitHub API, official docs).
+% Provenance/verification remarks are kept as % comments ONLY: IEEEtran prints every `note` field into the
+% reference list (the old refs.bib printed "[checked ...]", "UNVERIFIED", "dOI ..." into the PDF).
+% IEEEtran.bst has no `doi` field -> DOI is given in `note = {doi: ...}`; web pages use `url` + accessed date in `note`.
+% Online-page access date: all pages were fetched 2026-11-20; "accessed Nov. 20, 2026" is used (re-check and
+% change to the final submission date if you re-open them on 2026-11-21 or later).
+
+% ---------------------------------------------------------------- model and benchmark
+% arXiv API: id 2310.04378v1, cs.CV, 2023-10-06; authors/title match. No peer-reviewed venue found (not claimed).
+@misc{lcm,
+  author = {Luo, Simian and Tan, Yiqin and Huang, Longbo and Li, Jian and Zhao, Hang},
+  title = {Latent Consistency Models: Synthesizing High-Resolution Images with Few-Step Inference},
+  howpublished = {arXiv:2310.04378 [cs.CV]},
+  month = oct,
+  year = {2023}
+}
+
+% arXiv API: 2311.05556v1, cs.CV, 2023-11-09, comment "Technical Report"; authors/title match.
+@misc{lcmlora,
+  author = {Luo, Simian and Tan, Yiqin and Patil, Suraj and Gu, Daniel and von Platen, Patrick and Passos, Apolin{\'a}rio and Huang, Longbo and Li, Jian and Zhao, Hang},
+  title = {{LCM-LoRA}: A Universal {S}table-{D}iffusion Acceleration Module},
+  howpublished = {arXiv:2311.05556 [cs.CV]},
+  month = nov,
+  year = {2023}
+}
+
+% Crossref 10.1109/CVPR52688.2022.01042: title/authors/pages 10674-10685 match, issued 2022-06.
+@inproceedings{rombach2022,
+  author = {Rombach, Robin and Blattmann, Andreas and Lorenz, Dominik and Esser, Patrick and Ommer, Bj{\"o}rn},
+  title = {High-Resolution Image Synthesis with Latent Diffusion Models},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  pages = {10674--10685},
+  month = jun,
+  year = {2022},
+  note = {doi: 10.1109/CVPR52688.2022.01042}
+}
+
+% Crossref 10.18653/v1/2023.acl-long.51: title/authors/pages 893-911 match. Dataset licence CC0-1.0 confirmed on the
+% Hugging Face dataset card (cardData.license = cc0-1.0, 2026-11-20); licence is not printed in the reference.
+@inproceedings{diffusiondb,
+  author = {Wang, Zijie J. and Montoya, Evan and Munechika, David and Yang, Haoyang and Hoover, Benjamin and Chau, Duen Horng},
+  title = {{DiffusionDB}: A Large-scale Prompt Gallery Dataset for Text-to-Image Generative Models},
+  booktitle = {Proc. 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages = {893--911},
+  year = {2023},
+  note = {doi: 10.18653/v1/2023.acl-long.51}
+}
+
+% Crossref 10.52202/075280-2270: NeurIPS 36, pp. 52132-52152; NeurIPS proceedings page title
+% "GenEval: An object-focused framework for evaluating text-to-image alignment" (Datasets and Benchmarks).
+@inproceedings{geneval,
+  author = {Ghosh, Dhruba and Hajishirzi, Hanna and Schmidt, Ludwig},
+  title = {{GenEval}: An Object-Focused Framework for Evaluating Text-to-Image Alignment},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Datasets and Benchmarks Track},
+  volume = {36},
+  pages = {52132--52152},
+  year = {2023},
+  note = {doi: 10.52202/075280-2270; arXiv:2310.11513}
+}
+
+% ---------------------------------------------------------------- graphs, compilation, PyTorch
+% developer.nvidia.com/blog/cuda-graphs/: "Sep 05, 2019 By Alan Gray" (og:published_time 2019-09-05).
+@misc{gray2019,
+  author = {Gray, Alan},
+  title = {Getting Started with {CUDA} Graphs},
+  howpublished = {NVIDIA Technical Blog},
+  month = sep,
+  year = {2019},
+  url = {https://developer.nvidia.com/blog/cuda-graphs/},
+  note = {accessed Nov. 20, 2026}
+}
+
+% Crossref 10.1145/3620665.3640366: ASPLOS '24 Vol. 2, pp. 929-947, issued 2024-04-27; real list has 50 authors (first four kept + "others").
+@inproceedings{ansel2024,
+  author = {Ansel, Jason and Yang, Edward and He, Horace and Gimelshein, Natalia and others},
+  title = {{PyTorch 2}: Faster Machine Learning Through Dynamic {P}ython Bytecode Transformation and Graph Compilation},
+  booktitle = {Proc. 29th ACM Int. Conf. Architectural Support for Programming Languages and Operating Systems (ASPLOS), Vol. 2},
+  pages = {929--947},
+  month = apr,
+  year = {2024},
+  note = {doi: 10.1145/3620665.3640366}
+}
+
+% docs.pytorch.org 2.9 page "CUDAGraph Trees" (Created May 19, 2023; last updated Jul 30, 2025) -- text supports the cited sentence.
+@misc{pt_cgtrees,
+  author = {{PyTorch}},
+  title = {{CUDAGraph} Trees},
+  howpublished = {PyTorch 2.9 documentation},
+  url = {https://docs.pytorch.org/docs/2.9/torch.compiler_cudagraph_trees.html},
+  note = {accessed Nov. 20, 2026}
+}
+
+% 2.9 page lists "eager_on_recompile": "Run code eagerly when a recompile is necessary. If there is cached compiled code valid for the input, it will still be used."
+@misc{pt_stance,
+  author = {{PyTorch}},
+  title = {\texttt{torch.compiler.set\_stance}},
+  howpublished = {PyTorch 2.9 documentation},
+  url = {https://docs.pytorch.org/docs/2.9/generated/torch.compiler.set_stance.html},
+  note = {accessed Nov. 20, 2026}
+}
+
+% 2.9 page title is "AOTInductor: Ahead-Of-Time Compilation for Torch.Export-ed Models" (Created Jun 13, 2025; updated Aug 14, 2025); prototype status.
+@misc{pt_aoti,
+  author = {{PyTorch}},
+  title = {{AOTInductor}: Ahead-of-Time Compilation for \texttt{torch.export}-ed Models},
+  howpublished = {PyTorch 2.9 documentation},
+  url = {https://docs.pytorch.org/docs/2.9/torch.compiler_aot_inductor.html},
+  note = {accessed Nov. 20, 2026}
+}
+
+% NeurIPS proceedings page: vol. 33, pp. 8343-8354. NOTE: not cited in main.tex (uncited entries are not printed by BibTeX).
+@inproceedings{nimble,
+  author = {Kwon, Woosuk and Yu, Gyeong-In and Jeong, Eunji and Chun, Byung-Gon},
+  title = {Nimble: Lightweight and Parallel {GPU} Task Scheduling for Deep Learning},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume = {33},
+  pages = {8343--8354},
+  year = {2020},
+  note = {arXiv:2012.02732}
+}
+
+% GitHub API 2026-11-20: title "[inductor] found_by_coordesc is lost when a compile worker's autotune-cache hit is unpickled, so coordinate descent re-runs";
+% author (GitHub login) zohaibm-amd; created 2026-11-02; state open, last update 2026-11-03; a commenter (asugranyes) says they are working on a fix.
+@misc{pt_issue,
+  author = {{zohaibm-amd (GitHub user)}},
+  title = {{[inductor]} \texttt{found\_by\_coordesc} is lost when a compile worker's autotune-cache hit is unpickled, so coordinate descent re-runs},
+  howpublished = {GitHub issue pytorch/pytorch\#203030},
+  month = nov,
+  year = {2026},
+  url = {https://github.com/pytorch/pytorch/issues/203030},
+  note = {opened Nov. 2, 2026; still open on Nov. 20, 2026; accessed Nov. 20, 2026}
+}
+
+% GitHub API 2026-11-20: title "[inductor] Honor cached coordinate descent winners after the autotuner is pickled (#205301)" (the original title, not a paraphrase);
+% author (login) Sidharth123-cpu; created 2026-11-17; state open, merged = false, updated 2026-11-20. Body: cache hits (local/remote/MegaCache) re-run
+% coordinate descent because triton.Config.__setstate__ drops the flag when unpickled/deep-copied (compile-worker path AND FX-graph-cache bundle path).
+@misc{pt_pr,
+  author = {{Sidharth123-cpu (GitHub user)}},
+  title = {{[inductor]} Honor cached coordinate descent winners after the autotuner is pickled},
+  howpublished = {GitHub pull request pytorch/pytorch\#205301},
+  month = nov,
+  year = {2026},
+  url = {https://github.com/pytorch/pytorch/pull/205301},
+  note = {opened Nov. 17, 2026; unmerged on Nov. 20, 2026; accessed Nov. 20, 2026}
+}
+
+% arXiv abs page 2503.19779v3 (submitted 25 Mar 2025, v3 22 Dec 2025), cs.LG; title/authors match. No journal ref / venue given on arXiv;
+% publication venue NOT found -> unverified. Cited claims (per-graph profiling-based selective deployment; compilation "one-time cost ... easily covered") confirmed in v3 HTML.
+@misc{pygraph,
+  author = {Ghosh, Abhishek and Nayak, Ajay and Panwar, Ashish and Basu, Arkaprava},
+  title = {{PyGraph}: Robust Compiler Support for {CUDA} Graphs in {PyTorch}},
+  howpublished = {arXiv:2503.19779 [cs.LG], v3},
+  month = dec,
+  year = {2025}
+}
+
+% ---------------------------------------------------------------- serving systems
+% docs.vllm.ai/en/latest/design/cuda_graphs/ ("latest developer preview docs"; content changes between versions).
+@misc{vllm_cg,
+  author = {{vLLM project}},
+  title = {{CUDA} Graphs},
+  howpublished = {vLLM documentation (design)},
+  url = {https://docs.vllm.ai/en/latest/design/cuda_graphs/},
+  note = {accessed Nov. 20, 2026}
+}
+
+% The old URL redirects (HTTP) to https://docs.sglang.io/docs/advanced_features/server_arguments ; new canonical URL used.
+@misc{sglang_args,
+  author = {{SGLang project}},
+  title = {Server Arguments},
+  howpublished = {SGLang documentation},
+  url = {https://docs.sglang.io/docs/advanced_features/server_arguments},
+  note = {accessed Nov. 20, 2026}
+}
+
+% Page title "Working with Dynamic Shapes"; optimization profiles are specified at build time.
+@misc{trt_dyn,
+  author = {{NVIDIA}},
+  title = {Working with Dynamic Shapes},
+  howpublished = {NVIDIA TensorRT documentation},
+  url = {https://docs.nvidia.com/deeplearning/tensorrt/latest/inference-library/work-with-dynamic-shapes.html},
+  note = {accessed Nov. 20, 2026}
+}
+
+% ---------------------------------------------------------------- diffusion inference and serving
+@misc{hf_fp16,
+  author = {{Hugging Face}},
+  title = {Accelerate inference},
+  howpublished = {{Diffusers} documentation},
+  url = {https://huggingface.co/docs/diffusers/optimization/fp16},
+  note = {accessed Nov. 20, 2026}
+}
+
+% Current page title is "Reduce memory usage" (old bib title "Memory optimization" is wrong). The page mentions torch.compile only once, in passing.
+@misc{hf_memory,
+  author = {{Hugging Face}},
+  title = {Reduce memory usage},
+  howpublished = {{Diffusers} documentation},
+  url = {https://huggingface.co/docs/diffusers/optimization/memory},
+  note = {accessed Nov. 20, 2026}
+}
+
+% pytorch.org blog: "By Sayak Paul (Hugging Face), Animesh Jain (Meta), Benjamin Bossan (Hugging Face), July 17, 2025". The post does not mention CUDA Graphs.
+@misc{pt_blog,
+  author = {Paul, Sayak and Jain, Animesh and Bossan, Benjamin},
+  title = {\texttt{torch.compile} and {Diffusers}: A Hands-On Guide to Peak Performance},
+  howpublished = {PyTorch Blog},
+  month = jul,
+  year = {2025},
+  url = {https://pytorch.org/blog/torch-compile-and-diffusers-a-hands-on-guide-to-peak-performance/},
+  note = {accessed Nov. 20, 2026}
+}
+
+% GitHub API: chengzeyi/stable-fast, MIT, last push 2025-03-27, not archived; README: "CUDA Graph ... This implemention also supports dynamic shape." (line 75).
+@misc{stablefast,
+  author = {{chengzeyi (GitHub user)}},
+  title = {stable-fast},
+  howpublished = {GitHub repository chengzeyi/stable-fast},
+  url = {https://github.com/chengzeyi/stable-fast},
+  note = {accessed Nov. 20, 2026}
+}
+
+% GitHub API: siliconflow/onediff, Apache-2.0, last push 2025-12-04 (main HEAD 98898c4). The multi-resolution example
+% onediff_diffusers_extensions/examples/text_to_image_sdxl.py WAS read: default options {"mode": "max-autotune:cudagraphs", "dynamic": true},
+% comment "The nexfort backend encounters an exception when dynamically switching resolution to 960x720" -> the old UNVERIFIED flag can be dropped.
+@misc{onediff,
+  author = {{SiliconFlow}},
+  title = {{OneDiff}},
+  howpublished = {GitHub repository siliconflow/onediff},
+  url = {https://github.com/siliconflow/onediff},
+  note = {accessed Nov. 20, 2026}
+}
+
+% arXiv API: 2602.10940v1, cs.CV, 2026-02-11, single author Guandong Li; title matches.
+@misc{fastusp,
+  author = {Li, Guandong},
+  title = {{FastUSP}: A Multi-Level Collaborative Acceleration Framework for Distributed Diffusion Model Inference},
+  howpublished = {arXiv:2602.10940 [cs.CV]},
+  month = feb,
+  year = {2026}
+}
+
+% arXiv API: 2610.23047, cs.DC, v1 2026-10-16, v3 2026-11-05; authors/title match.
+@misc{difflet,
+  author = {Ma, Bin and Yu, Min and Kodamalla, Vijay and Liu, Johnny and Li, Da and Li, Dong},
+  title = {{DIFFLET}: A Fast Inference Engine for Diffusion Transformer Models on {AWS} {Trainium}},
+  howpublished = {arXiv:2610.23047 [cs.DC], v3},
+  month = oct,
+  year = {2026}
+}
+
+% USENIX page (BibTeX + citation_* meta): NSDI '24, Santa Clara, CA, April 2024, pp. 1173-1189, six authors; the NSDI title contains "Text-to-Image"
+% (the arXiv v1 title does not). Content check: LCBFU eviction score f_i * K_i, caches intermediate noise states -> matches the sentence in main.tex.
+@inproceedings{nirvana,
+  author = {Agarwal, Shubham and Mitra, Subrata and Chakraborty, Sarthak and Karanam, Srikrishna and Mukherjee, Koyel and Saini, Shiv Kumar},
+  title = {Approximate Caching for Efficiently Serving Text-to-Image Diffusion Models},
+  booktitle = {Proc. 21st USENIX Symp. Networked Systems Design and Implementation (NSDI)},
+  address = {Santa Clara, CA, USA},
+  pages = {1173--1189},
+  month = apr,
+  year = {2024},
+  note = {arXiv:2312.04429},
+  url = {https://www.usenix.org/conference/nsdi24/presentation/agarwal-shubham}
+}
+
+% ---------------------------------------------------------------- online decisions and caching
+% Crossref 10.1007/BF01762111: Algorithmica 3(1-4):79-119, issued 1988-11.
+@article{karlin1988,
+  author = {Karlin, Anna R. and Manasse, Mark S. and Rudolph, Larry and Sleator, Daniel D.},
+  title = {Competitive snoopy caching},
+  journal = {Algorithmica},
+  volume = {3},
+  number = {1--4},
+  pages = {79--119},
+  month = nov,
+  year = {1988},
+  note = {doi: 10.1007/BF01762111}
+}
+
+% LIPIcs/DROPS page 10.4230/LIPIcs.STACS.2008.1331: STACS 2008 (25th), pp. 503-514 (arXiv:0802.2832 is the same paper). Journal version:
+% SIAM J. Discrete Math. 26(2012) 718-736, doi 10.1137/100794018 (title there has a comma: "Rent, Lease, or Buy").
+@inproceedings{lotker2008,
+  author = {Lotker, Zvi and Patt-Shamir, Boaz and Rawitz, Dror},
+  title = {Rent, Lease or Buy: Randomized Algorithms for Multislope Ski Rental},
+  booktitle = {Proc. 25th Int. Symp. Theoretical Aspects of Computer Science (STACS)},
+  pages = {503--514},
+  year = {2008},
+  note = {doi: 10.4230/LIPIcs.STACS.2008.1331; arXiv:0802.2832}
+}
+
+% Crossref 10.1145/3149371: ACM Trans. Storage 13(4), art. 35 (pp. 1-31), issued 2017-11-17; authors Gil Einziger, Roy Friedman, Ben Manes.
+@article{tinylfu,
+  author = {Einziger, Gil and Friedman, Roy and Manes, Ben},
+  title = {{TinyLFU}: A Highly Efficient Cache Admission Policy},
+  journal = {ACM Trans. Storage},
+  volume = {13},
+  number = {4},
+  pages = {1--31},
+  month = nov,
+  year = {2017},
+  note = {doi: 10.1145/3149371}
+}
+
+% USENIX USITS'97 page + reprint PDF: Pei Cao (U. Wisconsin-Madison), Sandy Irani (UC Irvine); "Monterey, California, December 1997".
+% The reprint PDF carries no original page numbers -> pages left out (unverified; commonly cited as 193-206, NOT confirmed).
+@inproceedings{gds1997,
+  author = {Cao, Pei and Irani, Sandy},
+  title = {Cost-Aware {WWW} Proxy Caching Algorithms},
+  booktitle = {Proc. USENIX Symp. Internet Technologies and Systems (USITS)},
+  address = {Monterey, CA, USA},
+  month = dec,
+  year = {1997},
+  url = {https://www.usenix.org/legacy/publications/library/proceedings/usits97/cao.html}
+}
+
+
+% arXiv API: 2501.09253, v1 2025-01-16, v2 2025-10-05, cs.DC; authors Desen Sun, Zepeng Zhao, Yuke Wang. No journal_ref;
+% Crossref has no matching record -> venue UNVERIFIED, cited as preprint. Title is all-caps "PATCHEDSERVE" in arXiv metadata, the PDF uses PatchedServe.
+@inproceedings{patchedserve,
+  author = {Sun, Desen and Zhao, Zepeng and Wang, Yuke},
+  title = {{MixFusion}: A Patch-Level Parallel Serving System for Mixed-Resolution Diffusion Models},
+  booktitle = {Proc. 31st ACM SIGPLAN Annual Symposium on Principles and Practice of Parallel Programming (PPoPP)},
+  pages = {522--536},
+  year = {2026},
+  doi = {10.1145/3774934.3786420},
+  note = {Preprint: {PatchedServe}, arXiv:2501.09253}
+}
+
+% arXiv API: 2604.06664, 2026-04-08, cs.DC/cs.LG; six authors match. No journal_ref (venue UNVERIFIED).
+@misc{foundry,
+  author = {Liu, Xueshen and Wu, Yongji and Yao, Yuncheng and Zhuo, Danyang and Stoica, Ion and Mao, Z. Morley},
+  title = {Foundry: Template-Based {CUDA} Graph Context Materialization for Fast {LLM} Serving Cold Start},
+  howpublished = {arXiv:2604.06664 [cs.DC]},
+  month = apr,
+  year = {2026},
+  url = {https://arxiv.org/abs/2604.06664}
+}
+
+% Crossref 10.1109/PDP66500.2025.00019: "2025 33rd Euromicro International Conference on Parallel, Distributed, and Network-Based Processing (PDP)",
+% pp. 70-77, issued 2025-03-12; authors Jonah Ekelund, Stefano Markidis, Ivy Peng. arXiv preprint: 2501.09398. Conference city not checked (omitted).
+@inproceedings{ekelund2025,
+  author = {Ekelund, Jonah and Markidis, Stefano and Peng, Ivy},
+  title = {Boosting Performance of Iterative Applications on {GPUs}: Kernel Batching with {CUDA} Graphs},
+  booktitle = {Proc. 33rd Euromicro Int. Conf. Parallel, Distributed, and Network-Based Processing (PDP)},
+  pages = {70--77},
+  month = mar,
+  year = {2025},
+  note = {doi: 10.1109/PDP66500.2025.00019}
+}
+
+% CHANGED vs refs_v5: the paper is now a peer-reviewed MLSys 2025 paper (proceedings page citation_* meta: Proceedings of Machine Learning and Systems,
+% vol. 7, published 2025-05-12; authors Sohaib Ahmad, Qizheng Yang, Haoliang Wang, Ramesh K. Sitaraman, Hui Guan). Page numbers not given on the page -> omitted.
+@inproceedings{diffserve,
+  author = {Ahmad, Sohaib and Yang, Qizheng and Wang, Haoliang and Sitaraman, Ramesh K. and Guan, Hui},
+  title = {{DiffServe}: Efficiently Serving Text-to-Image Diffusion Models with Query-Aware Model Scaling},
+  booktitle = {Proc. Mach. Learn. Syst. (MLSys)},
+  volume = {7},
+  month = may,
+  year = {2025},
+  url = {https://proceedings.mlsys.org/paper_files/paper/2025/hash/414fd191b3246a19a55741b938380136-Abstract-Conference.html},
+  note = {arXiv:2411.15381}
+}
+
+% USENIX page citation_* meta: OSDI '20, pp. 443-462, seven authors (v5 had "Gujarati and others"). Month/location not on the page -> omitted.
+@inproceedings{clockwork,
+  author = {Gujarati, Arpan and Karimi, Reza and Alzayat, Safya and Hao, Wei and Kaufmann, Antoine and Vigfusson, Ymir and Mace, Jonathan},
+  title = {Serving {DNNs} like {Clockwork}: Performance Predictability from the Bottom Up},
+  booktitle = {Proc. 14th USENIX Symp. Operating Systems Design and Implementation (OSDI)},
+  pages = {443--462},
+  year = {2020},
+  url = {https://www.usenix.org/conference/osdi20/presentation/gujarati}
+}
+
+% ---------------------------------------------------------------- official documentation (PyTorch 2.9, same version as the one we ran: torch 2.9.1+cu126)
+% Page "CUDA semantics", section "Optimizing memory usage with PYTORCH_CUDA_ALLOC_CONF": "expandable_segments (experimental, default: False)
+% ... create CUDA allocations that can later be expanded ... changing batch size"; the section id is optimizing-memory-usage-with-pytorch-cuda-alloc-conf.
+@misc{pt_alloc_conf,
+  author = {{PyTorch}},
+  title = {{CUDA} semantics: Optimizing memory usage with \texttt{PYTORCH\_CUDA\_ALLOC\_CONF}},
+  howpublished = {PyTorch 2.9 documentation},
+  url = {https://docs.pytorch.org/docs/2.9/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf},
+  note = {accessed Nov. 22, 2026}
+}
+
+% Page text: "Set memory fraction for a process. The fraction is used to limit an caching allocator to allocated memory on a CUDA device ...
+% If trying to allocate more than the allowed value in a process, will raise an out of memory error in allocator." -> it bounds the CACHING ALLOCATOR, not the CUDA context.
+@misc{pt_memfrac,
+  author = {{PyTorch}},
+  title = {\texttt{torch.cuda.memory.set\_per\_process\_memory\_fraction}},
+  howpublished = {PyTorch 2.9 documentation},
+  url = {https://docs.pytorch.org/docs/2.9/generated/torch.cuda.memory.set_per_process_memory_fraction.html},
+  note = {accessed Nov. 22, 2026}
+}

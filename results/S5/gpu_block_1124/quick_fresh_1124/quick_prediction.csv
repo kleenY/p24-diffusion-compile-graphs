@@ -1,0 +1,4 @@
+label,policy,pred_excl_input_s,pred_input_s,pred_total_s,n_input_extrapolated,mem_budget_mb,pred_event_counts
+E0,B0,6.9266344112111256,0.08083941275253892,7.0074738239636645,0,,"{""eager_first"": 2, ""steady"": 58}"
+B1,B1,81.5790856142994,0.08083941275253892,81.65992502705194,0,,"{""compile"": 2, ""steady"": 58}"
+Ours,Ours,6.900082743144594,0.08083941275253892,6.980922155897133,0,6565.1,"{""capture"": 1, ""eager_first"": 1, ""steady"": 58}"

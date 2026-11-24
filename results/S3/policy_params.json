@@ -1,0 +1,166 @@
+{
+  "version": "v2",
+  "frozen_at": "2026-11-17T15:10:53",
+  "step": "S3 3.2b Ours v2 development tuning (simulator, CPU, development traces from half A only; evaluation traces untouched)",
+  "implementation_fix_note": "first v2 freeze (policy_code ours.py SHA16 see sim_dev/v2_firstpass_before_C1_backoff_fix/policy_params_firstpass.json) was redone after the toy test 'budget full -> only C1' exposed that the refused-graph backoff also throttled the memory-free C1 tier; fix = C1 keeps threshold alpha and is tried during graph backoff; dev numbers of both passes are kept; no change to candidates/objective/selection rule",
+  "revision_basis": "v2 revision basis: see AUTO_DECISIONS 2026-11-17 (STATE/AUTO_DECISIONS.md, '2026-11-17 16:xx S3 3.2 policy design revision v2'; revision made AFTER seeing v1 development numbers; dev set only, no third design round)",
+  "cost_table": "results/S2/cost_table/merged/cost_table.csv",
+  "cost_table_sha16": "aa691bbea98d15c6",
+  "workload_manifest": "results/S3/workload/sha256_manifest.txt",
+  "manifest_sha16": "7d7b993c4d5402b0",
+  "budgets_json_sha16": "58eb9bf8560c961f",
+  "tuning_script": "code/scripts/tune_dev_S3_v2.py",
+  "tuning_raw_csv": "results/S3/sim_dev/v2/tuning_ours_v2_raw.csv",
+  "tuning_raw_csv_sha16": "13b9beb458294666",
+  "tuning_condition": "W1-W5 x N in {1e3,1e4} x seeds 0-4 (50 dev traces), default budget 6565.1 MiB, cache mode warm (pre-warmed disk cache), overhead-aware admission (22.33 MiB per graph), objective = geometric mean of total service time (s); all three groups carry (a) online horizon and (b) four tiers",
+  "groups_compared": {
+    "g1_a1_H1e3": {
+      "alpha": 1.0,
+      "H_prior": 1000.0
+    },
+    "g2_a1_H1e4": {
+      "alpha": 1.0,
+      "H_prior": 10000.0
+    },
+    "g3_a0.5_H1e3": {
+      "alpha": 0.5,
+      "H_prior": 1000.0
+    }
+  },
+  "selection_rule": "pre-registered (AUTO_DECISIONS 2026-11-17, same rule as 3.2): choose the lowest objective; if the first group is within 2% of the lowest (first <= 1.02 x best) take the first group",
+  "ours": {
+    "tiers": [
+      "E",
+      "G1",
+      "C1",
+      "C1+G1"
+    ],
+    "horizon": "online: H_eff = max(H_prior, n_served)",
+    "objective_geomean_service_s": {
+      "g1_a1_H1e3": 593.883741040495,
+      "g2_a1_H1e4": 630.1304302293144,
+      "g3_a0.5_H1e3": 590.4783967661484
+    },
+    "objective_by_N": {
+      "g1_a1_H1e3": {
+        "1000": 198.0461823665703,
+        "10000": 1780.8871327771037
+      },
+      "g2_a1_H1e4": {
+        "1000": 233.09695695721575,
+        "10000": 1703.4300416622787
+      },
+      "g3_a0.5_H1e3": {
+        "1000": 199.42660372582299,
+        "10000": 1748.3361323591241
+      }
+    },
+    "best_group": "g3_a0.5_H1e3",
+    "chosen_group": "g1_a1_H1e3",
+    "first_vs_best_pct": 0.5767093754820651,
+    "params": {
+      "alpha": 1.0,
+      "H_prior": 1000.0,
+      "horizon": "online",
+      "tiers": [
+        "E",
+        "G1",
+        "C1",
+        "C1+G1"
+      ]
+    },
+    "selection_basis": "objective of the three groups {'g1_a1_H1e3': 593.883741040495, 'g2_a1_H1e4': 630.1304302293144, 'g3_a0.5_H1e3': 590.4783967661484}; first group is 0.58% above the best -> first group (<2%)"
+  },
+  "v1_history": {
+    "file": "results/S3/policy_params_v1_spec.json",
+    "file_sha16": "a126355dd6197c34",
+    "tiers": [
+      "E",
+      "G1",
+      "C1+G1"
+    ],
+    "horizon": "fixed H_prior",
+    "objective_geomean_service_s": {
+      "g1_a1_H1e3": 602.1120660088594,
+      "g2_a1_H1e4": 627.9163406604782,
+      "g3_a0.5_H1e3": 601.0630465800868
+    },
+    "chosen_group": "g1_a1_H1e3",
+    "params": {
+      "alpha": 1.0,
+      "H_prior": 1000.0
+    },
+    "selection_basis": "objective of the three groups {'g1_a1_H1e3': 602.1120660088594, 'g2_a1_H1e4': 627.9163406604782, 'g3_a0.5_H1e3': 601.0630465800868}; first group is 0.17% above the best -> first group (<2%)",
+    "rerun_in_v2_script_objective": {
+      "g1_a1_H1e3": 602.1120660088594,
+      "g2_a1_H1e4": 627.9163406604782,
+      "g3_a0.5_H1e3": 601.0630465800868
+    },
+    "v1_C1_extension_history": {
+      "tiers": [
+        "E",
+        "C1",
+        "C1+G1"
+      ],
+      "status": "exploratory extension, needs a main-session decision before use in S3.3",
+      "objective_geomean_service_s": {
+        "g1_a1_H1e3": 596.1230071333085,
+        "g2_a1_H1e4": 630.028890789015,
+        "g3_a0.5_H1e3": 596.0245933155857
+      },
+      "best_group": "g3_a0.5_H1e3",
+      "chosen_group": "g1_a1_H1e3",
+      "first_vs_best_pct": 0.016511704185795395,
+      "params": {
+        "alpha": 1.0,
+        "H_prior": 1000.0
+      }
+    }
+  },
+  "ablation_params": {
+    "v1_spec": {
+      "horizon": "fixed",
+      "tiers": [
+        "E",
+        "G1",
+        "C1+G1"
+      ],
+      "alpha": 1.0,
+      "H_prior": 1000.0
+    },
+    "fixed_horizon (no a)": {
+      "horizon": "fixed"
+    },
+    "three_tiers (no b)": {
+      "tiers": [
+        "E",
+        "G1",
+        "C1+G1"
+      ]
+    }
+  },
+  "shared_by": "Ours, Ours-NE, B5 use ours.params (alpha, H_prior, horizon, tiers); ablations vary one switch of Ours.params only",
+  "fixed_constants_not_tuned": {
+    "prior_weight": 50.0,
+    "backoff0": 8,
+    "B3pp_k": 8,
+    "B6p_k": 8,
+    "B6_batch_buckets": [
+      1,
+      2,
+      4
+    ],
+    "evict_s_charged_in_simulator": 0.0,
+    "per_graph_overhead_mb": 22.33,
+    "prior": "A-half mapped resolution distribution x declared B/CFG distribution (p24/sim/prior.py)"
+  },
+  "policy_code": {
+    "policy/base.py": "0716509f6bf09dc4",
+    "policy/ours.py": "03f9ad80c392b842",
+    "policy/baselines.py": "35757377e4ecb559",
+    "policy/factory.py": "b3a9693b76f57da5",
+    "policy/costview.py": "d21ea0c0a3c6badc",
+    "sim/simulator.py": "f99de8b737d55997",
+    "sim/prior.py": "5eee108e125dbe26"
+  }
+}

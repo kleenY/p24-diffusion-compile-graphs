@@ -1,0 +1,2 @@
+key,reason,detail
+512x512x3x0,equiv_fail_frozen,quick_pass=0 rmse=0.014139464125037193 lpips=0.007901136763393879 full_pass=None; frozen verdict rmse_ratio=4.093295839880299 lpips=0.014189320616424084

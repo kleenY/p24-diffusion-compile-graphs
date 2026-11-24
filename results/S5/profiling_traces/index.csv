@@ -1,0 +1,20 @@
+group,trace,source_sqlite,source_sha256,n_records_in_requests,n_requests,used_for
+S1_512_b1,E0_b1_cfg0,results/S1/nsys_q2/E0_b1_cfg0.sqlite,d902bc0fc6eb9fa65a6bfb1dbc4881bbeacbc7fa1709e0f54b61183196ef1b2e,15417,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,E0_b1_cfg1,results/S1/nsys_q2/E0_b1_cfg1.sqlite,520f9754101066f8fc76b2a625b95efc345e6782ebb59539221acc6c739eeca2,16122,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,C1_b1_cfg0,results/S1/nsys_q2/C1_b1_cfg0.sqlite,899aa4d00cb655f4b098dd6b2b1bb055b445b7b2c0ceaa9c7f8fe5b023f0a913,9555,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,C1_b1_cfg1,results/S1/nsys_q2/C1_b1_cfg1.sqlite,316711ecce1031f63fae9563b7c2700e1fef8974806e2f9ed6d8f1d7c92fd577,10182,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,C2_b1_cfg0,results/S1/nsys_q2/C2_b1_cfg0.sqlite,7746c2761c34e001eb834d65733ad3d8d2eaa648ace891ea58e71b8e62505ab0,9588,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,C2_b1_cfg1,results/S1/nsys_q2/C2_b1_cfg1.sqlite,38dee4c9919f9ddbfd77d01b30d5dfb61e055762c14aa4127f1dd1c45b0f8b21,10230,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,G1_b1_cfg0,results/S1/nsys_q2/G1_b1_cfg0.sqlite,d9f009f84db2c1b27e7834b49038cd4425c0dfd5a834b44f7177d78aac2229f9,15450,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,G1_b1_cfg1,results/S1/nsys_q2/G1_b1_cfg1.sqlite,c67ad85f6d65a7a8f05b6dbb772d259166564341975f2a0ff0e182aa05cb5cf0,16155,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,G2_b1_cfg0,results/S1/nsys_q2/G2_b1_cfg0.sqlite,e53a7581ccc8bf73041e0dd8de135a34e8c0a5ffb02fc12a86f9cac17d06f7a1,15429,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,G2_b1_cfg1,results/S1/nsys_q2/G2_b1_cfg1.sqlite,49f772b0bfb80c94dc625204aca023d7402b4cd3cdc7a1881673dcd540c3b01c,16134,3,kernel breakdown at 512x512 B1 (Tab. kernels)
+S1_512_b1,C1+G2_b1_cfg0,results/S1/nsys_q/C1+G2_b1_cfg0.sqlite,661faefb8cd19711742c3786c2c7708d4dd80b49646c560c4657393f4c490473,9567,3,kernel breakdown at 512x512 B1
+S1_512_b1,C1+G2_b1_cfg1,results/S1/nsys_q/C1+G2_b1_cfg1.sqlite,09eec252df4d4042ba61dddc9a1f69260eed99d79462c678ac847fb1817f3f51,10194,3,kernel breakdown at 512x512 B1
+S2_256_768,E0_256x256_b1_cfg0,results/S2/cost_table/S-1/nsys/E0_256x256_b1_cfg0.sqlite,9bb9dfccc0a900a34bbff6b79d6765249de3fc2c3ac44b88e34455b4242c9593,15699,3,idle-gap / capture saving at 256x256 and 768x768
+S2_256_768,G1_256x256_b1_cfg0,results/S2/cost_table/S-1/nsys/G1_256x256_b1_cfg0.sqlite,969775fd240af13fa009d9172018fb1104fc7d0841eaf82d7a66a68f87c62d32,15732,3,idle-gap / capture saving at 256x256 and 768x768
+S2_256_768,E0_768x768_b4_cfg1,results/S2/cost_table/S-1/nsys/E0_768x768_b4_cfg1.sqlite,401e3db500d7cd54f51f6c090cf39512dfaa2cbbeaecd6870becc2bf7bf43184,16014,3,idle-gap / capture saving at 256x256 and 768x768
+S2_256_768,G1_768x768_b4_cfg1,results/S2/cost_table/S-1/nsys/G1_768x768_b4_cfg1.sqlite,4ac2e82c554a8b471deee0ebb4e6de509c405e833016b23c6d53a2336790aa9a,16047,3,idle-gap / capture saving at 256x256 and 768x768
+S3_accel,C1+G1_512x512_b1_cfg0,results/S3/accel/nsys/C1+G1_512x512_b1_cfg0.sqlite,89d8d800448d815ee42a4c6288f78db62340047850cc608093cbad7055fe2fe5,9588,3,C1+G1 at 512x512
+S4X_X10_sdturbo,E0_512x512_b1_cfg0,results/S4X/x10/profile/E0_512x512_b1_cfg0.sqlite,34b1ffd75758d2b72f6bc134268162b5524f26eb11c222cdbae2dced10646745,5436,3,second model (SD-Turbo) mechanism check
+S4X_X10_sdturbo,C1_512x512_b1_cfg0,results/S4X/x10/profile/C1_512x512_b1_cfg0.sqlite,2ea4dc17b76dbeee8543ec0982f8bbb0006ca791385478dd478f5bb71d0b2aff,3627,3,second model (SD-Turbo) mechanism check

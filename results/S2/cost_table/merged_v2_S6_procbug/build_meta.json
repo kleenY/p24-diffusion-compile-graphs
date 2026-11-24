@@ -1,0 +1,237 @@
+{
+  "time": "2026-11-16T01:27:31",
+  "argv": [
+    "<REPO>/code/scripts/build_cost_table.py",
+    "--raw",
+    "../results/S2/cost_table/S-1/main=S-1",
+    "--raw",
+    "../results/S2/cost_table/S-1/check_cold768=S-1",
+    "--raw",
+    "../results/S2/cost_table/S-2/main=S-2",
+    "--raw",
+    "../results/S2/cost_table/S-3/main=S-3",
+    "--raw",
+    "../results/S2/cost_table/S-3/baseline_a=S-3",
+    "--raw",
+    "../results/S2/cost_table/S-3/baseline_b=S-3",
+    "--raw",
+    "../results/S2/cost_table/S-3/b3_check=S-3",
+    "--raw",
+    "../results/S2/cold_tiers/c1_512b1=S-4",
+    "--raw",
+    "../results/S2/cold_tiers/c1_5shapes=S-4",
+    "--raw",
+    "../results/S2/cold_tiers/c2c5_512b1=S-4",
+    "--raw",
+    "../results/S2/cold_tiers/c2c6_768b4=S-4",
+    "--raw",
+    "../results/S2/cold_tiers/c6_512b1_L1=S-4",
+    "--raw",
+    "../results/S2/cold_tiers/c1_768b4_remeasure=S-4",
+    "--seq",
+    "../results/S2/inproc_seq/base4_C1G1_disk=S-5",
+    "--seq",
+    "../results/S2/inproc_seq/base4_C1G1_empty=S-5",
+    "--seq",
+    "../results/S2/inproc_seq/base4_E0=S-5",
+    "--seq",
+    "../results/S2/inproc_seq/base4_G1=S-5",
+    "--seq",
+    "../results/S2/inproc_seq/gap_C1_disk=S-6",
+    "--seq",
+    "../results/S2/inproc_seq/gap_C1_empty=S-6",
+    "--seq",
+    "../results/S2/inproc_seq/gap_E0_disk=S-6",
+    "--seq",
+    "../results/S2/inproc_seq/gap_G1_disk=S-6",
+    "--seq",
+    "../results/S2/inproc_seq/v3shapes_C1_disk=S-5",
+    "--seq",
+    "../results/S2/inproc_seq/v3shapes_C1_empty=S-5",
+    "--seq",
+    "../results/S2/inproc_seq/v3shapes_E0_disk=S-5",
+    "--seq",
+    "../results/S2/inproc_seq/v3shapes_G1_disk=S-5",
+    "--seq",
+    "../results/S2/inproc_seq/v3shapes_G1_disk_tail=S-5",
+    "--transient",
+    "../results/S2/cold_tiers/all_transient.csv",
+    "--extrapolate",
+    "C2,C5,C6",
+    "--out-dir",
+    "../results/S2/cost_table/merged"
+  ],
+  "inputs": [
+    {
+      "path": "../results/S2/cost_table/S-1/main",
+      "block": "S-1",
+      "seq": false,
+      "n_rows": 4000
+    },
+    {
+      "path": "../results/S2/cost_table/S-1/check_cold768",
+      "block": "S-1",
+      "seq": false,
+      "n_rows": 25
+    },
+    {
+      "path": "../results/S2/cost_table/S-2/main",
+      "block": "S-2",
+      "seq": false,
+      "n_rows": 6000
+    },
+    {
+      "path": "../results/S2/cost_table/S-3/main",
+      "block": "S-3",
+      "seq": false,
+      "n_rows": 3000
+    },
+    {
+      "path": "../results/S2/cost_table/S-3/baseline_a",
+      "block": "S-3",
+      "seq": false,
+      "n_rows": 1500
+    },
+    {
+      "path": "../results/S2/cost_table/S-3/baseline_b",
+      "block": "S-3",
+      "seq": false,
+      "n_rows": 1000
+    },
+    {
+      "path": "../results/S2/cost_table/S-3/b3_check",
+      "block": "S-3",
+      "seq": false,
+      "n_rows": 1000
+    },
+    {
+      "path": "../results/S2/cold_tiers/c1_512b1",
+      "block": "S-4",
+      "seq": false,
+      "n_rows": 960
+    },
+    {
+      "path": "../results/S2/cold_tiers/c1_5shapes",
+      "block": "S-4",
+      "seq": false,
+      "n_rows": 2786
+    },
+    {
+      "path": "../results/S2/cold_tiers/c2c5_512b1",
+      "block": "S-4",
+      "seq": false,
+      "n_rows": 576
+    },
+    {
+      "path": "../results/S2/cold_tiers/c2c6_768b4",
+      "block": "S-4",
+      "seq": false,
+      "n_rows": 576
+    },
+    {
+      "path": "../results/S2/cold_tiers/c6_512b1_L1",
+      "block": "S-4",
+      "seq": false,
+      "n_rows": 480
+    },
+    {
+      "path": "../results/S2/cold_tiers/c1_768b4_remeasure",
+      "block": "S-4",
+      "seq": false,
+      "n_rows": 98
+    },
+    {
+      "path": "../results/S2/inproc_seq/base4_C1G1_disk",
+      "block": "S-5",
+      "seq": true,
+      "n_rows": 120
+    },
+    {
+      "path": "../results/S2/inproc_seq/base4_C1G1_empty",
+      "block": "S-5",
+      "seq": true,
+      "n_rows": 93
+    },
+    {
+      "path": "../results/S2/inproc_seq/base4_E0",
+      "block": "S-5",
+      "seq": true,
+      "n_rows": 120
+    },
+    {
+      "path": "../results/S2/inproc_seq/base4_G1",
+      "block": "S-5",
+      "seq": true,
+      "n_rows": 120
+    },
+    {
+      "path": "../results/S2/inproc_seq/gap_C1_disk",
+      "block": "S-6",
+      "seq": true,
+      "n_rows": 60
+    },
+    {
+      "path": "../results/S2/inproc_seq/gap_C1_empty",
+      "block": "S-6",
+      "seq": true,
+      "n_rows": 60
+    },
+    {
+      "path": "../results/S2/inproc_seq/gap_E0_disk",
+      "block": "S-6",
+      "seq": true,
+      "n_rows": 60
+    },
+    {
+      "path": "../results/S2/inproc_seq/gap_G1_disk",
+      "block": "S-6",
+      "seq": true,
+      "n_rows": 60
+    },
+    {
+      "path": "../results/S2/inproc_seq/v3shapes_C1_disk",
+      "block": "S-5",
+      "seq": true,
+      "n_rows": 360
+    },
+    {
+      "path": "../results/S2/inproc_seq/v3shapes_C1_empty",
+      "block": "S-5",
+      "seq": true,
+      "n_rows": 360
+    },
+    {
+      "path": "../results/S2/inproc_seq/v3shapes_E0_disk",
+      "block": "S-5",
+      "seq": true,
+      "n_rows": 360
+    },
+    {
+      "path": "../results/S2/inproc_seq/v3shapes_G1_disk",
+      "block": "S-5",
+      "seq": true,
+      "n_rows": 273
+    },
+    {
+      "path": "../results/S2/inproc_seq/v3shapes_G1_disk_tail",
+      "block": "S-5",
+      "seq": true,
+      "n_rows": 120
+    },
+    {
+      "path": "../results/S2/cold_tiers/all_transient.csv",
+      "kind": "transient",
+      "sha256_16": "b86fad6789e29082"
+    }
+  ],
+  "tier_map": {},
+  "dev_synthetic": false,
+  "n_rows": 238,
+  "by_source": {
+    "measured": 126,
+    "extrapolated_ratio_C1": 88,
+    "interpolated_B3": 24
+  },
+  "script_sha256_16": "af2fc64841be0c83",
+  "n_procs": 972
+}

@@ -1,0 +1,24 @@
+VERDICT: GO  (qualifying methods: ['M2', 'M3b', 'M5'])
+decision line: see header of scripts/probe_aot_g1_S5.py
+
+M1: success_all_3=0 bit_identical_all_3=0 speedup@512x512x1x0=None qualifies=0
+    512x512x1x0: {'status': 'fail', 'error_class': 'other', 'speedup_pct': None, 'image_bit_identical': None, 'graph_pool_mib': None}
+    512x512x1x1: {'status': 'fail', 'error_class': 'other', 'speedup_pct': None, 'image_bit_identical': None, 'graph_pool_mib': None}
+    768x768x4x1: {'status': 'fail', 'error_class': 'other', 'speedup_pct': None, 'image_bit_identical': None, 'graph_pool_mib': None}
+M2: success_all_3=1 bit_identical_all_3=1 speedup@512x512x1x0=2.139126522732815 qualifies=1
+    512x512x1x0: {'status': 'ok', 'error_class': None, 'speedup_pct': 2.139126522732815, 'image_bit_identical': 1, 'graph_pool_mib': 178.0}
+    512x512x1x1: {'status': 'ok', 'error_class': None, 'speedup_pct': 1.504348742560993, 'image_bit_identical': 1, 'graph_pool_mib': 188.0}
+    768x768x4x1: {'status': 'ok', 'error_class': None, 'speedup_pct': 0.15725321150166044, 'image_bit_identical': 1, 'graph_pool_mib': 1074.0}
+M3a: success_all_3=0 bit_identical_all_3=0 speedup@512x512x1x0=None qualifies=0
+    512x512x1x0: {'status': 'fail', 'error_class': 'other', 'speedup_pct': None, 'image_bit_identical': None, 'graph_pool_mib': None}
+    512x512x1x1: {'status': 'fail', 'error_class': 'other', 'speedup_pct': None, 'image_bit_identical': None, 'graph_pool_mib': None}
+    768x768x4x1: {'status': 'fail', 'error_class': 'other', 'speedup_pct': None, 'image_bit_identical': None, 'graph_pool_mib': None}
+M3b: success_all_3=1 bit_identical_all_3=1 speedup@512x512x1x0=2.1816594961256914 qualifies=1
+    512x512x1x0: {'status': 'ok', 'error_class': None, 'speedup_pct': 2.1816594961256914, 'image_bit_identical': 1, 'graph_pool_mib': 178.0}
+    512x512x1x1: {'status': 'ok', 'error_class': None, 'speedup_pct': 1.4600204797865106, 'image_bit_identical': 1, 'graph_pool_mib': 188.0}
+    768x768x4x1: {'status': 'ok', 'error_class': None, 'speedup_pct': 0.1543570144227934, 'image_bit_identical': 1, 'graph_pool_mib': 1074.0}
+M5: success_all_3=1 bit_identical_all_3=1 speedup@512x512x1x0=2.214067973478567 qualifies=1
+    512x512x1x0: {'status': 'ok', 'error_class': None, 'speedup_pct': 2.214067973478567, 'image_bit_identical': 1, 'graph_pool_mib': 178.0}
+    512x512x1x1: {'status': 'ok', 'error_class': None, 'speedup_pct': 1.424371441658426, 'image_bit_identical': 1, 'graph_pool_mib': 188.0}
+    768x768x4x1: {'status': 'ok', 'error_class': None, 'speedup_pct': 0.22778099944061958, 'image_bit_identical': 1, 'graph_pool_mib': 1074.0}
+M4: cudagraphs (inductor config triton.cudagraphs / cpp-wrapper cudagraphs) is a COMPILE-TIME option baked into the exported wrapper; it cannot be switched on for an existing package without re-export and re-compile -> NOT done (no rebuild). A load-time, rebuild-free knob exists: aoti_load_package(..., run_single_threaded=True) -> tested as M5.

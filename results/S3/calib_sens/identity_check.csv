@@ -1,0 +1,7 @@
+set,cell,n_rows,n_cols_compared,columns_differing,bit_identical,max_abs_rel_service_diff
+ID_i,"W2,N=1000,seed=100,cold=disk",13,30,{},1,0.0
+ID_i,"W2,N=1000,seed=100,cold=empty",13,30,{},1,0.0
+ID_ii,"W2,N=1000,seed=100,cold=disk",13,30,{},1,0.0
+ID_ii,"W2,N=1000,seed=100,cold=empty",13,30,{},1,0.0
+FILL1_i,"W2,N=1000,seed=100,cold=disk",13,30,"{""service_s"": 2, ""warmup_s"": 2, ""total_incl_load_s"": 2, ""n_events_with_fallback"": 13}",0,0.004073114180857651
+FILL1_i,"W2,N=1000,seed=100,cold=empty",13,30,"{""n_events_with_fallback"": 13}",0,0.0

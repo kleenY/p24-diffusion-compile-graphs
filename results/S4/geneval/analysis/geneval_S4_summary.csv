@@ -1,0 +1,24 @@
+group,metric,abs_score,delta,ci_lo,ci_hi,verdict,note
+E0,Overall,0.36652,,0.34657,0.38656,,E0 absolute; CI = prompt bootstrap of the score itself
+E0,single_object,0.93750,,0.90312,0.96875,,E0 absolute
+E0,two_object,0.25253,,0.19697,0.31061,,E0 absolute
+E0,counting,0.28437,,0.22187,0.34687,,E0 absolute
+E0,colors,0.66223,,0.59043,0.73404,,E0 absolute
+E0,position,0.03750,,0.02000,0.05500,,E0 absolute
+E0,color_attr,0.02500,,0.01000,0.04250,,E0 absolute
+C1G1,Overall,0.36653,0.00000,-0.00373,0.00367,UNCHANGED,CI wholly inside the +-0.02 margin
+C1G1,single_object,0.93437,-0.00313,-0.00937,0.00000,report-only,
+C1G1,two_object,0.25505,0.00253,-0.00758,0.01263,report-only,
+C1G1,counting,0.28750,0.00313,-0.00937,0.01562,report-only,
+C1G1,colors,0.66223,0.00000,-0.01064,0.01064,report-only,
+C1G1,position,0.03500,-0.00250,-0.00750,0.00000,report-only,
+C1G1,color_attr,0.02500,0.00000,0.00000,0.00000,report-only,
+PAD,Overall,0.36496,-0.00156,-0.00559,0.00262,UNCHANGED,CI wholly inside the +-0.02 margin
+PAD,single_object,0.93437,-0.00313,-0.00937,0.00000,report-only,
+PAD,two_object,0.25505,0.00253,-0.00758,0.01263,report-only,
+PAD,counting,0.27813,-0.00625,-0.02187,0.01250,report-only,
+PAD,colors,0.66223,0.00000,-0.01064,0.01064,report-only,
+PAD,position,0.03500,-0.00250,-0.00750,0.00000,report-only,
+PAD,color_attr,0.02500,0.00000,0.00000,0.00000,report-only,
+PAD,sensitivity:samples_0-2 (B3->B4),,-0.00135,-0.00630,0.00371,report-only,not part of the verdict
+PAD,sensitivity:sample_3 (B1->B4),,-0.00217,-0.00842,0.00337,report-only,not part of the verdict

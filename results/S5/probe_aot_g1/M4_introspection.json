@@ -1,0 +1,28 @@
+{
+ "method": "M4",
+ "doc": "package-provided cudagraph option? (introspection only, no rebuild)",
+ "rebuild_performed": false,
+ "torch": "2.9.1+cu126",
+ "inductor_config_triton_cudagraphs": false,
+ "inductor_config_cudagraphs_env_TORCHINDUCTOR_CUDAGRAPHS": null,
+ "aot_inductor_config_graph_keys": [],
+ "aoti_load_package_signature": "(path: 'FileLike', run_single_threaded: 'bool' = False, device_index: 'int' = -1) -> 'AOTICompiledModel'",
+ "unet_package_wrapper_scan": {
+  "512x512x1x0": {
+   "wrapper_cpp_bytes": 3166465,
+   "mentions_cudagraph": 0,
+   "mentions_cudaStreamSynchronize": 0
+  },
+  "512x512x1x1": {
+   "wrapper_cpp_bytes": 3190297,
+   "mentions_cudagraph": 0,
+   "mentions_cudaStreamSynchronize": 0
+  },
+  "768x768x4x1": {
+   "wrapper_cpp_bytes": 3046599,
+   "mentions_cudagraph": 0,
+   "mentions_cudaStreamSynchronize": 0
+  }
+ },
+ "conclusion": "cudagraphs (inductor config triton.cudagraphs / cpp-wrapper cudagraphs) is a COMPILE-TIME option baked into the exported wrapper; it cannot be switched on for an existing package without re-export and re-compile -> NOT done (no rebuild). A load-time, rebuild-free knob exists: aoti_load_package(..., run_single_threaded=True) -> tested as M5."
+}

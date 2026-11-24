@@ -1,0 +1,101 @@
+{
+ "version": "S4P_v3_params_prereg_v1",
+ "written_at": "2026-11-18T13:09:08",
+ "source_prereg": "goals/S4P_uplift_line_prereg_v1.md (P1; SHA16 af179afd6b58df57)",
+ "order_statement": "Written BEFORE any simulation of Ours-v3 on dev traces. Before this file only: toy unit tests of ours_v3.py (hand-computed cost tables), cost-table break-even analysis (per-shape payback counts, key-sharing credit) and the first-sight SHAPE ORDER of two dev traces (W2/W3 N=1e4 seed 0; no outcomes) were run. S3 evaluation traces (seeds 100-109) and the new evaluation seeds 110-119 were never read by this step; the executor read goals/.. ANALYSIS_3.3_opus.txt (quotes S3 evaluation numbers for the mechanism) as background.",
+ "policy": {
+  "name": "Ours-v3",
+  "code": "code/p24/policy/ours_v3.py",
+  "code_sha16_at_prereg": "5fc37b46c6080510",
+  "factory": "code/p24/policy/factory_v3.py",
+  "factory_sha16_at_prereg": "8d9df27fdb212819",
+  "base": "S3 Ours v2 (code/p24/policy/ours.py SHA16 03f9ad80c392b842, unchanged); v3 = v2 + payback gate K_pay + alpha_c1",
+  "unit_tests": "code/tests/test_policy_v3_S4P.py (SHA16 930abb208cb5b41b at prereg; toy tests green)",
+  "payback_gate": "For a shape served eagerly (no compiled code, no graph): n_star = U_C1(s | cache mode, compiled keys of this process) / (steady_E0 - steady_C1), from the cost table via CostView.one_time_s('C1', s, compiled_keys=state.compiled_keys); n_star <= K_pay -> Action(COMPILE) at once (first sight, evaluated at every request while the shape is still eager). Else v2 unchanged.",
+  "alpha_c1": "ski-rental fraction of the memory-free C1 tier in the online path (None = alpha). Graph tiers keep alpha."
+ },
+ "v2_frozen_params_shared_by_all_candidates": {
+  "alpha": 1.0,
+  "H_prior": 1000.0,
+  "horizon": "online",
+  "tiers": [
+   "E",
+   "G1",
+   "C1",
+   "C1+G1"
+  ]
+ },
+ "v2_params_file": "results/S3/policy_params.json (SHA16 bb09408690eeb4bf)",
+ "inputs": {
+  "cost_table": "results/S2/cost_table/merged/cost_table.csv",
+  "cost_table_sha16": "aa691bbea98d15c6",
+  "cost_addendum": "results/S3/cost_addendum/cost_addendum.csv",
+  "cost_addendum_sha16": "8302b0bf7a473d6d",
+  "budgets": "results/S3/budgets.json (default tier 6565.1 MiB)",
+  "budgets_sha16": "58eb9bf8560c961f",
+  "dev_traces": "results/S3/workload/dev_traces/*_A.jsonl (half A, seeds 0-4); manifest results/S3/workload/sha256_manifest.txt",
+  "manifest_sha16": "7d7b993c4d5402b0",
+  "prior": "p24.sim.prior.prior_A (A-half distribution x declared B/CFG)"
+ },
+ "simulator": "Same as the S3 3.3 main simulator: p24/sim/simulator.py (frozen) + cost table + 3.1b addendum overlay (p24.sim.addendum, install_simulator_hook), default budget, overhead-aware admission, prior_A; cold levels as sim_eval_S3: disk = cache_mode warm, empty = cache_mode empty with --missing impute semantics (flagged imputed=1; S3 AUTO_DECISIONS 2026-11-17: missing cold_empty cells imputed from the disk-cache value x median measured empty/disk ratio of the arm), hot = warm with the first shape also at the in-process tier.",
+ "candidates": {
+  "g1_K30_a1": {
+   "K_pay": 30.0,
+   "alpha_c1": 1.0
+  },
+  "g2_K100_a1": {
+   "K_pay": 100.0,
+   "alpha_c1": 1.0
+  },
+  "g3_K30_a0.5": {
+   "K_pay": 30.0,
+   "alpha_c1": 0.5
+  },
+  "g4_K100_a0.5": {
+   "K_pay": 100.0,
+   "alpha_c1": 0.5
+  }
+ },
+ "candidates_note": "At most 4 groups (pre-registration). All other parameters = v2 frozen params above (alpha=1.0, H_prior=1000, online horizon, four tiers, ...). K_pay is in requests of the shape (predicted payback count); K=30 admits at first sight only shapes whose one-time cost is nearly covered by key sharing (disk cache) -> bounded regret <= 30 x saving per shape; K=100 admits roughly the cheaper half of the shapes of a disk-cache process.",
+ "simplicity_order": [
+  "g1_K30_a1",
+  "g2_K100_a1",
+  "g3_K30_a0.5",
+  "g4_K100_a0.5"
+ ],
+ "simplicity_note": "fewest deviations from v2 first (g1, g2: only the gate; g3, g4: gate + alpha_c1), then the smaller K (less speculative) first.",
+ "objective_primary": {
+  "name": "O1",
+  "definition": "geometric mean of the total service time (s) over W1-W5 x N in {1e3, 1e4} x seeds 0-4 = 50 dev traces (half A), disk-cache level (cache_mode warm), default budget",
+  "traces_n": 50
+ },
+ "objective_second": {
+  "name": "O2",
+  "definition": "same 50 dev traces, empty-cache level (cache_mode empty, imputed table as S3 main evaluation), default budget; used as a CONSTRAINT (cold-start must not degrade): eligible iff O2(candidate) <= 1.005 x O2(v2)",
+  "v2": "Ours with the S3 frozen params (= OursV3 with K_pay=0, alpha_c1=None; bit-for-bit equality is a unit test)"
+ },
+ "selection_rule": "1) eligible = candidates with O2(candidate) <= 1.005 x O2(v2). 2) best = lowest O1 among eligible. 3) selected = the SIMPLEST (simplicity_order) eligible candidate with O1 <= 1.01 x O1(best) ('difference < 1% -> simplest'). 4) If no candidate is eligible, freeze the candidate with the lowest O2/O2(v2), flag 'constraint_violated' in policy_params_v3.json and the report. No other criterion enters the selection.",
+ "reference_rows_reported": [
+  "Ours v2 (S3 frozen)",
+  "B0",
+  "B1",
+  "B4",
+  "B5",
+  "B7 (oracle counts, not online)",
+  "all other S3 policies",
+  "four candidates"
+ ],
+ "report_only_diagnostics": {
+  "note": "Do NOT enter the selection. Dev data only (half A, seeds 0-4); extra N are generated in memory from the A half pool with the S2/S3 generator (flagged trace_kind=gen_default, as sim_eval_S3 --dev-extra-N); no eval trace is touched.",
+  "dev_H5_style_table": "cell means (W1-W5 x {empty, disk, hot} x N in {1e2, 1e3, 1e4, 1e5}) over dev seeds: v3/B1, v3/B0, v3/v2, v3/best-online (best online = B1,B2,B3,B3p,B3pp,B4,B5,B6,B6p as scripts/h4_verdict_S3.py ONLINE); max over cells",
+  "dev_H5a_style": "W2 N=1e4 disk: per dev seed v3/B1 and the number of seeds <= 1.01 and < 1",
+  "mid_N": "N = 3e3 (generated in memory, all workloads, 3 colds) to expose any cliff between the grid points"
+ },
+ "revision_clause": "If the dev run shows a design flaw (e.g. dev-style W2 N=1e4 v3/B1 stays > 1.03 for every candidate, or an implementation error), a revised candidate set may be written to a NEW file params_prereg_rev2.json BEFORE the next run, with the reason and the first-pass numbers kept; this file and the first-pass raw outputs are never overwritten (S3 3.2b precedent).",
+ "frozen_output_planned": "results/S4P/v3/policy_params_v3.json (0444): selected group, ours_v3.py SHA, cost table / addendum SHA, tuning raw SHA, this prereg SHA",
+ "scripts_planned": [
+  "code/scripts/tune_dev_S4P_v3.py",
+  "code/scripts/gen_traces_S4P.py",
+  "code/scripts/sim_eval_S4P.py"
+ ]
+}

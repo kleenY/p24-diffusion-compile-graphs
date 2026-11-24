@@ -1,0 +1,353 @@
+{
+ "generated": "2026-11-19T00:18:27",
+ "frozen_method": "see docstring of scripts/fit_mem_model_S4_43b.py (written before any probe data existed)",
+ "model": "R_hat = W0 + P + Wmax + a + c*n_prep ; a,c from min-total-over-prediction LP envelope on all training rows",
+ "train_set_label": "training probes = Ours fwd + Ours rev + B1 fwd (Ours fwd + rev + B1 fwd were fixed before any 4.3b data existed)",
+ "W0_mb": 2056.6103515625,
+ "a_mb": 1458.0288000000003,
+ "c_mb_per_prepare_event": 82.4128,
+ "fit": {
+  "n_rows": 900,
+  "min_over_mb": 0.0,
+  "mean_over_mb": 920.6052804722223,
+  "max_over_mb": 3470.0288,
+  "n_active": 36,
+  "A_obs_min": -2012.0,
+  "A_obs_max": 3848.0,
+  "n_prep_max": 31,
+  "n_prep_distinct": 32,
+  "lp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+ },
+ "train_probes": {
+  "fwd": {
+   "file": "../results/S4/mem_43b/fwd/steps.csv",
+   "n_rows": 300,
+   "peak_obs_mb": 20140.0,
+   "n_prep_max": 4,
+   "n_shape_change_rows": 266
+  },
+  "rev": {
+   "file": "../results/S4/mem_43b/rev/steps.csv",
+   "n_rows": 300,
+   "peak_obs_mb": 19860.0,
+   "n_prep_max": 4,
+   "n_shape_change_rows": 266
+  },
+  "b1": {
+   "file": "../results/S4/mem_43b/b1/steps.csv",
+   "n_rows": 300,
+   "peak_obs_mb": 10958.0,
+   "n_prep_max": 31,
+   "n_shape_change_rows": 266
+  }
+ },
+ "n_ws_fallback_train": 0,
+ "n_ws_fallback_cells": 0,
+ "n_prep_train_max": 31,
+ "n_cells_with_n_prep_beyond_train": 1,
+ "n_cells": 13,
+ "n_cells_pred_ge_meas": 12,
+ "n_cells_over_le_1GB": 5,
+ "n_cells_pass": 4,
+ "max_overestimate_mb": 2335.2384,
+ "max_underestimate_mb": 126.48559999999998,
+ "n_old_model_pred_ge_meas": 4,
+ "truth_cross_check_max_abs_mb": 0.0,
+ "cross_order_info": {
+  "fit_fwd_predict_rev": {
+   "a": 0.0,
+   "c": 441.1700000000001,
+   "pred_peak_mb": 20886.0,
+   "obs_peak_mb": 19860.0,
+   "covers": true,
+   "over_mb": 1026.0
+  },
+  "fit_rev_predict_fwd": {
+   "a": 0.0,
+   "c": 446.9200000000001,
+   "pred_peak_mb": 20909.0,
+   "obs_peak_mb": 20140.0,
+   "covers": true,
+   "over_mb": 769.0
+  }
+ },
+ "ours_only_fit": {
+  "note": "INFORMATIONAL, not judged: same method on Ours fwd + Ours rev only (v1 training set)",
+  "a_mb": 0.0,
+  "c_mb_per_prepare_event": 446.9200000000001,
+  "fit": {
+   "n_rows": 600,
+   "min_over_mb": 0.0,
+   "mean_over_mb": 788.260859375,
+   "max_over_mb": 2012.0,
+   "n_active": 15,
+   "A_obs_min": -2012.0,
+   "A_obs_max": 1787.6800000000003,
+   "n_prep_max": 4,
+   "n_prep_distinct": 5,
+   "lp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+  },
+  "n_prep_train_max": 4,
+  "n_cells_with_n_prep_beyond_train": 4,
+  "n_cells_pred_ge_meas": 12,
+  "n_cells_over_le_1GB": 7,
+  "n_cells_pass": 6,
+  "max_overestimate_mb": 12541.440000000002,
+  "max_underestimate_mb": 855.5,
+  "cells": [
+   {
+    "stream": "W2_N300_seed100_B",
+    "policy": "B0",
+    "pred_mb": 13346.0,
+    "meas_mb": 13140.0,
+    "diff_mb": 206.0,
+    "cell_pass": true
+   },
+   {
+    "stream": "W2_N300_seed100_B",
+    "policy": "B1",
+    "pred_mb": 21134.520000000004,
+    "meas_mb": 10958.0,
+    "diff_mb": 10176.520000000004,
+    "cell_pass": false
+   },
+   {
+    "stream": "W2_N300_seed100_B",
+    "policy": "B4",
+    "pred_mb": 20929.0,
+    "meas_mb": 19884.0,
+    "diff_mb": 1045.0,
+    "cell_pass": false
+   },
+   {
+    "stream": "W2_N300_seed100_B",
+    "policy": "Ours",
+    "pred_mb": 20909.0,
+    "meas_mb": 20140.0,
+    "diff_mb": 769.0,
+    "cell_pass": true
+   },
+   {
+    "stream": "W3_N300_seed100_B",
+    "policy": "B0",
+    "pred_mb": 13346.0,
+    "meas_mb": 13254.0,
+    "diff_mb": 92.0,
+    "cell_pass": true
+   },
+   {
+    "stream": "W3_N300_seed100_B",
+    "policy": "B1",
+    "pred_mb": 21134.520000000004,
+    "meas_mb": 10842.0,
+    "diff_mb": 10292.520000000004,
+    "cell_pass": false
+   },
+   {
+    "stream": "W3_N300_seed100_B",
+    "policy": "B4",
+    "pred_mb": 21181.75,
+    "meas_mb": 20372.0,
+    "diff_mb": 809.75,
+    "cell_pass": true
+   },
+   {
+    "stream": "W3_N300_seed100_B",
+    "policy": "Ours",
+    "pred_mb": 20909.0,
+    "meas_mb": 20210.0,
+    "diff_mb": 699.0,
+    "cell_pass": true
+   },
+   {
+    "stream": "W3_N300_seed100_B",
+    "policy": "B3p",
+    "pred_mb": 18262.120000000003,
+    "meas_mb": 13798.0,
+    "diff_mb": 4464.120000000003,
+    "cell_pass": false
+   },
+   {
+    "stream": "W5_N300_seed100_B",
+    "policy": "B0",
+    "pred_mb": 13346.0,
+    "meas_mb": 12718.0,
+    "diff_mb": 628.0,
+    "cell_pass": true
+   },
+   {
+    "stream": "W5_N300_seed100_B",
+    "policy": "B1",
+    "pred_mb": 21581.440000000002,
+    "meas_mb": 9040.0,
+    "diff_mb": 12541.440000000002,
+    "cell_pass": false
+   },
+   {
+    "stream": "W5_N300_seed100_B",
+    "policy": "B4",
+    "pred_mb": 19994.5,
+    "meas_mb": 20850.0,
+    "diff_mb": -855.5,
+    "cell_pass": false
+   },
+   {
+    "stream": "W5_N300_seed100_B",
+    "policy": "Ours",
+    "pred_mb": 20163.0,
+    "meas_mb": 18170.0,
+    "diff_mb": 1993.0,
+    "cell_pass": false
+   }
+  ]
+ },
+ "judged_criterion": "all cells: pred >= meas AND pred - meas <= 1024 MiB",
+ "cells": [
+  {
+   "stream": "W2_N300_seed100_B",
+   "policy": "B0",
+   "n_prep_max": 0,
+   "pred_mb": 14804.0288,
+   "meas_mb": 13140.0,
+   "diff_mb": 1664.0288,
+   "pred_ge_meas": true,
+   "over_le_1GB": false,
+   "cell_pass": false
+  },
+  {
+   "stream": "W2_N300_seed100_B",
+   "policy": "B1",
+   "n_prep_max": 31,
+   "pred_mb": 11292.8256,
+   "meas_mb": 10958.0,
+   "diff_mb": 334.8256000000001,
+   "pred_ge_meas": true,
+   "over_le_1GB": true,
+   "cell_pass": true
+  },
+  {
+   "stream": "W2_N300_seed100_B",
+   "policy": "B4",
+   "n_prep_max": 4,
+   "pred_mb": 20929.0,
+   "meas_mb": 19884.0,
+   "diff_mb": 1045.0,
+   "pred_ge_meas": true,
+   "over_le_1GB": false,
+   "cell_pass": false
+  },
+  {
+   "stream": "W2_N300_seed100_B",
+   "policy": "Ours",
+   "n_prep_max": 4,
+   "pred_mb": 20909.0,
+   "meas_mb": 20140.0,
+   "diff_mb": 769.0,
+   "pred_ge_meas": true,
+   "over_le_1GB": true,
+   "cell_pass": true
+  },
+  {
+   "stream": "W3_N300_seed100_B",
+   "policy": "B0",
+   "n_prep_max": 0,
+   "pred_mb": 14804.0288,
+   "meas_mb": 13254.0,
+   "diff_mb": 1550.0288,
+   "pred_ge_meas": true,
+   "over_le_1GB": false,
+   "cell_pass": false
+  },
+  {
+   "stream": "W3_N300_seed100_B",
+   "policy": "B1",
+   "n_prep_max": 31,
+   "pred_mb": 11292.8256,
+   "meas_mb": 10842.0,
+   "diff_mb": 450.8256000000001,
+   "pred_ge_meas": true,
+   "over_le_1GB": true,
+   "cell_pass": true
+  },
+  {
+   "stream": "W3_N300_seed100_B",
+   "policy": "B4",
+   "n_prep_max": 3,
+   "pred_mb": 21546.257199999996,
+   "meas_mb": 20372.0,
+   "diff_mb": 1174.2571999999964,
+   "pred_ge_meas": true,
+   "over_le_1GB": false,
+   "cell_pass": false
+  },
+  {
+   "stream": "W3_N300_seed100_B",
+   "policy": "Ours",
+   "n_prep_max": 4,
+   "pred_mb": 20909.0,
+   "meas_mb": 20210.0,
+   "diff_mb": 699.0,
+   "pred_ge_meas": true,
+   "over_le_1GB": true,
+   "cell_pass": true
+  },
+  {
+   "stream": "W3_N300_seed100_B",
+   "policy": "B3p",
+   "n_prep_max": 11,
+   "pred_mb": 15710.5696,
+   "meas_mb": 13798.0,
+   "diff_mb": 1912.5696000000007,
+   "pred_ge_meas": true,
+   "over_le_1GB": false,
+   "cell_pass": false
+  },
+  {
+   "stream": "W5_N300_seed100_B",
+   "policy": "B0",
+   "n_prep_max": 0,
+   "pred_mb": 14804.0288,
+   "meas_mb": 12718.0,
+   "diff_mb": 2086.0288,
+   "pred_ge_meas": true,
+   "over_le_1GB": false,
+   "cell_pass": false
+  },
+  {
+   "stream": "W5_N300_seed100_B",
+   "policy": "B1",
+   "n_prep_max": 32,
+   "pred_mb": 11375.2384,
+   "meas_mb": 9040.0,
+   "diff_mb": 2335.2384,
+   "pred_ge_meas": true,
+   "over_le_1GB": false,
+   "cell_pass": false
+  },
+  {
+   "stream": "W5_N300_seed100_B",
+   "policy": "B4",
+   "n_prep_max": 2,
+   "pred_mb": 20723.5144,
+   "meas_mb": 20850.0,
+   "diff_mb": -126.48559999999998,
+   "pred_ge_meas": false,
+   "over_le_1GB": true,
+   "cell_pass": false
+  },
+  {
+   "stream": "W5_N300_seed100_B",
+   "policy": "Ours",
+   "n_prep_max": 4,
+   "pred_mb": 20163.0,
+   "meas_mb": 18170.0,
+   "diff_mb": 1993.0,
+   "pred_ge_meas": true,
+   "over_le_1GB": false,
+   "cell_pass": false
+  }
+ ],
+ "PASS": false,
+ "verdict_text": "NOT PASSED: memory model not repaired (report the per-cell table; the 'memory bounded' claim keeps the S3 3.4 wording)",
+ "script_sha16": "76642f0eaed803e5"
+}

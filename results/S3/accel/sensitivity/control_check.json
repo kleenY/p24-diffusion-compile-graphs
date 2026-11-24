@@ -1,0 +1,9 @@
+{
+ "formal_main_raw": "<REPO>/results/S3/sim_eval/main_raw.csv",
+ "n_formal_rows": 360,
+ "n_ctrl_rows": 360,
+ "n_matched": 360,
+ "max_abs_diff_service_s": 0.0,
+ "max_abs_diff_total_incl_load_s": 0.0,
+ "n_status_not_ok_formal": 0
+}

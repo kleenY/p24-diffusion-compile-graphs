@@ -1,0 +1,319 @@
+{
+ "validity": {
+  "V1": {
+   "passed": true,
+   "ok_proc_ids": {
+    "B0": [
+     0,
+     1,
+     2
+    ],
+    "B1": [
+     0,
+     1,
+     2
+    ],
+    "Ours": [
+     0,
+     1,
+     2
+    ]
+   },
+   "missing": {},
+   "bad_status": [],
+   "rows_not_ok": []
+  },
+  "V2": {
+   "passed": true,
+   "no_or_bad_evidence": [],
+   "cache_removed_after": {
+    "B0_W2_empty_p0": {
+     "expected_dir_removed": true,
+     "root_exists_after": true,
+     "max_kb_sampled": 16,
+     "first_sample_files": 0
+    },
+    "B0_W2_empty_p1": {
+     "expected_dir_removed": true,
+     "root_exists_after": true,
+     "max_kb_sampled": 16,
+     "first_sample_files": 0
+    },
+    "B0_W2_empty_p2": {
+     "expected_dir_removed": true,
+     "root_exists_after": true,
+     "max_kb_sampled": 16,
+     "first_sample_files": 0
+    },
+    "B1_W2_empty_p0": {
+     "expected_dir_removed": true,
+     "root_exists_after": true,
+     "max_kb_sampled": 2978148,
+     "first_sample_files": 0
+    },
+    "B1_W2_empty_p1": {
+     "expected_dir_removed": true,
+     "root_exists_after": true,
+     "max_kb_sampled": 2986304,
+     "first_sample_files": 0
+    },
+    "B1_W2_empty_p2": {
+     "expected_dir_removed": true,
+     "root_exists_after": true,
+     "max_kb_sampled": 2985588,
+     "first_sample_files": 0
+    },
+    "Ours_W2_empty_p0": {
+     "expected_dir_removed": true,
+     "root_exists_after": true,
+     "max_kb_sampled": 20,
+     "first_sample_files": 0
+    },
+    "Ours_W2_empty_p1": {
+     "expected_dir_removed": true,
+     "root_exists_after": true,
+     "max_kb_sampled": 20,
+     "first_sample_files": 0
+    },
+    "Ours_W2_empty_p2": {
+     "expected_dir_removed": true,
+     "root_exists_after": true,
+     "max_kb_sampled": 20,
+     "first_sample_files": 0
+    }
+   },
+   "note": "removal after the process is reported, not a validity item"
+  },
+  "V3": {
+   "passed": true,
+   "pinned_nonzero": []
+  },
+  "V4_not_quiet": {
+   "flagged": [],
+   "lines": {},
+   "note": "a flag alone does not void the judgement (verdict WITH flagged processes + excluding_flagged variant)"
+  },
+  "unfinished": false,
+  "all": true
+ },
+ "verdict_all_processes": {
+  "n_ok": {
+   "B0": 3,
+   "B1": 3,
+   "Ours": 3
+  },
+  "T_mean": {
+   "B0": 213.17059397066865,
+   "B1": 947.2343577703335,
+   "Ours": 212.52255965099417
+  },
+  "T_median": {
+   "B0": 213.16099992200907,
+   "B1": 942.6890466530022,
+   "Ours": 212.52991730099893
+  },
+  "T_values": {
+   "B0": [
+    213.13584072999947,
+    213.16099992200907,
+    213.21494125999743
+   ],
+   "B1": [
+    942.6890466530022,
+    957.1608858359978,
+    941.8531408220006
+   ],
+   "Ours": [
+    212.487605368995,
+    212.52991730099893,
+    212.5501562829886
+   ]
+  },
+  "H1": {
+   "passed": true,
+   "ratio_Ours_over_B0": 0.9969600201059455,
+   "line": "<= 1.05",
+   "ci95": [
+    0.9967389241149727,
+    0.9971735873573316
+   ]
+  },
+  "H2": {
+   "passed": true,
+   "ratio_B1_over_B0": 4.443550773708821,
+   "line": ">= 2.0",
+   "ci95": [
+    4.418480890886739,
+    4.489940256697337
+   ]
+  },
+  "paired_ratios_by_p": {
+   "0": {
+    "Ours_over_B0": 0.9969585811622098,
+    "B1_over_B0": 4.4229494364920106
+   },
+   "1": {
+    "Ours_over_B0": 0.9970394086102006,
+    "B1_over_B0": 4.490318989806775
+   },
+   "2": {
+    "Ours_over_B0": 0.9968820900961243,
+    "B1_over_B0": 4.417388083856145
+   }
+  },
+  "paired_H1_all": true,
+  "paired_H2_all": true,
+  "label": "holds",
+  "holds": true,
+  "reported": {
+   "Ours_over_B1_real": 0.224361118141074,
+   "Ours_over_B1_pred": 0.20709640225786025,
+   "r1_pred": 0.9968949158504983,
+   "r2_pred": 4.813675684279839
+  },
+  "prediction_error_reported": {
+   "B0": {
+    "T_real_mean": 213.17059397066865,
+    "T_pred": 222.33479869986735,
+    "signed_pred_minus_real_over_real": 0.04299000419569904,
+    "abs_error": 0.04299000419569904,
+    "flag_gt_15pct": false
+   },
+   "B1": {
+    "T_real_mean": 947.2343577703335,
+    "T_pred": 1070.2476142708042,
+    "signed_pred_minus_real_over_real": 0.12986570376314038,
+    "abs_error": 0.12986570376314038,
+    "flag_gt_15pct": false
+   },
+   "Ours": {
+    "T_real_mean": 212.52255965099417,
+    "T_pred": 221.64443044054173,
+    "signed_pred_minus_real_over_real": 0.0429218940545773,
+    "abs_error": 0.0429218940545773,
+    "flag_gt_15pct": false
+   }
+  },
+  "first_request_s_mean": {
+   "B0": 0.5222145433363039,
+   "B1": 38.355295359006654,
+   "Ours": 0.6655720233247848
+  },
+  "first_request_s_pred": {
+   "B0": 0.5039750441210344,
+   "B1": 41.791951285908,
+   "Ours": 0.6898446852574125
+  },
+  "n_compile_mean": {
+   "B0": 0.0,
+   "B1": 31.0,
+   "Ours": 0.0
+  },
+  "n_capture_mean": {
+   "B0": 0.0,
+   "B1": 0.0,
+   "Ours": 1.0
+  },
+  "n_compile_pred": {
+   "B0": 0.0,
+   "B1": 31.0,
+   "Ours": 0.0
+  },
+  "n_capture_pred": {
+   "B0": 0.0,
+   "B1": 0.0,
+   "Ours": 1.0
+  },
+  "peak_reserved_mb_max": {
+   "B0": 14484.0,
+   "B1": 10836.0,
+   "Ours": 15340.0
+  }
+ },
+ "prediction": {
+  "T_pred": {
+   "B0": 222.33479869986735,
+   "B1": 1070.2476142708042,
+   "Ours": 221.64443044054173
+  },
+  "first_req_pred": {
+   "B0": 0.5039750441210344,
+   "B1": 41.791951285908,
+   "Ours": 0.6898446852574125
+  },
+  "n_compile_pred": {
+   "B0": 0.0,
+   "B1": 31.0,
+   "Ours": 0.0
+  },
+  "n_capture_pred": {
+   "B0": 0.0,
+   "B1": 0.0,
+   "Ours": 1.0
+  },
+  "event_counts_pred": {
+   "B0": "{\"eager_first\": 31, \"steady\": 969}",
+   "B1": "{\"compile\": 31, \"steady\": 969}",
+   "Ours": "{\"capture\": 1, \"eager_first\": 30, \"steady\": 969}"
+  },
+  "complete": true
+ },
+ "time": "2026-11-22T02:21:06",
+ "synthetic": false,
+ "script_sha16": "485b8335a24df266",
+ "raw": "<REPO>/results/S4X/x8/real/raw",
+ "n_processes": 9,
+ "disk_cache_reference_not_judged": {
+  "P5d_W2_N1000_seed130 (warm disk cache)": {
+   "B0": {
+    "mean_service_s": 210.7800562166667,
+    "n": 3
+   },
+   "B1-AOT": {
+    "mean_service_s": 186.79651803233233,
+    "n": 3
+   },
+   "Ours": {
+    "mean_service_s": 210.18509284833758,
+    "n": 3
+   },
+   "Ours_over_B0": 0.997177326076251
+  },
+  "X3_W2_N1000_seed131 (warm disk cache)": {
+   "B0": {
+    "mean_service_s": 215.61914418565962,
+    "n": 3
+   },
+   "B1-AOT-K": {
+    "mean_service_s": 192.38688874466848,
+    "n": 3
+   },
+   "B1-AOT": {
+    "mean_service_s": 193.00165909399706,
+    "n": 3
+   }
+  },
+  "X5_W2_N10000_seed133 (warm disk cache, N=10000)": {
+   "B1": {
+    "mean_service_s": 1930.988297369998,
+    "n": 3
+   },
+   "Ours": {
+    "mean_service_s": 2017.050616227333,
+    "n": 3
+   },
+   "Ours_over_B1": 1.0445690525284652
+  }
+ },
+ "status": "JUDGED",
+ "conclusion": {
+  "label": "holds",
+  "H1": true,
+  "H2": true,
+  "r_Ours_over_B0": 0.9969600201059455,
+  "r_B1_over_B0": 4.443550773708821,
+  "paired_H1_all": true,
+  "paired_H2_all": true,
+  "holds": true
+ }
+}

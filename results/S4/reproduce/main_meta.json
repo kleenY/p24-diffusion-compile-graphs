@@ -1,0 +1,279 @@
+{
+ "experiment": "main",
+ "args": {
+  "split": "eval",
+  "experiment": "main",
+  "out": "<REPO>/results/S4/reproduce",
+  "workloads": null,
+  "N": null,
+  "seeds": null,
+  "colds": null,
+  "budgets": null,
+  "policies": null,
+  "boots": 200,
+  "dev_extra_N": [],
+  "addendum": "<REPO>/results/S3/cost_addendum/cost_addendum.csv",
+  "missing": "impute",
+  "procs": 4,
+  "tiny": false,
+  "selftest": false,
+  "no_lock": false
+ },
+ "n_rows": 7800,
+ "status_counts": {
+  "ok": 7800
+ },
+ "not_ok_by_variant_cold": {},
+ "wall_s": 300.0424590110779,
+ "variants": [
+  {
+   "label": "B0",
+   "policy": "B0",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B1",
+   "policy": "B1",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B2",
+   "policy": "B2",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B3",
+   "policy": "B3",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B3p",
+   "policy": "B3p",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B3pp",
+   "policy": "B3pp",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B4",
+   "policy": "B4",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B5",
+   "policy": "B5",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B6",
+   "policy": "B6",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B6p",
+   "policy": "B6p",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "B7",
+   "policy": "B7",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "Ours",
+   "policy": "Ours",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  },
+  {
+   "label": "Ours-NE",
+   "policy": "Ours-NE",
+   "params": {
+    "alpha": 1.0,
+    "H_prior": 1000.0,
+    "horizon": "online",
+    "tiers": [
+     "E",
+     "G1",
+     "C1",
+     "C1+G1"
+    ]
+   },
+   "prior": "A"
+  }
+ ],
+ "colds": [
+  "empty",
+  "disk",
+  "hot"
+ ],
+ "budgets": {
+  "default": 6565.1
+ },
+ "guards": {
+  "params_mode": "0o444",
+  "params_sha16": "bb09408690eeb4bf",
+  "cost_table_sha16": "aa691bbea98d15c6",
+  "manifest_sha16": "7d7b993c4d5402b0",
+  "code_sha16": {
+   "policy/base.py": "0716509f6bf09dc4",
+   "policy/ours.py": "03f9ad80c392b842",
+   "policy/baselines.py": "35757377e4ecb559",
+   "policy/factory.py": "b3a9693b76f57da5",
+   "policy/costview.py": "d21ea0c0a3c6badc",
+   "sim/simulator.py": "f99de8b737d55997",
+   "sim/prior.py": "5eee108e125dbe26"
+  },
+  "code_matches_freeze": true,
+  "addendum": {
+   "path": "<REPO>/results/S3/cost_addendum/cost_addendum.csv",
+   "sha16": "8302b0bf7a473d6d",
+   "n_inproc_replaced": 22,
+   "n_inproc_skipped_no_table_row": 0,
+   "n_override": 68
+  }
+ },
+ "script_sha16": "2eae165cebc40e68",
+ "time": "2026-11-18T13:08:44",
+ "trace_manifest_checked": true,
+ "cold_definition": "empty=cache_mode empty; disk=warm; hot=warm + first shape at inproc tier",
+ "prior_kinds": [
+  "A",
+  "swapped",
+  "uniform"
+ ],
+ "missing_mode": "impute"
+}

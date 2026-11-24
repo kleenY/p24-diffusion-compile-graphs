@@ -1,0 +1,143 @@
+{
+ "kind": "ctrl",
+ "split": "dev",
+ "workload": "W2",
+ "N": [
+  1000,
+  10000
+ ],
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "colds": [
+  "empty",
+  "disk",
+  "hot"
+ ],
+ "budget": "default",
+ "policies": [
+  "B0",
+  "B1",
+  "Ours"
+ ],
+ "status_counts": {
+  "ok": 90
+ },
+ "n_rows": 90,
+ "wall_s": 1.4302992820739746,
+ "time": "2026-11-17T20:01:25",
+ "missing_mode": "impute",
+ "guards": {
+  "params_mode": "0o444",
+  "params_sha16": "bb09408690eeb4bf",
+  "cost_table_sha16": "aa691bbea98d15c6",
+  "manifest_sha16": "7d7b993c4d5402b0",
+  "code_sha16": {
+   "policy/base.py": "0716509f6bf09dc4",
+   "policy/ours.py": "03f9ad80c392b842",
+   "policy/baselines.py": "35757377e4ecb559",
+   "policy/factory.py": "b3a9693b76f57da5",
+   "policy/costview.py": "d21ea0c0a3c6badc",
+   "sim/simulator.py": "f99de8b737d55997",
+   "sim/prior.py": "5eee108e125dbe26"
+  },
+  "code_matches_freeze": true
+ },
+ "script_sha16": "330d6b5774f2be8f",
+ "sim_eval_script_sha16": "2eae165cebc40e68",
+ "inputs": {
+  "cost_table_S2_sha16": "aa691bbea98d15c6",
+  "addendum_sha16": "8302b0bf7a473d6d",
+  "confirm_csv_sha16": "76e001998ce7d03f",
+  "policy_params_sha16": "bb09408690eeb4bf",
+  "budgets_sha16": "58eb9bf8560c961f",
+  "manifest_sha16": "7d7b993c4d5402b0"
+ },
+ "star_table": {
+  "path": "<REPO>/results/S3/accel/sensitivity/dev/cost_table_star.csv",
+  "sha16": "8a54e1b0e9187988",
+  "n_star_rows": 34,
+  "n_measured": 6,
+  "n_extrapolated": 28,
+  "median_steady_ratio": 0.9612579582892276,
+  "median_d_per_REFsteady": 217.22040933724784,
+  "median_k_empty": 11.542356466745867,
+  "measured": {
+   "512x512_b1_nocfg": {
+    "ratio": 0.970464,
+    "d_first": 38.35,
+    "cold_first": 309.5,
+    "r_steady_s": 0.06992,
+    "ref_steady_s": 0.072048,
+    "d_per_steady": 532.284033,
+    "old_empty_total_s": 41.459172,
+    "k_empty": 7.463489
+   },
+   "512x512_b4_cfg": {
+    "ratio": 0.947758,
+    "d_first": 59.55,
+    "cold_first": 495.6,
+    "r_steady_s": 0.325533,
+    "ref_steady_s": 0.343477,
+    "d_per_steady": 173.374054,
+    "old_empty_total_s": 42.579333,
+    "k_empty": 11.631804
+   },
+   "768x512_b1_nocfg": {
+    "ratio": 0.962411,
+    "d_first": 36.97,
+    "cold_first": 515.3,
+    "r_steady_s": 0.100545,
+    "ref_steady_s": 0.104472,
+    "d_per_steady": 353.874722,
+    "old_empty_total_s": 41.714,
+    "k_empty": 12.350757
+   },
+   "512x768_b2_cfg": {
+    "ratio": 0.959769,
+    "d_first": 37.27,
+    "cold_first": 493.4,
+    "r_steady_s": 0.272226,
+    "ref_steady_s": 0.283637,
+    "d_per_steady": 131.400346,
+    "old_empty_total_s": 46.295856,
+    "k_empty": 10.651661
+   },
+   "768x768_b1_nocfg": {
+    "ratio": 0.964233,
+    "d_first": 43.4,
+    "cold_first": 533.6,
+    "r_steady_s": 0.160295,
+    "ref_steady_s": 0.166241,
+    "d_per_steady": 261.066765,
+    "old_empty_total_s": 42.350711,
+    "k_empty": 12.595767
+   },
+   "768x768_b4_cfg": {
+    "ratio": 0.960105,
+    "d_first": 55.01,
+    "cold_first": 533.3,
+    "r_steady_s": 0.905065,
+    "ref_steady_s": 0.942673,
+    "d_per_steady": 58.355336,
+    "old_empty_total_s": 46.485566,
+    "k_empty": 11.452909
+   }
+  }
+ },
+ "n_extrapolated_cells": {
+  "shape_rows_total": 28,
+  "steady": 28,
+  "onetime_disk_inproc": 28,
+  "onetime_empty": 28,
+  "shapes_used_by_panel": 32,
+  "extrapolated_shapes_used_by_panel": 26,
+  "request_share_on_extrapolated_shapes": 0.6533636363636364
+ },
+ "capture_pool_note": "capture_pool_mb of C1+G1 unchanged (the confirm block did not measure the recorded-graph pool)",
+ "imputation_log": "impute_empty() applied before the star modification, same as formal evaluation"
+}

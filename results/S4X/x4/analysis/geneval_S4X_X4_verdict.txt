@@ -1,0 +1,20 @@
+
+RULE (pre-registered in S4, unchanged for S4-X X4): quality unchanged iff the 95% percentile CI (10000 prompt-bootstrap resamples, stratified by tag, SeedSequence([20261202, group_no])) of Delta-Overall (group - E0, paired by prompt) lies completely inside [-0.02, +0.02]. Sub-task Deltas are reported only, not judged.
+bootstrap resamples B=10000; margin = +-0.02
+
+=== pair AOT vs E0 (bootstrap stream no 3) ===
+E0 absolute: Overall = 0.3665 (95% CI 0.3466 .. 0.3866); prompts=553, images=2212, %images correct=34.58%
+E0 per tag: single_object=0.938, two_object=0.253, counting=0.284, colors=0.662, position=0.037, color_attr=0.025
+[AOT] Overall = 0.3659; Delta vs E0 = -0.0006  95% CI [-0.0044, +0.0032]  -> VERDICT: UNCHANGED (CI wholly inside the +-0.02 margin)
+     per-tag Delta (report only): single_object -0.003 [-0.009,+0.000], two_object -0.003 [-0.013,+0.005], counting -0.003 [-0.019,+0.013], colors +0.003 [-0.008,+0.016], position +0.000 [+0.000,+0.000], color_attr +0.003 [+0.000,+0.007]
+     paired images=2212; discordant: E0-only-correct=9, AOT-only-correct=8
+
+=== pair C1G1CFG vs E0CFG (bootstrap stream no 4) ===
+E0CFG absolute: Overall = 0.3547 (95% CI 0.3346 .. 0.3751); prompts=553, images=2212, %images correct=33.36%
+E0CFG per tag: single_object=0.941, two_object=0.240, counting=0.278, colors=0.617, position=0.028, color_attr=0.025
+[C1G1CFG] Overall = 0.3553; Delta vs E0CFG = +0.0006  95% CI [-0.0037, +0.0052]  -> VERDICT: UNCHANGED (CI wholly inside the +-0.02 margin)
+     per-tag Delta (report only): single_object +0.000 [-0.009,+0.009], two_object +0.003 [-0.005,+0.013], counting +0.006 [-0.009,+0.025], colors +0.000 [-0.011,+0.011], position -0.003 [-0.007,+0.000], color_attr -0.003 [-0.013,+0.007]
+     paired images=2212; discordant: E0CFG-only-correct=10, C1G1CFG-only-correct=11
+
+published SD1.5 GenEval value for comparison: unverified (public SD1.5 GenEval value not filled in; look up the GenEval/SD3-era papers and cite, then compare)
+input files (SHA256-16): E0=117e7b5802b021f7; AOT=6a0b6bc18988f602; E0CFG=383b8230f436a03d; C1G1CFG=a654379661cb530f

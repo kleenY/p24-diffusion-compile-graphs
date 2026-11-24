@@ -1,0 +1,70 @@
+{
+ "time": "2026-11-20T22:32:25",
+ "argv": [
+  "<REPO>/code/scripts/regime_S4X.py",
+  "run",
+  "--procs",
+  "6"
+ ],
+ "seeds": [
+  100,
+  101,
+  102,
+  103,
+  104,
+  105,
+  106,
+  107,
+  108,
+  109
+ ],
+ "Ns": [
+  100,
+  300,
+  1000,
+  3000,
+  10000
+ ],
+ "workloads": [
+  "W1",
+  "W2",
+  "W3",
+  "W5"
+ ],
+ "budgets": {
+  "wide": 8613.11,
+  "tight": 2204.99,
+  "default": 6565.1
+ },
+ "colds": [
+  "empty",
+  "disk"
+ ],
+ "n_rows": 5000,
+ "status": {
+  "ok": 5000
+ },
+ "traces_new_manifest_sha16": "bbbcbe6db9ce39c5",
+ "policy_params_sha16": "bb09408690eeb4bf",
+ "script_sha16": "6461b912bf4f0c38",
+ "K": [
+  "512x512x1x0",
+  "768x512x1x0",
+  "512x512x4x0",
+  "512x512x2x0",
+  "512x512x1x1",
+  "512x768x1x0",
+  "768x512x4x0",
+  "768x512x2x0",
+  "768x512x1x1",
+  "512x768x4x0",
+  "512x512x4x1",
+  "512x512x2x1",
+  "512x768x2x0",
+  "512x768x1x1",
+  "512x512x3x1"
+ ],
+ "s3_cost_table_sha16": "aa691bbea98d15c6",
+ "v2_cost_table_sha16": "8f1f50b7805aebef",
+ "wall_s": 28.837450742721558
+}

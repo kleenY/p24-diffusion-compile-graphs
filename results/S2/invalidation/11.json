@@ -1,0 +1,13 @@
+{
+ "entry": 11,
+ "tests": {
+  "step_count": {
+   "time": "2026-11-17 15:21:41",
+   "compiled_unique_graphs_for_steps_4_2_4_3": 3,
+   "graph_n4_matches_eager_n4": true,
+   "graph_n4_matches_eager_n2": false,
+   "max_abs_diff_graph4_vs_eager2": 0.8671875
+  }
+ },
+ "torch": "2.9.1+cu126"
+}

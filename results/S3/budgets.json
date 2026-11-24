@@ -1,0 +1,68 @@
+{
+  "units": "MiB",
+  "cost_table": "results/S2/cost_table/merged/cost_table.csv",
+  "cost_table_sha16": "aa691bbea98d15c6",
+  "memory_budget_json_sha16": "1c03f1ee961e258c",
+  "admission_rule": "admit new bucket iff sum over live buckets of (pool_mb + per_bucket_overhead_mb) + pool_mb(new) + per_bucket_overhead_mb <= graph_budget_mb",
+  "tiers": {
+    "tight": {
+      "mb": 2204.99,
+      "rule": "sum over the 3 most probable half-A shape buckets (H,W,B,cfg) of one C1+G1 pool + 22.33 MB per-graph overhead each; i.e. only the 3 most common buckets fit",
+      "buckets": [
+        {
+          "shape": {
+            "H": 512,
+            "W": 512,
+            "B": 1,
+            "cfg": 0
+          },
+          "p_A": 0.206168,
+          "c1g1_pool_mb": 628.0,
+          "per_graph_overhead_mb": 22.33,
+          "bucket_mb": 650.33
+        },
+        {
+          "shape": {
+            "H": 768,
+            "W": 512,
+            "B": 1,
+            "cfg": 0
+          },
+          "p_A": 0.092434,
+          "c1g1_pool_mb": 874.0,
+          "per_graph_overhead_mb": 22.33,
+          "bucket_mb": 896.33
+        },
+        {
+          "shape": {
+            "H": 512,
+            "W": 512,
+            "B": 1,
+            "cfg": 1
+          },
+          "p_A": 0.088358,
+          "c1g1_pool_mb": 636.0,
+          "per_graph_overhead_mb": 22.33,
+          "bucket_mb": 658.33
+        }
+      ],
+      "calc": "650.33 + 896.33 + 658.33 = 2204.99"
+    },
+    "mid": {
+      "mb": 4409.98,
+      "rule": "tight x 2",
+      "calc": "2 x 2204.99"
+    },
+    "default": {
+      "mb": 6565.1,
+      "rule": "S2 memory_budget.json graph_budget_mb (20480 - resident - largest eager workspace - 64)",
+      "calc": "20480 - 2561.5 - 11289.3896484375 - 64.0 = 6565.1"
+    },
+    "wide": {
+      "mb": 8613.11,
+      "rule": "23552 (hard cap of an exclusive GPU0 process) - resident - largest eager workspace - 64 - 1024 (whole-process margin for the 716 MB underestimate x ~1.4); simulated only, not run on a real GPU",
+      "calc": "23552 - 2561.5 - 11289.3896484375 - 64 - 1024 = 8613.11"
+    }
+  },
+  "notes": "the tight tier uses half-A frequencies (evaluation traces do not take part); the 4 tiers are monotone tight < mid < default < wide; all are recomputed if the cost table changes."
+}

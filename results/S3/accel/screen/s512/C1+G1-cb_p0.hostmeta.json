@@ -1,0 +1,6 @@
+{"tag": "C1+G1-cb_p0", "start": "2026-11-17T14:53:50", "end": "2026-11-17T14:54:12", "exit_code": 0,
+ "pinned_fallback_count": 0,
+ "memavailable_mb_before": 53376, "memavailable_mb_after": 53644,
+ "shmem_mb_before": 10, "shmem_mb_after": 10,
+ "uptime_s_before": 9495, "uptime_s_after": 9518,
+ "swap_used_pct_after": 2, "load1_after": 8.33}

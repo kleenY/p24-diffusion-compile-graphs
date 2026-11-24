@@ -1,0 +1,122 @@
+{
+  "arm": "C1+G1-recipe",
+  "status": "ok",
+  "keys": [
+    "768x512_b1_nocfg"
+  ],
+  "n_images": 8,
+  "seeds": [
+    7000,
+    7001,
+    7002,
+    7003,
+    7004,
+    7005,
+    7006,
+    7007
+  ],
+  "pad_b3": "4",
+  "native_b3": "on",
+  "padding_policy": "arm under test padded B3->B4 (filler discarded); fp32 reference and E0 native B3",
+  "code_sha256_16": {
+    "p24/__init__.py": "e3b0c44298fc1c14",
+    "p24/bench.py": "3209607782c5691a",
+    "p24/compat.py": "3a7ea2826045031f",
+    "p24/diag.py": "8d1a3fe8a75d9412",
+    "p24/equiv.py": "5229442096672e68",
+    "p24/nsys_analyze.py": "73dd3c7ddb8c2d03",
+    "p24/pipeline.py": "b7b46cc4d7694242",
+    "p24/reproduce_main_figure.py": "61d27b0239d59ba0",
+    "p24/runners.py": "356dd586a3de1341",
+    "p24/runners_tiered.py": "e4a5f06971941335",
+    "p24/stats.py": "e8bfb0a11b22b4c0",
+    "scripts/accel_analyze.py": "12c4018138402cae",
+    "scripts/accel_bench.py": "d17803c4f85e2937",
+    "scripts/accel_confirm_analyze.py": "7a6927e876d94846",
+    "scripts/accel_equiv.py": "762bc6820f95e8bc",
+    "scripts/accel_knobs.py": "48e9a98451041ba2",
+    "scripts/accel_x0_diag.py": "7fa63936b320d4e7",
+    "scripts/bench_input.py": "2e47f3a549ac4165",
+    "scripts/bench_rebuild_S3.py": "d6c619505d0f2957",
+    "scripts/bench_seq.py": "c59fa5c2d05344ac",
+    "scripts/build_cost_table.py": "b351b17ca51ceb60",
+    "scripts/build_memory_budget.py": "0dd3c1a78f1c2bd6",
+    "scripts/check_cache_keys.py": "2bf56e2b106b8ef4",
+    "scripts/check_marks_equal.py": "3b33045199e072f6",
+    "scripts/check_prewarm_S3_4.py": "c4a1e71d9d0ab83c",
+    "scripts/compare_S2_6.py": "1867d85528d9644f",
+    "scripts/compare_S3_4.py": "e85eee904bdb5995",
+    "scripts/freeze_params_S3.py": "57441978d45053ae",
+    "scripts/freeze_params_S3_v2.py": "36e08856e719baaa",
+    "scripts/gen_traces_S3.py": "8f770dee966bb5a3",
+    "scripts/gonogo_env.py": "e41f21e75f53fc28",
+    "scripts/h4_verdict_S3.py": "376f4a5bbe81dd6f",
+    "scripts/make_budgets_S3.py": "10424b790c0fa40c",
+    "scripts/plot_s1.py": "7edd211181584187",
+    "scripts/predict_S2_6.py": "6a6ba5d48d0c5ecf",
+    "scripts/predict_S3_4.py": "9df6c5abea357506",
+    "scripts/prepare_model.py": "10050c8b553c3b3c",
+    "scripts/prewarm_s2.py": "2465fd745bf16afc",
+    "scripts/run_equivalence.py": "8d8212266ca13ddc",
+    "scripts/run_matrix.py": "fbf771c020da62a4",
+    "scripts/serve_trace.py": "2fea64adca0d6664",
+    "scripts/sim_eval_S3.py": "20e6e4dff664f40d",
+    "scripts/tune_dev_S3.py": "d045e7ed13811876",
+    "scripts/tune_dev_S3_v2.py": "dbacd05c923933b9"
+  },
+  "tolerances_sha256": "84c7bc63a224579b319484c5644deef5a631796462cc13eaa3aaf08f8a6434c7",
+  "model_revisions_sha256": "932e4df4d2ad1065b54302d6ecbf32ce917fcaa8b0bd0231dd6c96a40a6a9f2e",
+  "warm_root": "<P24_CACHE>/x1_equiv_root",
+  "arm_cache_dir": "<P24_CACHE>/x1_equiv_root/C1_G1-recipe",
+  "time": "2026-11-17T16:47:50",
+  "device": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "torch": "2.9.1+cu126",
+    "cuda": "12.6",
+    "cuda_visible_devices": "GPU-722679a6-175b-cb56-b764-e8124d262c41"
+  },
+  "fused_weights_sha256": {
+    "text_encoder/model.safetensors": "660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd",
+    "unet/diffusion_pytorch_model.safetensors": "444a5981e52fc3b30f23773a0e4b19f2ed0f400941abce553449d506a0d7cd42",
+    "vae/diffusion_pytorch_model.safetensors": "4fbcf0ebe55a0984f5a5e00d8c4521d52359af7229bb4d81890039d2aa16dd7c"
+  },
+  "fused_weights_sha256_revisions": {
+    "text_encoder/model.safetensors": "660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd",
+    "unet/diffusion_pytorch_model.safetensors": "444a5981e52fc3b30f23773a0e4b19f2ed0f400941abce553449d506a0d7cd42",
+    "vae/diffusion_pytorch_model.safetensors": "4fbcf0ebe55a0984f5a5e00d8c4521d52359af7229bb4d81890039d2aa16dd7c"
+  },
+  "fused_weights_sha256_matches_revisions": true,
+  "tolerances": {
+    "c_rmse_ratio_max": 2.0,
+    "c_psnr_drop_db_max": 6.02,
+    "lpips_vs_E0_mean_max": 0.02
+  },
+  "compile_cache_counters": {
+    "fx_hit": 3,
+    "fx_miss": 0,
+    "fx_bypass": 0,
+    "aot_hit": 3,
+    "aot_miss": 0
+  },
+  "by_key": {
+    "768x512_b1_nocfg": {
+      "maxabs_vs_ref32": 0.22428059577941895,
+      "rmse_vs_ref32": 0.0024099620059132576,
+      "rmse_E0_vs_ref32": 0.005825711414217949,
+      "rmse_ratio": 0.4136768601396254,
+      "psnr_vs_ref32": 52.3597958337042,
+      "psnr_E0_vs_ref32": 44.69302042080276,
+      "maxabs_vs_E0": 0.669921875,
+      "lpips_vs_E0": 0.001171699957922101,
+      "psnr_drop_db": -7.666775412901437,
+      "rmse_ratio_ok": 1,
+      "psnr_drop_ok": 1,
+      "lpips_ok": 1,
+      "equiv_pass": 1,
+      "served_as": "768x512_b1_nocfg",
+      "padding": "native",
+      "ref32_served_as": "768x512_b1_nocfg",
+      "e0_served_as": "768x512_b1_nocfg"
+    }
+  }
+}
